@@ -2,7 +2,7 @@
 
 > an open-source themeable design system
 
-- NOTE: Still under development! Use at your own risk!
+- **NOTE**: still under development! use at your own risk!
 
 # overview
 
@@ -11,11 +11,9 @@
 - [@pgd/design-tokens](/packages/design-tokens)
   - automatically generate design tokens for multiple platforms using style-dictionary
 - [@pgd/components](/packages/components)
-  - framework-agnostic css components
+  - framework-agnostic css components based on sass and css variables
 - [@pgd/components-react](/packages/components-react)
   - themeable react components 
-
-# usage
 
 # license
 
