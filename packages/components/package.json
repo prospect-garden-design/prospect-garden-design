@@ -1,0 +1,21 @@
+{
+  "name": "@pgd/components",
+  "version": "1.0.0",
+  "description": "the css implementation of the prospect garden design system",
+  "main": "dist",
+  "scripts": {
+    "build": "rimraf dist && npm run build:styles",
+    "build:styles": "rimraf dist && node scripts/build-styles.js",
+    "build:styles-post": "fse copy dist/primitive-light.css docs/css/main.css",
+    "build:styles-test": "sass src/primitive/primitive-light.scss dist/output.css",
+    "build:types": "",
+    "demo": "webpack serve --hot --config webpack/webpack.config.demo.js",
+    "dev": "rimraf dist && npm run build:styles",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:log": "node index.js --name nested-a"
+  },
+  "dependencies": {
+    "@pgd/design-tokens": "1.0.0"
+  },
+  "devDependencies": {}
+}

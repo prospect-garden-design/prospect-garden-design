@@ -1,0 +1,16 @@
+// global flags
+$prefix4pg: pg- !default;
+
+// predefined themes: pg, bootstrap, pico
+// $theme-name: pg-t-pg !default;
+$theme-name: pg-t-halfmoon !default;
+
+
+// ----- comment vars with prefix test- before build ---- //
+$test-var: null !default;
+// $test-var: 16 !default;
+// the following class wont be present in the output, for test only
+.aaaa {
+  // color: teal;
+  font-size: $test-var;
+}

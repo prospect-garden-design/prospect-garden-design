@@ -1,0 +1,23 @@
+{
+  "name": "@pgd/design-tokens",
+  "version": "1.0.0",
+  "description": "automatically generated design tokens for the prospect garden design system",
+  "main": "dist",
+  "scripts": {
+    "build": "rimraf dist && npm run build:tokens",
+    "build:all-tokens": "rimraf dist && ",
+    "build:css": "",
+    "build:tokens": "node ./scripts/build-tokens.js",
+    "dev": "rimraf dist && npm run build:tokens",
+    "start": "npm run dev",
+    "test": "jest --config=jest.config.js",
+    "test:log": "node index.js --name nested-a"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "fs-extra": "^9.1.0",
+    "style-dictionary": "^3.0.0-rc.6",
+    "polished": "^4.1.1",
+    "tinycolor2": "^1.4.2"
+  }
+}

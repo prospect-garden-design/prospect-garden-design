@@ -1,0 +1,21 @@
+/*!
+ * css for prospect-garden-design | MIT License
+ *
+ * the css implementation of the prospect garden design system
+ *
+ * Author: jinyaoo <jinyaoo@qq.com>
+ * Source: https://github.com/taniarascia/primitive
+ * Documentation: https://taniarascia.github.io/primitive
+ */
+
+// -------------variables for themes ----------------------- //
+// @use '../../design-tokens/dist/halfmoon-vars';
+
+// ----------------- basic configuration ---------------- //
+@use 'base/variables' with ($prefix4pg: ""); // null is ok
+// @use 'base/variables' with ($prefix4pg: pg-);
+@use 'base/reset-normalize';
+// @use 'base/reset-custom';
+
+// --------------------- components --------------------- //
+@use 'components/button';
