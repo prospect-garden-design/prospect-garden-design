@@ -230,6 +230,12 @@ module.exports = {
     padding: { value: `0 2rem` },
     'font-size': { value: `1.8rem` },
   },
-  rounded: {},
+  rounded: {
+    'border-radius': {
+      sm: { value: `{${prefix4c}.button.sm.height.value}` },
+      md: { value: `{${prefix4c}.button.height.value}` },
+      lg: { value: `{${prefix4c}.button.lg.height.value}` },
+    },
+  },
   outline: {},
 };

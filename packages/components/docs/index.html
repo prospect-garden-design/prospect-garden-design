@@ -278,13 +278,13 @@
           <h3>Button Tags</h3>
           <ul>
             <li>
-              <code>.btn/.btn-*</code> classes are designed to style
+              <code>.btn/.btn-*</code> classes are designed to style the html
               <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code>,
               <code>&lt;input&gt;</code> elements
             </li>
             <li>
-              <code>&lt;a&gt;</code> element as button is designed to trigger
-              in-page functionality, instead of jumping to new pages.
+              <code>&lt;a&gt;</code> as button is designed to trigger in-page
+              functionality, instead of jumping to new pages.
             </li>
             <li>
               <code>role="button"</code> should be put on
@@ -341,34 +341,76 @@
             <button class="btn btn-lg" type="button">Large</button>
           </div>
 
-          <h3>Outline Buttons</h3>
+          <h3>Outline/Ghost Buttons</h3>
           <div class="eg-preview">
             <button class="btn" type="button">Default</button>
             <button class="btn btn-primary outline" type="button">
               Primary
             </button>
-            <button class="btn btn-secondary" type="button">Secondary</button>
-            <button class="btn btn-success" type="button">Success</button>
-            <button class="btn btn-info" type="button">Info</button>
-            <button class="btn btn-warning" type="button">Warning</button>
-            <button class="btn btn-danger" type="button">Danger</button>
-          </div>
-
-          <h3>Round Buttons</h3>
-          <div class="eg-preview">
-            <button class="btn" type="button">Default</button>
-            <button class="btn btn-primary outline" type="button">
-              Primary
+            <button class="btn btn-secondary outline" type="button">
+              Secondary
             </button>
-            <button class="btn-danger" type="button">Danger</button>
+            <button class="btn btn-success outline" type="button">
+              Success
+            </button>
+            <button class="btn btn-info outline" type="button">Info</button>
+            <button class="btn btn-warning outline" type="button">
+              Warning
+            </button>
+            <button class="btn btn-danger outline" type="button">Danger</button>
           </div>
 
-          <h3>Square Buttons</h3>
+          <h3>Rounded Buttons</h3>
+          <div class="eg-preview">
+            <button class="btn btn-rounded btn-sm" type="button">Small</button>
+            <button class="btn btn-rounded" type="button">Default</button>
+            <button class="btn btn-rounded btn-lg" type="button">Large</button>
+          </div>
+          <div class="eg-preview">
+            <button class="btn btn-primary btn-rounded btn-sm" type="button">
+              Small
+            </button>
+            <button class="btn btn-primary btn-rounded" type="button">
+              Default
+            </button>
+            <button class="btn btn-primary btn-rounded btn-lg" type="button">
+              Large
+            </button>
+          </div>
+
+          <h3>Square/Circular Buttons</h3>
+
+          <ul>
+            <li>
+              <code>.rounded-circle</code> should be put after
+              <code>.btn-square</code> to style a rounded button.
+            </li>
+          </ul>
+
           <div class="eg-preview">
             <button class="btn btn-square btn-sm" type="button">S</button>
-            <button class="btn btn-square btn" type="button">M</button>
+            <button class="btn btn-square" type="button">M</button>
             <button class="btn btn-square btn-lg" type="button">L</button>
-
+          </div>
+          <div class="eg-preview">
+            <button
+              class="btn btn-primary btn-square btn-sm rounded-circle"
+              type="button"
+            >
+              S
+            </button>
+            <button
+              class="btn btn-primary btn-square rounded-circle"
+              type="button"
+            >
+              M
+            </button>
+            <button
+              class="btn btn-primary btn-square btn-lg rounded-circle"
+              type="button"
+            >
+              L
+            </button>
           </div>
 
           <h3>Icon Buttons</h3>

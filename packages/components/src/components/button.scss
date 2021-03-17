@@ -1,6 +1,6 @@
 @use '../../../design-tokens/dist/halfmoon/button-vars';
-
 @use '../base/variables' as v;
+@use './button-utils' as u;
 
 .#{v.$prefix4pg}btn {
   @extend .#{v.$theme-name}; // component variables should be imported by <link>
@@ -56,145 +56,9 @@
     }
   }
 
-  &-primary {
-    color: var(--pg-c--button--primary--text-color);
-    background-color: var(--pg-c--button--primary--bg-color);
-    border-color: var(--pg-c--button--primary--border-color);
-    box-shadow: var(--pg-c--button--primary--box-shadow);
+  @include u.generate-semantic-button-variants(u.$button-variants);
 
-    &.hover,
-    &:hover {
-      color: var(--pg-c--button--primary--hover--text-color);
-      background-color: var(--pg-c--button--primary--hover--bg-color);
-      border-color: var(--pg-c--button--primary--hover--border-color);
-      box-shadow: var(--pg-c--button--primary--hover--box-shadow);
-    }
-
-    &:focus,
-    &:active,
-    &.active {
-      color: var(--pg-c--button--primary--focus--text-color);
-      background-color: var(--pg-c--button--primary--focus--bg-color);
-      border-color: var(--pg-c--button--primary--focus--border-color);
-      box-shadow: var(--pg-c--button--primary--focus--box-shadow);
-      outline: var(--pg-c--button--primary--focus--outline);
-    }
-
-    &.disabled,
-    &.disabled:hover,
-    &.disabled:focus {
-      color: var(--pg-c--button--primary--text-color);
-      background-color: var(--pg-c--button--primary--bg-color);
-      border-color: var(--pg-c--button--primary--border-color);
-      box-shadow: none;
-      outline: none;
-    }
-  }
-
-  &-secondary {
-    color: var(--pg-c--button--secondary--text-color);
-    background-color: var(--pg-c--button--secondary--bg-color);
-    border-color: var(--pg-c--button--secondary--border-color);
-    box-shadow: var(--pg-c--button--secondary--box-shadow);
-
-    &.hover,
-    &:hover {
-      color: var(--pg-c--button--secondary--hover--text-color);
-      background-color: var(--pg-c--button--secondary--hover--bg-color);
-      border-color: var(--pg-c--button--secondary--hover--border-color);
-      box-shadow: var(--pg-c--button--secondary--hover--box-shadow);
-    }
-
-    &:focus,
-    &:active,
-    &.active {
-      color: var(--pg-c--button--secondary--focus--text-color);
-      background-color: var(--pg-c--button--secondary--focus--bg-color);
-      border-color: var(--pg-c--button--secondary--focus--border-color);
-      box-shadow: var(--pg-c--button--secondary--focus--box-shadow);
-      outline: var(--pg-c--button--secondary--focus--outline);
-    }
-
-    &.disabled,
-    &.disabled:hover,
-    &.disabled:focus {
-      color: var(--pg-c--button--secondary--text-color);
-      background-color: var(--pg-c--button--secondary--bg-color);
-      border-color: var(--pg-c--button--secondary--border-color);
-      box-shadow: none;
-      outline: none;
-    }
-  }
-
-  &-success {
-    color: var(--pg-c--button--success--text-color);
-    background-color: var(--pg-c--button--success--bg-color);
-    border-color: var(--pg-c--button--success--border-color);
-    box-shadow: var(--pg-c--button--success--box-shadow);
-
-    &.hover,
-    &:hover {
-      color: var(--pg-c--button--success--hover--text-color);
-      background-color: var(--pg-c--button--success--hover--bg-color);
-      border-color: var(--pg-c--button--success--hover--border-color);
-      box-shadow: var(--pg-c--button--success--hover--box-shadow);
-    }
-
-    &:focus,
-    &:active,
-    &.active {
-      color: var(--pg-c--button--success--focus--text-color);
-      background-color: var(--pg-c--button--success--focus--bg-color);
-      border-color: var(--pg-c--button--success--focus--border-color);
-      box-shadow: var(--pg-c--button--success--focus--box-shadow);
-      outline: var(--pg-c--button--success--focus--outline);
-    }
-
-    &.disabled,
-    &.disabled:hover,
-    &.disabled:focus {
-      color: var(--pg-c--button--success--text-color);
-      background-color: var(--pg-c--button--success--bg-color);
-      border-color: var(--pg-c--button--success--border-color);
-      box-shadow: none;
-      outline: none;
-    }
-  }
-
-  &-danger {
-    color: var(--pg-c--button--danger--text-color);
-    background-color: var(--pg-c--button--danger--bg-color);
-    border-color: var(--pg-c--button--danger--border-color);
-    box-shadow: var(--pg-c--button--danger--box-shadow);
-
-    &.hover,
-    &:hover {
-      color: var(--pg-c--button--danger--hover--text-color);
-      background-color: var(--pg-c--button--danger--hover--bg-color);
-      border-color: var(--pg-c--button--danger--hover--border-color);
-      box-shadow: var(--pg-c--button--danger--hover--box-shadow);
-    }
-
-    &:focus,
-    &:active,
-    &.active {
-      color: var(--pg-c--button--danger--focus--text-color);
-      background-color: var(--pg-c--button--danger--focus--bg-color);
-      border-color: var(--pg-c--button--danger--focus--border-color);
-      box-shadow: var(--pg-c--button--danger--focus--box-shadow);
-      outline: var(--pg-c--button--danger--focus--outline);
-    }
-
-    &.disabled,
-    &.disabled:hover,
-    &.disabled:focus {
-      color: var(--pg-c--button--danger--text-color);
-      background-color: var(--pg-c--button--danger--bg-color);
-      border-color: var(--pg-c--button--danger--border-color);
-      box-shadow: none;
-      outline: none;
-    }
-  }
+  @include u.generate-outline-button-variants(u.$button-variants);
 
   &-sm {
     height: var(--pg-c--button--sm--height);
@@ -218,17 +82,31 @@
   &-square {
     width: var(--pg-c--button--height);
     // padding: 1.25rem;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
     &.btn-sm {
       width: var(--pg-c--button--sm--height);
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
+      padding-left: 0rem;
+      padding-right: 0rem;
     }
     &.btn-lg {
       width: var(--pg-c--button--lg--height);
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
+      padding-left: 0rem;
+      padding-right: 0rem;
     }
+  }
+
+  &.rounded-circle {
+    border-radius: 50%;
+  }
+
+  &-rounded {
+    border-radius: var(--pg-c--button--rounded--border-radius--md);
+  }
+  &-rounded.btn-sm {
+    border-radius: var(--pg-c--button--rounded--border-radius--sm);
+  }
+  &-rounded.btn-lg {
+    border-radius: var(--pg-c--button--rounded--border-radius--lg);
   }
 }
