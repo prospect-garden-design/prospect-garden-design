@@ -195,4 +195,40 @@
       outline: none;
     }
   }
+
+  &-sm {
+    height: var(--pg-c--button--sm--height);
+    line-height: var(--pg-c--button--sm--line-height);
+    padding: var(--pg-c--button--sm--padding);
+    font-size: var(--pg-c--button--sm--font-size);
+  }
+
+  &-lg {
+    height: var(--pg-c--button--lg--height);
+    line-height: var(--pg-c--button--lg--line-height);
+    padding: var(--pg-c--button--lg--padding);
+    font-size: var(--pg-c--button--lg--font-size);
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
+
+  &-square {
+    width: var(--pg-c--button--height);
+    // padding: 1.25rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    &.btn-sm {
+      width: var(--pg-c--button--sm--height);
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+    &.btn-lg {
+      width: var(--pg-c--button--lg--height);
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+  }
 }

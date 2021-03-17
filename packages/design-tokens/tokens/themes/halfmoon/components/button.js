@@ -218,4 +218,18 @@ module.exports = {
       // 'box-shadow': { value: `none` },
     },
   },
+  sm: {
+    height: { value: `2.6rem` },
+    'line-height': { value: `${prefix4c}.button.sm.height.value` },
+    padding: { value: `0 1rem` },
+    'font-size': { value: `1.2rem` },
+  },
+  lg: {
+    height: { value: `4rem` },
+    'line-height': { value: `${prefix4c}.button.lg.height.value` },
+    padding: { value: `0 2rem` },
+    'font-size': { value: `1.8rem` },
+  },
+  rounded: {},
+  outline: {},
 };

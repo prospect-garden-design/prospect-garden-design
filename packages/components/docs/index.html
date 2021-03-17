@@ -11,7 +11,6 @@
     <link href="../dist/pg.css" rel="stylesheet" />
 
     <style type="text/css">
-      /* ----------------styles for docs--------------------- */
       .nav-header {
         position: fixed;
         top: 0;
@@ -277,11 +276,21 @@
           <h2>Button</h2>
 
           <h3>Button Tags</h3>
-          <p>
-            <code>.btn/.btn-*</code> classes are designed to style
-            <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code>,
-            <code>&lt;input&gt;</code> elements
-          </p>
+          <ul>
+            <li>
+              <code>.btn/.btn-*</code> classes are designed to style
+              <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code>,
+              <code>&lt;input&gt;</code> elements
+            </li>
+            <li>
+              <code>&lt;a&gt;</code> element as button is designed to trigger
+              in-page functionality, instead of jumping to new pages.
+            </li>
+            <li>
+              <code>role="button"</code> should be put on
+              <code>&lt;a&gt;</code> elements for a11y.
+            </li>
+          </ul>
           <div class="eg-preview">
             <button class="btn">&lt;button&gt; element</button>
             <a class="btn" tabindex="0" role="button">&lt;a&gt; link element</a>
@@ -327,10 +336,9 @@
 
           <h3>Button Sizes</h3>
           <div class="eg-preview">
+            <button class="btn btn-sm" type="button">Small</button>
             <button class="btn" type="button">Default</button>
-            <button class="btn btn-primary outline" type="button">
-              Primary
-            </button>
+            <button class="btn btn-lg" type="button">Large</button>
           </div>
 
           <h3>Outline Buttons</h3>
@@ -357,11 +365,10 @@
 
           <h3>Square Buttons</h3>
           <div class="eg-preview">
-            <button class="btn" type="button">Default</button>
-            <button class="btn btn-primary outline" type="button">
-              Primary
-            </button>
-            <button class="btn-danger" type="button">Danger</button>
+            <button class="btn btn-square btn-sm" type="button">S</button>
+            <button class="btn btn-square btn" type="button">M</button>
+            <button class="btn btn-square btn-lg" type="button">L</button>
+
           </div>
 
           <h3>Icon Buttons</h3>
@@ -373,11 +380,11 @@
             <button class="btn-danger" type="button">Danger</button>
           </div>
 
-          <h3>Block Buttons</h3>
+          <h3>Full Width/Block Buttons</h3>
           <div class="eg-preview">
-            <button class="btn" type="button">Default</button>
-            <button class="btn btn-primary outline" type="button">
-              Primary
+            <button class="btn btn-block" type="button">Default Block</button>
+            <button class="btn btn-primary btn-block" type="button">
+              Primary Block
             </button>
           </div>
 
