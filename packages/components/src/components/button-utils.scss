@@ -43,7 +43,8 @@ $button-variants: (primary, secondary, success, danger) !default;
 // outline button variants
 @mixin generate-outline-button-variants($color-variants) {
   @each $color in $color-variants {
-    &-#{$color}.outline {
+    &-#{$color}.outline,
+    &-#{$color}.btn-link {
       color: var(--pg-c--button--#{$color}--bg-color);
       border-color: var(--pg-c--button--#{$color}--bg-color);
       background-color: transparent;
@@ -75,6 +76,16 @@ $button-variants: (primary, secondary, success, danger) !default;
         box-shadow: none;
         outline: none;
       }
+    }
+  }
+}
+
+// link text button
+// todo 与generate-outline-button-variants合并
+@mixin generate-link-text-button($color-variants) {
+  @each $color in $color-variants {
+    &-#{$color}.btn-link {
+      border-color: transparent;
     }
   }
 }

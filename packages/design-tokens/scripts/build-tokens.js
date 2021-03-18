@@ -6,7 +6,7 @@ const {
   compPrefix: prefix4c,
   globalPrefix: prefix4g,
 } = require('../tokens/utils/globalConfig');
-const compTokens = require('../tokens/themes/pg/components');
+const compTokens = require('../tokens/themes/halfmoon/components');
 const cssPropertiesToCTIMap = require('./utils/cssPropertiesToCTI');
 
 const ctiTransformerBuiltin =
@@ -16,7 +16,7 @@ StyleDictionary.registerTransform({
   name: 'attribute/cti-comp',
   type: 'attribute',
   transformer: (token) => {
-    // console.log('==, ', JSON.stringify(prop));
+    // console.log('==转换cti, ', JSON.stringify(token));
 
     if (token.path[0] === prefix4c) {
       // 若token属性名以pg-c开头，则根据叶节点的是css property名映射到cti

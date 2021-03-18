@@ -3,7 +3,7 @@
 @use './button-utils' as u;
 
 .#{v.$prefix4pg}btn {
-  @extend .#{v.$theme-name}; // component variables should be imported by <link>
+  @extend .#{v.$theme-name}; // themed component variables
 
   // position: relative;
   display: inline-block;
@@ -56,9 +56,23 @@
     }
   }
 
+  &.btn-link {
+    border-color: transparent;
+    box-shadow: none;
+
+    &:focus,
+    &:active {
+      text-decoration: none;
+      box-shadow: var(--pg-c--button--focus--box-shadow);
+      outline: var(--pg-c--button--focus--outline);
+    }
+  }
+
   @include u.generate-semantic-button-variants(u.$button-variants);
 
   @include u.generate-outline-button-variants(u.$button-variants);
+
+  @include u.generate-link-text-button(u.$button-variants);
 
   &-sm {
     height: var(--pg-c--button--sm--height);
