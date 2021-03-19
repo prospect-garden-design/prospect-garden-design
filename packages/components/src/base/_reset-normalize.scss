@@ -2,6 +2,7 @@
 // no css vars used here
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
+/* #region /folded css-reset-normalize */
 *,
 *::before,
 *::after {
@@ -138,3 +139,4 @@ progress {
 summary {
   display: list-item;
 }
+/* #endregion /folded css-reset-normalize */

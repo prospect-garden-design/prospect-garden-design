@@ -15,7 +15,10 @@
 @use 'base/variables' with ($prefix4pg: ""); // null is ok
 // @use 'base/variables' with ($prefix4pg: pg-);
 @use 'base/reset-normalize';
-// @use 'base/reset-custom';
+@use 'base/reset-custom';
+
+// ----------------------- layout ----------------------- //
+@use 'layout/container';
 
 // --------------------- components --------------------- //
 @use 'components/button';

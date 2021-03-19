@@ -1,8 +1,9 @@
 {
   "recommendations": [
-    "streetsidesoftware.code-spell-checker",
     "esbenp.prettier-vscode",
     "mervin.markdown-formatter",
-    "alefragnani.bookmarks"
+    "streetsidesoftware.code-spell-checker",
+    "alefragnani.bookmarks",
+    "maptz.regionfolder"
   ]
 }

@@ -78,18 +78,6 @@ html {
   /* scroll-behavior: smooth; */
 }
 
-@media (min-width: 768px) {
-  html {
-    /* font-size: var(--base-font-md); */
-  }
-}
-
-@media (min-width: 1200px) {
-  html {
-    /* font-size: var(--base-font-xl); */
-  }
-}
-
 /* 让第2个部分的内容不上移浮动到第1个部分的底部 */
 section {
   margin-bottom: calc(var(--spacing-block) * var(--spacing-factor-xl) * 2);
@@ -360,7 +348,7 @@ aside li a {
   padding: calc(var(--spacing-gutter) / 2);
 }
 
-.container,
+/* .container,
 .container-fluid {
   width: 100%;
   margin-right: auto;
@@ -373,4 +361,4 @@ aside li a {
   .container {
     max-width: 1080px;
   }
-}
+} */

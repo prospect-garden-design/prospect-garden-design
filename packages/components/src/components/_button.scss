@@ -3,8 +3,9 @@
 @use './button-utils' as u;
 
 .#{v.$prefix4pg}btn {
-  @extend .#{v.$theme-name}; // themed component variables
+  @extend .#{v.$theme-name}; // all component variables
 
+  /* #region btn-default-base */
   // position: relative;
   display: inline-block;
   height: var(--pg-c--button--height);
@@ -55,6 +56,8 @@
       outline: none;
     }
   }
+
+  /* #endregion btn-default-base */
 
   &.btn-link {
     border-color: transparent;

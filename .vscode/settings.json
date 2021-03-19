@@ -34,5 +34,49 @@
     "editor.defaultFormatter": "mervin.markdown-formatter"
   },
   "bookmarks.saveBookmarksInProject": true,
-  "editor.formatOnSaveMode": "modifications"
+  "editor.formatOnSaveMode": "modifications",
+  "maptz.regionfolder": {
+    "[markdown]": {
+      "defaultFoldStartRegex": "\\<!--[\\s]*#region[\\s]+/folded[\\s]*(.*)",
+      "foldStart": "<!-- #region [NAME]",
+      "foldStartRegex": "\\<!--[\\s]*#region[\\s]*(.*)",
+      "foldEnd": "<!-- #endregion",
+      "foldEndRegex": "\\<!--[\\s]*#endregion"
+    },
+    "[html]": {
+      "defaultFoldStartRegex": "\\<!--[\\s]*#region[\\s]+/folded[\\s]*(.*)",
+      "foldStart": "<!-- #region [NAME]",
+      "foldStartRegex": "\\<!--[\\s]*#region[\\s]*(.*)",
+      "foldEnd": "<!-- #endregion",
+      "foldEndRegex": "\\<!--[\\s]*#endregion"
+    },
+    "[css]": {
+      "defaultFoldStartRegex": "/\\*[\\s]*#region[\\s]+/folded(.*)",
+      "foldStart": "/* #region [NAME]",
+      "foldStartRegex": "/\\*[\\s]*#region[\\s]+(.*)",
+      "foldEnd": "/* #endregion",
+      "foldEndRegex": "/\\*[\\s]*#endregion(.*)"
+    },
+    "[scss]": {
+      "defaultFoldStartRegex": "/\\*[\\s]*#region[\\s]+/folded(.*)",
+      "foldStart": "/* #region [NAME]",
+      "foldStartRegex": "/\\*[\\s]*#region[\\s]+(.*)",
+      "foldEnd": "/* #endregion",
+      "foldEndRegex": "/\\*[\\s]*#endregion(.*)"
+    },
+    "[javascript]": {
+      "defaultFoldStartRegex": "//[\\s]*#region[\\s]+/folded[\\s]*(.*)",
+      "foldStart": "// #region [NAME]",
+      "foldStartRegex": "//[\\s]*#region[\\s]+(.*)",
+      "foldEnd": "// #endregion",
+      "foldEndRegex": "//[\\s]*#endregion(.*)"
+    },
+    "[typescript]": {
+      "defaultFoldStartRegex": "//[\\s]*#region[\\s]+/folded[\\s]*(.*)",
+      "foldStart": "// #region [NAME]",
+      "foldStartRegex": "//[\\s]*#region[\\s]+(.*)",
+      "foldEnd": "// #endregion",
+      "foldEndRegex": "//[\\s]*#endregion(.*)"
+    }
+  }
 }

@@ -1,3 +1,4 @@
+// #region /folded import
 const StyleDictionary = require('style-dictionary');
 const tinycolor = require('tinycolor2');
 const { getDifference } = require('../tokens/utils/strUtils');
@@ -8,10 +9,12 @@ const {
 } = require('../tokens/utils/globalConfig');
 const compTokens = require('../tokens/themes/halfmoon/components');
 const cssPropertiesToCTIMap = require('./utils/cssPropertiesToCTI');
+// #endregion /folded import
 
 const ctiTransformerBuiltin =
   StyleDictionary.transform['attribute/cti'].transformer;
 
+// #region /folded registerTransform/Format
 StyleDictionary.registerTransform({
   name: 'attribute/cti-comp',
   type: 'attribute',
@@ -50,6 +53,15 @@ StyleDictionary.registerTransform({
 });
 
 StyleDictionary.registerTransform({
+  name: 'color/css',
+  ...StyleDictionary.transform[`color/css`],
+  transitive: true,
+  matcher: (token) =>
+    token.attributes.category === 'color' && !token.outputAsItIs,
+});
+// #endregion /folded registerTransform/Format
+
+StyleDictionary.registerTransform({
   name: 'color/css-modify',
   type: 'value',
   transitive: true,
@@ -66,14 +78,6 @@ StyleDictionary.registerTransform({
   },
   matcher: (token) => token.attributes.category === 'color' && token.modify,
   // matcher: (prop) => !prop.outputAsItIs,
-});
-
-StyleDictionary.registerTransform({
-  name: 'color/css',
-  ...StyleDictionary.transform[`color/css`],
-  transitive: true,
-  matcher: (token) =>
-    token.attributes.category === 'color' && !token.outputAsItIs,
 });
 
 StyleDictionary.registerFormat({
