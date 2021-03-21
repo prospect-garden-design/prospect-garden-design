@@ -4,7 +4,7 @@ const {
 } = require('../../../utils/globalConfig');
 
 module.exports = {
-  width: { value: `26rem` },
+  width: { value: `16.25rem` }, // 260
   // padding: { value: `1rem` },
   'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
   'border-color': {

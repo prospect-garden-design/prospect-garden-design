@@ -6,13 +6,13 @@ const {
 module.exports = {
   content: {
     spacing: {
-      val: { value: `3rem` },
-      xs: { value: `2rem` },
-      half: { value: `1.5rem` },
-      'xs-half': { value: `1rem` },
+      val: { value: `1.875rem` }, // 30
+      xs: { value: `1.25rem` }, // 20
+      half: { value: `1rem` },
+      'xs-half': { value: `0.625rem` },
     },
     title: {
-      'font-size': { value: `2rem` },
+      'font-size': { value: `1.25rem` },
       'font-weight': { value: `500` },
     },
   },

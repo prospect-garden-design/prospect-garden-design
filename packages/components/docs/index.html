@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="pg-t-halfmoon" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -165,7 +165,7 @@
     <!-- #endregion /folded styles for docsite -->
   </head>
 
-  <body class="pg-t-halfmoon">
+  <body>
     <!-- Top Nav -->
     <nav class="container-fluid nav-header">
       <ul>
@@ -355,6 +355,8 @@
         <section id="accordion" class="docs-content-section">
           <h2>Accordion</h2>
         </section>
+
+        <!-- #region /folded button -->
         <section id="button" class="docs-content-section">
           <h2>Button</h2>
 
@@ -532,7 +534,9 @@
             </button>
           </div>
         </section>
+        <!-- #endregion /folded button -->
 
+        <!-- #region /folded button-group -->
         <section id="button-group" class="docs-content-section">
           <h2>Button Group</h2>
 
@@ -702,37 +706,45 @@
             </div>
           </div>
         </section>
+        <!-- #endregion /folded button-group -->
 
         <section id="card" class="docs-content-section">
           <h2>Card</h2>
           <p>
-            content containers and cards are popular components for displaying
-            brief and attractive information.
+            card is one of the most popular components for displaying brief and
+            attractive contents.
           </p>
           <p>
-            content containers <code>.content</code> can be used to provide a
-            nice margin around the content inside.
+            <code>.content</code> can be used to provide a nice margin around
+            the content inside.
           </p>
           <p>
-            card <code>.card</code> can be used to provide a box with nice
+            <code>.card</code> can be used to provide a visual box with nice
             padding, border and margin.
           </p>
+          <p>
+            <code>.card</code> and <code>.content</code> can be nested inside
+            one another in any combination to help to organize the content
+            better.
+          </p>
+          <p>
+            the margin around <code>.content</code> is equal to the padding
+            inside <code>.card</code>. This makes nested content and cards have
+            proper alignment.
+          </p>
+
+          <h3>Basic Card</h3>
           <p>
             By default, <code>.content</code> and <code>.card</code> will fit
             the full width of its parent element.
           </p>
           <p>
             However, it's easy to change their parent element's width with
-            utility classes.
+            utility classes like <code>.w-0/25/50/75</code>.
           </p>
-          <p>
-            <code>.card</code> and <code>.content</code> can be nested inside
-            one another in any combination.
-          </p>
-          <h3>Basic Card</h3>
           <div class="eg-preview">
             <div class="card">
-              <h2 class="card-title">第五十四回 史太君破陈腐旧套</h2>
+              <h5 class="card-title">第五十四回 史太君破陈腐旧套</h5>
               <p>
                 这些书都是一个套子，左不过是些佳人才子，最没趣儿。把人家女儿说的那样坏，
                 还说是佳人，编的连影儿也没有了。开口都是书香门第，父亲不是尚书就是宰相，
@@ -740,16 +752,16 @@
                 只一见了一个清俊的男人，不管是亲是友，便想起终身大事来，父母也忘了，书礼也忘了，
                 鬼不成鬼，贼不成贼，那一点儿是佳人？便是满腹文章，做出这些事来，也算不得是佳人了……
               </p>
-              <div class="text-right">
+              <div class="text-left">
                 <a href="#" class="btn">阅读全文</a>
               </div>
             </div>
           </div>
           <div class="eg-preview w-75">
             <div class="card">
-              <h2 class="card-title">
+              <h5 class="card-title">
                 Lady Jia ridicules the cliches of romantic fiction
-              </h2>
+              </h5>
               <p class="text-muted">
                 In some cases it’s because the writer is envious of people so
                 much better off than himself, or disappointed because he has
@@ -757,7 +769,7 @@
                 portrays them in this unfavourable light as a means of getting
                 his own back on them...
               </p>
-              <div class="text-right">
+              <div class="text-left">
                 <a href="#" class="btn">Read more</a>
               </div>
             </div>
@@ -770,7 +782,7 @@
                 alt="img-eg-placeholder-green"
               />
               <div class="content">
-                <h2 class="content-title">史太君破陈腐旧套</h2>
+                <h5 class="content-title">史太君破陈腐旧套</h5>
                 <p class="text-muted">
                   这些书都是一个套子，左不过是些佳人才子，最没趣儿。把人家女儿说的那样坏，
                   还说是佳人，编的连影儿也没有了……
@@ -792,43 +804,38 @@
             using <code>.p-card</code>, <code>.px-card</code>,
             <code>.py-card</code>
           </p>
-          <div class="eg-preview w-50">
+          <div class="eg-preview w-75 mw-100">
+            <!-- <div class="eg-preview mw-100"> -->
             <div class="card p-0">
               <!-- Card header -->
-              <div
-                class="px-card py-10 border-bottom"
-                style="background: beige"
-              >
-                <h3 class="card-title m-0">Subscribe using email</h3>
+              <div class="px-card py-2 border-bottom">
+                <h3 class="card-title m-0">Subscribe by email</h3>
               </div>
               <!-- Content -->
               <div class="content">
-                <form action="..." method="...">
-                  <div class="form-group input-group">
-                    <!-- <div class="input-group-prepend">
+                <!-- <form action="..." method="..."> -->
+                <div class="form-group input-group pb-3">
+                  <!-- <div class="input-group-prepend">
                       <span class="input-group-text">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                       </span>
                     </div> -->
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Your email"
-                      required="required"
-                    />
-                  </div>
                   <input
-                    class="btn btn-primary btn-block"
-                    type="submit"
-                    value="Subscribe"
+                    type="email"
+                    class="form-control"
+                    placeholder="Your email"
+                    required="required"
                   />
-                </form>
+                </div>
+                <input
+                  class="btn btn-primary"
+                  type="submit"
+                  value="Subscribe"
+                />
+                <!-- </form> -->
               </div>
               <!-- Card footer -->
-              <div
-                class="px-card py-10 bg-light-lm bg-very-dark-dm rounded-bottom"
-                style="background: lightgray"
-              >
+              <div class="px-card py-2 bg-light rounded-bottom">
                 <p class="m-0">
                   We will notify you whenever we make a new post. No spam, no
                   marketing, we promise.

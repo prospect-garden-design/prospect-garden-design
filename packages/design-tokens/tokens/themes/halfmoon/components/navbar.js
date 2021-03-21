@@ -4,8 +4,8 @@ const {
 } = require('../../../utils/globalConfig');
 
 module.exports = {
-  height: { value: `5rem` },
-  padding: { value: `1rem` },
+  height: { value: `3.125rem` },
+  padding: { value: `0.625rem` },
   'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
   'border-color': {
     value: `{${prefix4g}.color.black.val.value}`,

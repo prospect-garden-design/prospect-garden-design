@@ -1,0 +1,133 @@
+/* #region /folded utils-for-text */
+
+.font-italic {
+  font-style: italic !important;
+}
+
+.font-bold {
+  font-weight: 700 !important;
+}
+
+.font-size-14 {
+  font-size: 0.875rem !important;
+}
+
+.font-size-16 {
+  font-size: 1rem !important;
+}
+
+.font-size-18 {
+  font-size: 1.125rem !important;
+}
+
+.font-size-20 {
+  font-size: 1.25rem !important;
+}
+
+.font-size-24 {
+  font-size: 1.5rem !important;
+}
+
+.font-size-28 {
+  font-size: 1.75rem !important;
+}
+
+.font-size-32 {
+  font-size: 2rem !important;
+}
+
+.font-size-36 {
+  font-size: 2.25rem !important;
+}
+
+.font-size-40 {
+  font-size: 2.5rem !important;
+}
+
+.text-left,
+text-start {
+  text-align: left !important;
+}
+
+.text-right,
+text-end {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-wrap {
+  white-space: normal !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.text-decoration-underline {
+  text-decoration: underline !important;
+}
+
+.text-break {
+  word-wrap: break-word !important;
+}
+
+.text-reset {
+  color: inherit !important;
+}
+
+// line-height
+
+.lh-1 {
+  line-height: 1 !important;
+}
+
+.lh-sm {
+  line-height: 1.25 !important;
+}
+
+.lh-base {
+  line-height: 1.5 !important;
+}
+
+.lh-lg {
+  line-height: 2 !important;
+}
+
+/* #endregion /folded utils-for-text */

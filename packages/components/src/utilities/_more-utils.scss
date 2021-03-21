@@ -1,0 +1,23 @@
+/* #region /folded more-utils-for-css */
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+// link reset
+.link-reset {
+  color: inherit !important;
+  text-decoration: underline;
+}
+.link-reset:hover {
+  color: inherit !important;
+  opacity: 0.75;
+}
+.link-reset:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
+
+/* #endregion more-utils-for-css */

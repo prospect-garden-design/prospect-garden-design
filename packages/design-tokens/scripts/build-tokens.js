@@ -86,7 +86,7 @@ StyleDictionary.registerFormat({
     return `${this.selectorName} {
       ${dictionary.allProperties
         .map((token) => {
-          if (token.name.includes('pg-g--color--base--text--val')) {
+          if (token.name.includes('pg-c--button--box-shadow-color')) {
             // if (dictionary.usesReference(prop.original.value)) {
             // console.log('==out, ', JSON.stringify(token));
           }
@@ -138,7 +138,15 @@ StyleDictionary.registerFormat({
 
           if (options.outputReferences) {
             if (token.attributes.category === 'color') {
-              // 这里只处理包含特殊值的color，普通color不处理
+              // 以下只处理包含特殊值的color，不处理代表普通color的raw value
+
+              if (
+                dictionary.usesReference(token.original.value) &&
+                token.modify
+              ) {
+                // 若原值是引用，且包含颜色处理的modify配置，则直接输出颜色值，不输出引用名
+                return `  --${token.name}: ${value};`;
+              }
 
               if (IsHslColorFormat(token.original.value)) {
                 // 若属性原值是hsl的形式，如 {h:1,s:10%,l:10%}

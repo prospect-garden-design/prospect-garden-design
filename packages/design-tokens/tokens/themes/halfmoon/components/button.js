@@ -4,8 +4,8 @@ const {
 } = require('../../../utils/globalConfig');
 
 module.exports = {
-  height: { value: '3.2rem' },
-  padding: { value: '0 1.5rem' },
+  height: { value: '2rem' }, // 32
+  padding: { value: '0 1rem' },
   'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
   'border-radius': { value: `{${prefix4g}.size.border.base.radius.value}` },
   'box-shadow-color': {
@@ -13,7 +13,7 @@ module.exports = {
     modify: [{ type: `setAlpha`, amount: `0.05` }],
   },
   'box-shadow': {
-    value: `0 0.2rem 0 {${prefix4c}.button.box-shadow-color.value}`,
+    value: `0 0.125rem 0 {${prefix4c}.button.box-shadow-color.value}`,
     replaceRefs: 'all',
   },
   'border-color': {
@@ -40,7 +40,7 @@ module.exports = {
       modify: [{ type: `setAlpha`, amount: `0.6` }],
     },
     'box-shadow': {
-      value: `0 0 0 0.2rem {${prefix4c}.button.focus.box-shadow-color.value}`,
+      value: `0 0 0 0.125rem {${prefix4c}.button.focus.box-shadow-color.value}`,
       replaceRefs: 'all',
     },
     outline: { value: `none` },
@@ -78,7 +78,7 @@ module.exports = {
         modify: [{ type: `setAlpha`, amount: `0.3` }],
       },
       'box-shadow': {
-        value: `0 0 0 0.3rem {${prefix4c}.button.primary.focus.box-shadow-color.value}`,
+        value: `0 0 0 0.1875rem {${prefix4c}.button.primary.focus.box-shadow-color.value}`,
         replaceRefs: 'all',
       },
       outline: { value: `{${prefix4c}.button.focus.outline.value}` },
@@ -124,7 +124,7 @@ module.exports = {
         modify: [{ type: `setAlpha`, amount: `0.3` }],
       },
       'box-shadow': {
-        value: `0 0 0 0.3rem {${prefix4c}.button.secondary.focus.box-shadow-color.value}`,
+        value: `0 0 0 0.1875rem {${prefix4c}.button.secondary.focus.box-shadow-color.value}`,
         replaceRefs: 'all',
       },
       outline: { value: `{${prefix4c}.button.focus.outline.value}` },
@@ -164,7 +164,7 @@ module.exports = {
         modify: [{ type: `setAlpha`, amount: `0.3` }],
       },
       'box-shadow': {
-        value: `0 0 0 0.3rem {${prefix4c}.button.success.focus.box-shadow-color.value}`,
+        value: `0 0 0 0.1875rem {${prefix4c}.button.success.focus.box-shadow-color.value}`,
         replaceRefs: 'all',
       },
       outline: { value: `{${prefix4c}.button.focus.outline.value}` },
@@ -204,7 +204,7 @@ module.exports = {
         modify: [{ type: `setAlpha`, amount: `0.3` }],
       },
       'box-shadow': {
-        value: `0 0 0 0.3rem {${prefix4c}.button.danger.focus.box-shadow-color.value}`,
+        value: `0 0 0 0.1875rem {${prefix4c}.button.danger.focus.box-shadow-color.value}`,
         replaceRefs: 'all',
       },
       outline: { value: `{${prefix4c}.button.focus.outline.value}` },
@@ -219,16 +219,16 @@ module.exports = {
     },
   },
   sm: {
-    height: { value: `2.6rem` },
+    height: { value: `1.625rem` }, // 26
     'line-height': { value: `${prefix4c}.button.sm.height.value` },
     padding: { value: `0 1rem` },
-    'font-size': { value: `1.2rem` },
+    'font-size': { value: `0.75rem` },
   },
   lg: {
-    height: { value: `4rem` },
+    height: { value: `2.5rem` }, // 40
     'line-height': { value: `${prefix4c}.button.lg.height.value` },
-    padding: { value: `0 2rem` },
-    'font-size': { value: `1.8rem` },
+    padding: { value: `0 1.25rem` },
+    'font-size': { value: `1.125rem` },
   },
   rounded: {
     'border-radius': {

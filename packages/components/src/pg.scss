@@ -9,15 +9,25 @@
  */
 
 // ------------- variables for themes ------------------- //
-// @use '../../design-tokens/dist/halfmoon-vars';
+@use '../../design-tokens/dist/halfmoon-vars';
 
-// ----------------- basic configuration ---------------- //
+// ----------- config, variables, css reset ------------- //
 @use 'base/variables' with ($prefix4pg: ""); // null is ok
 // @use 'base/variables' with ($prefix4pg: pg-);
 @use 'base/reset-normalize';
-@use 'base/reset-custom';
+@use 'base/reset-base';
 
+// ------------------ common css utils ------------------ //
+@use 'utilities/display-position';
 @use 'utilities/sizing';
+@use 'utilities/spacing';
+@use 'utilities/layout-flex';
+@use 'utilities/layout-css-grid';
+@use 'utilities/color';
+@use 'utilities/text';
+@use 'utilities/border';
+@use 'utilities/transition-animation';
+@use 'utilities/more-utils';
 
 // ----------------------- layout ----------------------- //
 @use 'layout/container';
