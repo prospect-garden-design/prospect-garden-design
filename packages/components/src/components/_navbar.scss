@@ -1,0 +1,91 @@
+@use '../../../design-tokens/dist/halfmoon/navbar-vars';
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  width: 100%;
+  height: var(--pg-c--navbar--height);
+  padding-left: var(--pg-c--navbar--padding);
+  padding-right: var(--pg-c--navbar--padding);
+  background-color: var(--pg-c--navbar--bg-color);
+  // background-image: var(--lm-navbar-bg-image);
+  border-bottom: var(--pg-c--navbar--border-width) solid var(--pg-c--navbar--border-color);
+  box-shadow: var(--pg-c--navbar--box-shadow);
+}
+
+.navbar.navbar-fixed-bottom {
+  height: var(--pg-c--navbar--fixed-bottom--height);
+  border-bottom: none;
+  border-top: var(--pg-c--navbar--border-width) solid var(--pg-c--navbar--border-color);
+  box-shadow: var(--pg-c--navbar--fixed-bottom--box-shadow);
+}
+
+.navbar.navbar-static-bottom {
+  border-bottom: none;
+  border-top: var(--pg-c--navbar--border-width) solid var(--pg-c--navbar--border-color);
+  box-shadow: var(--pg-c--navbar--static-bottom--box-shadow);
+}
+
+.navbar .container,
+.navbar .container-sm,
+.navbar .container-md,
+.navbar .container-lg,
+.navbar .container-xl,
+.navbar .container-fluid {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  padding-left: var(--navbar-container-horizontal-padding);
+  padding-right: var(--navbar-container-horizontal-padding);
+}
+
+.navbar-brand,
+.navbar-nav,
+.navbar-text,
+.navbar-content {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.navbar-brand:not(:first-child),
+.navbar-nav:not(:first-child),
+.navbar-text:not(:first-child),
+.navbar-content:not(:first-child),
+.navbar>.form-inline:not(:first-child) {
+  margin-left: var(--navbar-content-horizontal-margin);
+}
+
+.navbar-text {
+  color: var(--lm-navbar-text-color);
+}
+
+.navbar-nav {
+  height: var(--navbar-height);
+
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-item {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.navbar-nav:first-child>.nav-item:first-child>.nav-link {
+  padding-left: 0;
+}
+
+.navbar-nav:last-child>.nav-item:last-child>.nav-link {
+  padding-right: 0;
+}
