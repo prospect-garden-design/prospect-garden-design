@@ -7,7 +7,8 @@
 
 .bg-light {
   // background-color: var(--gray-color-light) !important;
-  background-color: #f1f1f1 !important;
+  // background-color: #f1f1f1 !important;
+  background-color: var(--pg-g--color--gray--light--val) !important;
 }
 
 .bg-transparent {

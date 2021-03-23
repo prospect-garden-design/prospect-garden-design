@@ -8,6 +8,7 @@
 
     <!-- <link href="../dist/pg-vars.css" rel="stylesheet"> -->
     <link href="css/docs-pico-part.css" rel="stylesheet" />
+    <link href="css/docs-icons.css" rel="stylesheet" />
     <link href="../dist/pg.css" rel="stylesheet" />
 
     <!-- #region /folded styles for docsite -->
@@ -32,7 +33,7 @@
         display: none;
       }
 
-      @media (min-width: 1200px) {
+      @media (min-width: 768px) {
         .nav-header ul:first-of-type li:nth-of-type(2) {
           display: inline;
         }
@@ -42,13 +43,13 @@
         padding-top: calc(1rem * var(--spacing-factor-xs) + 3.5rem);
       }
 
-      @media (min-width: 576px) {
+      @media (min-width: 768px) {
         .docs-topmost-block {
           padding-top: calc(1rem * var(--spacing-factor-sm) + 3.5rem);
         }
       }
 
-      @media (min-width: 1200px) {
+      @media (min-width: 768px) {
         .docs-topmost-block {
           display: grid;
           grid-column-gap: calc(var(--spacing-gutter) * 4);
@@ -70,7 +71,7 @@
         margin-bottom: var(--spacing-typography);
       }
 
-      @media (min-width: 1200px) {
+      @media (min-width: 768px) {
         .docs-toc nav {
           position: fixed;
           width: 200px;
@@ -172,7 +173,7 @@
         <li>
           <a href="" aria-label="Back home"> LOGO </a>
         </li>
-        <li>CSS for Prospect Garden Design System</li>
+        <li>CSS for Prospect Garden Design</li>
         <li><a href="#docsTOC" class="secondary">Components</a></li>
       </ul>
       <ul>
@@ -384,6 +385,7 @@
             <!-- <a class="btn" href="#">&lt;a&gt; link element</a> -->
             <input type="submit" value="input type=submit" class="btn" />
             <input type="button" value="input type=button" class="btn" />
+            <div class="btn" tabindex="0" role="button">&lt;div&gt;</div>
           </div>
 
           <h3>Button Semantic Variants</h3>
@@ -849,7 +851,7 @@
 
         <section id="nav" class="docs-content-section">
           <h2>Nav</h2>
-          <h3>Basic Navbar</h3>
+
           <p>classes in the navbar:</p>
           <ul>
             <li>brand: text/image</li>
@@ -858,25 +860,29 @@
             <li>content: container for buttons, dropdowns...</li>
             <li>form-inline: create forms inside navbar</li>
           </ul>
+
+          <h3>Static Navbar</h3>
+          <p>static navbar is not fixed at the top or bottom.</p>
           <div class="eg-preview">
-            <div class="container-fluid h-500 overflow-y-auto">
-              <nav class="navbar" id="navbar-6">
-                <div class="navbar-content">
-                  <button class="btn btn-action" type="button">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                    <span class="sr-only">Toggle sidebar</span>
-                  </button>
-                </div>
-                <a href="#" class="navbar-brand">
-                  <img src="fake-logo.svg" alt="navbar-brand-img" />
-                  Brand
-                </a>
-                <div class="navbar-content ml-auto">
-                  <button class="btn" type="button">login</button>
-                  <button class="btn btn-primary" type="button">sign up</button>
-                </div>
-              </nav>
-            </div>
+            <nav class="navbar bg-light" id="navbar-6">
+              <div class="navbar-content">
+                <button class="btn btn-action" type="button">
+                  <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+                  <span class="sr-only">Toggle sidebar</span>
+                </button>
+              </div>
+              <a class="navbar-brand" style="cursor: pointer">
+                <!-- <img src="fake-logo.svg" alt="navbar-brand-img" /> -->
+                <span class="raindrop-solid icon"></span>
+                <span class="pl-2">Brand</span>
+              </a>
+              <div class="navbar-content ml-auto">
+                <button class="btn" type="button">login</button>
+                <button class="btn btn-primary ml-1" type="button">
+                  sign up
+                </button>
+              </div>
+            </nav>
           </div>
         </section>
         <section id="progress" class="docs-content-section">
