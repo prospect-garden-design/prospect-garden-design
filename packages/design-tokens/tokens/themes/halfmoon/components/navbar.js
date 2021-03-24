@@ -31,28 +31,27 @@ module.exports = {
   content: {
     'margin-x': { value: `1rem` },
   },
-  'text-color':  {  value:  `{${prefix4g}.color.base.text.light.value}`  },
-  link:{
+  'text-color': { value: `{${prefix4g}.color.base.text.light.value}` },
+  link: {
     'padding-x': { value: `{${prefix4c}.navbar.content.margin-x.value}` }, // 16px
-    'text-color':  {  value:  `{${prefix4g}.color.base.text.val.value}`  },
-    'bg-color':{value:`transparent`},
-    hover:{
-      'text-color':  {  value:  `{${prefix4g}.color.brand.primary.val.value}`  },
-      'bg-color':{value:`${prefix4c}.navbar.link.bg-color.value`},
+    'text-color': { value: `{${prefix4g}.color.base.text.val.value}` },
+    'bg-color': { value: `transparent` },
+    hover: {
+      'text-color': { value: `{${prefix4g}.color.brand.primary.val.value}` },
+      'bg-color': { value: `${prefix4c}.navbar.link.bg-color.value` },
     },
-    active:{
-      'text-color':  {  value:  `{${prefix4g}.color.brand.primary.val.value}`  },
-      'bg-color':{value:`${prefix4c}.navbar.link.bg-color.value`},
-    }
+    active: {
+      'text-color': { value: `{${prefix4g}.color.brand.primary.val.value}` },
+      'bg-color': { value: `${prefix4c}.navbar.link.bg-color.value` },
+    },
   },
-  brand:{
-    'font-size':{value:`1.25rem`},
-    'font-weight':{value:`500`},
-    image:{
-      height:{value:`1.375rem`}, // 22px
-      'margin-right':{value:`0.625rem`},
+  brand: {
+    'font-size': { value: `1.25rem` },
+    'font-weight': { value: `500` },
+    image: {
+      height: { value: `1.375rem` }, // 22px
+      'margin-right': { value: `0.625rem` },
     },
-  'text-color':  {  value:  `{${prefix4g}.color.base.text.val.value}`  },
-
-  }
+    'text-color': { value: `{${prefix4g}.color.base.text.val.value}` },
+  },
 };
