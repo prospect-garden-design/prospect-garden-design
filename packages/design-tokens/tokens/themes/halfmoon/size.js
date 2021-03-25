@@ -51,10 +51,12 @@ module.exports = {
       value: `0 0.25rem 0.5rem {${prefix4g}.color.shadow.value}`,
       replaceRefs: 'all',
     },
-    'hyperlink-focus-visible-outline': { value: `none` },
-    'hyperlink-focus-visible': {
-      value: `0 0 0 0.2rem {${prefix4g}.color.brand.primary.val.value}`,
-      replaceRefs: 'all',
+    hyperlink: {
+      'focus-outline': { value: `none` },
+      focus: {
+        value: `0 0 0 0.125rem {${prefix4g}.color.brand.primary.val.value}`,
+        replaceRefs: 'all',
+      },
     },
   },
   container: {
@@ -70,8 +72,8 @@ module.exports = {
   },
   content: {
     spacing: {
-      val: { value: `1.875rem` }, // 30
-      xs: { value: `1.25rem` }, // 20
+      val: { value: `1.875rem` }, // 30px
+      xs: { value: `1.25rem` }, // 20px
       half: { value: `0.9375rem` },
       'xs-half': { value: `0.625rem` },
     },

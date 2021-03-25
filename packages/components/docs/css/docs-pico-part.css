@@ -103,38 +103,38 @@ ul {
 }
 
 a {
-  background-color: transparent;
-  color: var(--primary);
-  text-decoration: none;
-  transition: background-color var(--transition), color var(--transition),
-    text-decoration var(--transition), box-shadow var(--transition);
+  /* background-color: transparent; */
+  /* color: var(--primary); */
+  /* text-decoration: none; */
+  /* transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition); */
 }
 
 a:hover,
 a:active,
 a:focus {
-  color: var(--primary-hover);
-  text-decoration: underline;
+  /* color: var(--primary-hover); */
+  /* text-decoration: underline; */
 }
 
 a:focus {
-  outline: none;
-  background-color: var(--primary-focus);
+  /* outline: none; */
+  /* background-color: var(--primary-focus); */
 }
 
 a.secondary {
   color: var(--secondary);
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 a.secondary:hover,
 a.secondary:active,
 a.secondary:focus {
-  color: var(--secondary-hover);
+  /* color: var(--secondary-hover); */
 }
 
 a.secondary:focus {
-  background-color: var(--secondary-focus);
+  /* background-color: var(--secondary-focus); */
 }
 
 h1,

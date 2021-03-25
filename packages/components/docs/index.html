@@ -204,7 +204,7 @@
             </ul>
           </details>
           <details open>
-            <summary>design Tokens</summary>
+            <summary>design tokens</summary>
             <ul>
               <li><a href="#palette" class="secondary">color palette</a></li>
               <li><a href="#typography" class="secondary">typography</a></li>
@@ -253,7 +253,7 @@
 
       <!-- Document content -->
       <div class="docs-content" role="document">
-        <!-- #region Getting started -->
+        <!-- #region /folded Getting started -->
         <section id="overview" class="docs-content-section">
           <h2>overview</h2>
           <p>
@@ -430,7 +430,41 @@
         <!-- #region /folded sidebar -->
         <section id="sidebar" class="docs-content-section">
           <h2>sidebar</h2>
-          
+
+          <h3>basic sidebar</h3>
+          <div class="sidebar position-static bg-light">
+            <div class="sidebar-menu">
+              <a tabindex="0" class="sidebar-brand">
+                <!-- <img src="..." alt="..." /> -->
+                <span><i class="icono-barChart">logo</i></span>
+                Brand
+              </a>
+              <div class="sidebar-content">
+                <input type="text" class="form-control" placeholder="Search" />
+                <div class="mt-10 font-size-12">
+                  Press <kbd>Enter</kbd> to search
+                </div>
+              </div>
+              <h5 class="sidebar-title">Getting started</h5>
+              <div class="sidebar-divider"></div>
+              <a href="#!" class="sidebar-link active">Installation</a>
+              <a href="#!" class="sidebar-link">CLI commands</a>
+              <br />
+              <h5 class="sidebar-title">Components</h5>
+              <div class="sidebar-divider"></div>
+              <a href="#!" class="sidebar-link">File explorer</a>
+              <a href="#!" class="sidebar-link">Spreadsheet</a>
+              <a href="#!" class="sidebar-link">Map</a>
+              <a href="#!" class="sidebar-link">Messenger</a>
+            </div>
+          </div>
+
+          <h3>sidebar links with icons</h3>
+          <div class="eg-preview">
+            <button class="btn">button with data-pg-sidebar</button>
+            <a class="btn" href="#!">anchor link with data-pg-sidebar</a>
+          </div>
+          <h3>sidebar with multi-level & collapsible contents</h3>
         </section>
         <!-- #endregion /folded sidebar -->
 
@@ -462,13 +496,10 @@
             </li>
           </ul>
           <div class="eg-preview">
-            <button class="btn">&lt;button&gt; element</button>
-            <a class="btn" tabindex="0" role="button">&lt;a&gt; link element</a>
-            <!-- <a class="btn" role="button">&lt;a&gt; link element</a> 没有href属性就无法使用tab键focus-->
-            <!-- <a class="btn" href="#" role="button">&lt;a&gt; link element</a> -->
-            <!-- <a class="btn" href="#">&lt;a&gt; link element</a> -->
-            <input type="submit" value="input type=submit" class="btn" />
-            <input type="button" value="input type=button" class="btn" />
+            <button class="btn">&lt;button&gt;</button>
+            <a class="btn" href="#!" role="button">&lt;a&gt; link </a>
+            <input type="submit" value="&lt;input submit&gt;" class="btn" />
+            <input type="button" value="&lt;input button&gt;" class="btn" />
             <div class="btn" tabindex="0" role="button">&lt;div&gt;</div>
           </div>
 
@@ -843,7 +874,7 @@
                 鬼不成鬼，贼不成贼，那一点儿是佳人？便是满腹文章，做出这些事来，也算不得是佳人了……
               </p>
               <div class="text-left">
-                <a href="#" class="btn">阅读全文</a>
+                <a tabindex="0" class="btn">阅读全文</a>
               </div>
             </div>
           </div>
@@ -860,7 +891,7 @@
                 his own back on them...
               </p>
               <div class="text-left">
-                <a href="#" class="btn">Read more</a>
+                <a tabindex="0" class="btn">Read more</a>
               </div>
             </div>
           </div>
@@ -878,7 +909,7 @@
                   还说是佳人，编的连影儿也没有了……
                 </p>
                 <div class="text-right">
-                  <a href="#" class="btn">更多</a>
+                  <a tabindex="0" class="btn">更多</a>
                 </div>
               </div>
             </div>
