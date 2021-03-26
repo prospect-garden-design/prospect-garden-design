@@ -1,0 +1,38 @@
+@use '../../../design-tokens/dist/halfmoon/code-vars';
+@use '../base/variables' as v;
+
+// code,
+.#{v.$prefix4pg}code {
+  @extend .#{v.$theme-name};
+
+  font-family: 'Source Code Pro', SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+
+  padding: var(--pg-c--code--padding);
+  margin: var(--pg-c--code--margin);
+  border: var(--pg-c--code--border-width) solid;
+  border-radius: var(--pg-c--code--border-radius);
+  border-color: var(--pg-c--code--border-color);
+  color: var(--pg-c--code--text-color);
+  background-color: var(--pg-c--code--bg-color);
+  font-size: var(--pg-c--code--font-size);
+  line-height: var(--pg-c--code--line-height);
+}
+
+.#{v.$prefix4pg}kbd {
+  @extend .#{v.$theme-name};
+
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+
+  padding: var(--pg-c--code--kbd--padding);
+  margin: var(--pg-c--code--kbd--margin);
+  color: var(--pg-c--code--kbd--text-color);
+  background-color: var(--pg-c--code--kbd--bg-color);
+  border: var(--pg-c--code--kbd--border-width) solid;
+  border-color: var(--pg-c--code--kbd--border-color);
+  border-radius: var(--pg-c--code--kbd--border-radius);
+  font-size: var(--pg-c--code--kbd--font-size);
+  line-height: var(--pg-c--code--kbd--line-height);
+  // user-select: none;
+}

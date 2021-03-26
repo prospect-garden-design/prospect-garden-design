@@ -32,9 +32,13 @@
 // ----------------------- layout ----------------------- //
 @use 'layout/container';
 
+@use 'components/navbar';
+@use 'components/sidebar';
+
+// ------------------ general elements ------------------ //
+@use 'components/code';
+
 // --------------------- components --------------------- //
 @use 'components/button';
 @use 'components/button-group';
 @use 'components/card';
-@use 'components/navbar';
-@use 'components/sidebar';

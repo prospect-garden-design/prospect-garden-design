@@ -226,10 +226,16 @@
             </ul>
           </details>
           <details open>
+            <summary>general elements</summary>
+            <ul>
+              <li><a href="#code" class="secondary">code</a></li>
+              <li><a href="#button" class="secondary">button</a></li>
+            </ul>
+          </details>
+          <details open>
             <summary id="components">Components</summary>
             <ul>
               <li><a href="#accordion" class="secondary">accordion</a></li>
-              <li><a href="#button" class="secondary">button</a></li>
               <li>
                 <a href="#button-group" class="secondary">button-group</a>
               </li>
@@ -251,9 +257,8 @@
         </nav>
       </aside>
 
-      <!-- Document content -->
       <div class="docs-content" role="document">
-        <!-- #region /folded Getting started -->
+        <!-- #region /folded getting started -->
         <section id="overview" class="docs-content-section">
           <h2>overview</h2>
           <p>
@@ -262,11 +267,11 @@
           </p>
           <p>
             It's a responsive css framework built to make switching themes easy,
-            heavily based on CSS Variables(a.k.a. CSS custom properties).
+            heavily based on css variables(a.k.a. css custom properties).
           </p>
           <h3>features</h3>
           <ul>
-            <li>themeable first css framework</li>
+            <li>themeable components</li>
             <li>
               theming styles are built on top of design tokens, across platform
               kept in mind
@@ -318,9 +323,9 @@
         <section id="theming" class="docs-content-section">
           <h2>theming</h2>
         </section>
-        <!-- #endregion Getting started -->
+        <!-- #endregion getting started -->
 
-        <!-- #region Design Tokens  -->
+        <!-- #region design tokens  -->
         <section id="palette" class="docs-content-section">
           <h2>color palette</h2>
         </section>
@@ -330,9 +335,9 @@
         <section id="spacing" class="docs-content-section">
           <h2>spacing</h2>
         </section>
-        <!-- #endregion Design Tokens  -->
+        <!-- #endregion design tokens  -->
 
-        <!-- #region Layout -->
+        <!-- #region layout -->
         <section id="container" class="docs-content-section">
           <h2>container</h2>
           <p>containers can be used to center the content horizontally.</p>
@@ -349,6 +354,17 @@
               responsive at the specified breakpoint width and greater width.
             </li>
           </ul>
+          <p><code>.container</code> has no padding and margin by default.</p>
+          <ul>
+            <li>
+              built-in margins tend to make it unexpected and confusing to align
+              contents.
+            </li>
+            <li>
+              <code>.content</code> is recommended to add margin for contents of
+              containers and cards.
+            </li>
+          </ul>
           <p>
             this site use <code>.container</code>, responsive for all screen
             sizes.
@@ -357,7 +373,7 @@
         <section id="grid" class="docs-content-section">
           <h2>grid</h2>
         </section>
-        <!-- #endregion Layout -->
+        <!-- #endregion layout -->
 
         <!-- #region nav -->
         <!-- #region /folded navbar -->
@@ -470,7 +486,53 @@
 
         <!-- #endregion nav -->
 
-        <!-- #region Components -->
+        <!-- #region general elements -->
+        <section id="code" class="docs-content-section">
+          <h2>code & kbd</h2>
+          <ul>
+            <li>
+              <code class="code">.code</code> and
+              <code class="code">.kbd</code> are designed to only style inline
+              elements.
+            </li>
+            <li>
+              code blocks are recommended to be styled with other libs like
+              highlight.js.
+            </li>
+          </ul>
+          <h3>code</h3>
+          <div class="eg-preview">
+            <ul>
+              <li>
+                Add the class <code class="code">.some-class</code> to the
+                element to format it.
+              </li>
+              <li><code class="code">10 + 5 = 15</code></li>
+              <li>
+                The default code style is like this
+                <code class="">f = ma</code>.
+              </li>
+            </ul>
+          </div>
+
+          <h3>keyboard character</h3>
+          <div class="eg-preview">
+            <ul>
+              <li>
+                Toggle dark mode by pressing <kbd class="kbd">shift</kbd> +
+                <kbd class="kbd">D</kbd>.
+              </li>
+              <li>
+                The default kbd style is like this <kbd>ctrl</kbd> +
+                <kbd>D</kbd>..
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- #endregion general elements -->
+
+        <!-- #region components -->
         <section id="accordion" class="docs-content-section">
           <h2>accordion</h2>
         </section>
@@ -986,8 +1048,8 @@
           </p>
           <p>每个小节部分的元素是section[class="docs-content-section"]</p>
         </section>
-        <!-- #endregion Tools & Resources -->
       </div>
+      <!-- #endregion Tools & Resources -->
     </main>
 
     <!-- 依赖js实现：I点击目录后高亮当前元素 -->

@@ -33,7 +33,7 @@ module.exports = {
       rounded2: { value: '0.375rem' },
       rounded3: { value: '0.5rem' },
       'rounded-pill': { value: '50rem' },
-      'hyperlink-focus-visible': {
+      'hyperlink-focus': {
         value: `{${prefix4g}.size.border.base.radius.value}`,
       },
     },

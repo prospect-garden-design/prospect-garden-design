@@ -86,7 +86,6 @@ module.exports = {
     },
     light: {
       val: { value: `{${prefix4g}.color.gray.light.hsl.value}` },
-
       hsl: {
         value: {
           h: `{${prefix4g}.color.gray.base.hue.value}`,

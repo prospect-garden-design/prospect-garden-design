@@ -8,6 +8,12 @@ module.exports = {
   padding: { value: '0 1rem' },
   'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
   'border-radius': { value: `{${prefix4g}.size.border.base.radius.value}` },
+  'text-color': { value: `{${prefix4g}.color.base.text.light.value}` },
+  'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
+  'border-color': {
+    value: `{${prefix4g}.color.black.val.value}`,
+    modify: [{ type: `setAlpha`, amount: `0.2` }],
+  },
   'box-shadow-color': {
     value: `{${prefix4g}.color.black.val.value}`,
     modify: [{ type: `setAlpha`, amount: `0.05` }],
@@ -16,12 +22,6 @@ module.exports = {
     value: `0 0.125rem 0 {${prefix4c}.button.box-shadow-color.value}`,
     replaceRefs: 'all',
   },
-  'border-color': {
-    value: `{${prefix4g}.color.black.val.value}`,
-    modify: [{ type: `setAlpha`, amount: `0.2` }],
-  },
-  'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
-  'text-color': { value: `{${prefix4g}.color.base.text.light.value}` },
   'font-size': { value: '2rem' },
   'text-align': { value: 'center' },
   'line-height': { value: `{${prefix4c}.button.height.value}` },
