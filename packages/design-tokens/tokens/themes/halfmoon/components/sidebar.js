@@ -5,14 +5,13 @@ const {
 
 module.exports = {
   width: { value: `16.25rem` }, // 260px
-  // padding: { value: `1rem` },
-  'box-shadow': { value: `none` },
-  'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
+  'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
+  'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
   'border-color': {
     value: `{${prefix4g}.color.black.val.value}`,
     modify: [{ type: `setAlpha`, amount: `0.2` }],
   },
-  'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
+  'box-shadow': { value: `none` },
   overlay: {
     'bg-color': {
       value: `{${prefix4g}.color.black.val.value}`,
@@ -48,10 +47,10 @@ module.exports = {
     },
     focus: {
       'box-shadow': {
-        value: `{${prefix4g}.size.shadow.hyperlink.focus.value}`,
+        value: `{${prefix4g}.size.hyperlink.focus.box-shadow.value}`,
       },
       outline: {
-        value: `{${prefix4g}.size.shadow.hyperlink.focus-outline.value}`,
+        value: `{${prefix4g}.size.hyperlink.focus.outline.value}`,
       },
     },
     active: {
@@ -67,10 +66,10 @@ module.exports = {
       },
       focus: {
         'box-shadow': {
-          value: `{${prefix4g}.size.shadow.hyperlink.focus.value}`,
+          value: `{${prefix4g}.size.hyperlink.focus.box-shadow.value}`,
         },
         outline: {
-          value: `{${prefix4g}.size.shadow.hyperlink.focus-outline.value}`,
+          value: `{${prefix4g}.size.hyperlink.focus.outline.value}`,
         },
       },
     },
@@ -97,7 +96,7 @@ module.exports = {
     height: { value: `2rem` },
     'margin-right': { value: `0.0625rem` },
     'border-width': { value: `0` },
-    'border-radius': { value: `{${prefix4g}.size.border.base.radius.value}` },
+    'border-radius': { value: `{${prefix4g}.size.base.border-radius.value}` },
     'border-color': { value: `transparent` },
     'bg-color': {
       value: `{${prefix4g}.color.black.val.value}`,
@@ -150,10 +149,10 @@ module.exports = {
     },
     focus: {
       'box-shadow': {
-        value: `{${prefix4g}.size.shadow.hyperlink.focus.value}`,
+        value: `{${prefix4g}.size.hyperlink.focus.box-shadow.value}`,
       },
       outline: {
-        value: `{${prefix4g}.size.shadow.hyperlink.focus-outline.value}`,
+        value: `{${prefix4g}.size.hyperlink.focus.outline.value}`,
       },
     },
   },

@@ -18,8 +18,8 @@ html {
 }
 
 body {
-  background-color: var(--pg-g--color--base--body--bg);
   color: var(--pg-g--color--base--text--val);
+  background-color: var(--pg-g--color--base--body--bg);
   font-size: var(--pg-g--size--base--font-size); // always 1rem
   line-height: var(--pg-g--size--base--line-height); // always 1.5
   font-weight: 400;

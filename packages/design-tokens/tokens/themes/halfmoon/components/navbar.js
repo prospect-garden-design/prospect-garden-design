@@ -6,13 +6,13 @@ const {
 module.exports = {
   height: { value: `3.125rem` }, // 50px
   'padding-x': { value: `0.625rem` }, // 10px
-  'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
+  'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
+  'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
   'border-color': {
     value: `{${prefix4g}.color.black.val.value}`,
     modify: [{ type: `setAlpha`, amount: `0.2` }],
   },
   'box-shadow': { value: `none` },
-  'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
   'fixed-bottom': {
     height: { value: `{${prefix4c}.navbar.height.value}` },
     'box-shadow': { value: `none` },
@@ -53,5 +53,21 @@ module.exports = {
       'margin-right': { value: `0.625rem` },
     },
     'text-color': { value: `{${prefix4g}.color.base.text.val.value}` },
+  },
+  'action-button': {
+    width: { value: `2.25rem` },
+    'padding-x': { value: `0` },
+  },
+  input: {
+    'min-width': { value: `7.5rem` }, // 120
+    xs: {
+      'min-width': { value: `6.25rem` }, // 100
+    },
+  },
+  'input-group': {
+    'min-width': { value: `12.5rem` }, // 200
+    xs: {
+      'min-width': { value: `11.25rem` }, // 180
+    },
   },
 };

@@ -6,8 +6,8 @@ const {
 module.exports = {
   height: { value: `2rem` }, // 32
   'padding-x': { value: `0.5rem` },
-  'border-radius': { value: `{${prefix4g}.size.border.base.radius.value}` },
-  'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
+  'border-radius': { value: `{${prefix4g}.size.base.border-radius.value}` },
+  'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
   sm: {
     height: { value: `1.625rem` }, // 26
     'padding-x': { value: `{${prefix4c}.input.padding-x.value}` },
@@ -98,6 +98,7 @@ module.exports = {
       },
     },
   },
+  // input-group
   group: {
     text: {
       'padding-x': { value: `{${prefix4c}.input.padding-x.value}` },

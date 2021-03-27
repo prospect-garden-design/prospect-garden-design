@@ -4,10 +4,10 @@ const {
 } = require('../../../utils/globalConfig');
 
 module.exports = {
-  height: { value: '2rem' }, // 32
-  padding: { value: '0 1rem' },
-  'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
-  'border-radius': { value: `{${prefix4g}.size.border.base.radius.value}` },
+  height: { value: `2rem` }, // 32
+  padding: { value: `0 1rem` },
+  'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
+  'border-radius': { value: `{${prefix4g}.size.base.border-radius.value}` },
   'text-color': { value: `{${prefix4g}.color.base.text.light.value}` },
   'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
   'border-color': {
@@ -220,15 +220,15 @@ module.exports = {
   },
   sm: {
     height: { value: `1.625rem` }, // 26
-    'line-height': { value: `${prefix4c}.button.sm.height.value` },
     padding: { value: `0 1rem` },
     'font-size': { value: `0.75rem` },
+    'line-height': { value: `${prefix4c}.button.sm.height.value` },
   },
   lg: {
     height: { value: `2.5rem` }, // 40
-    'line-height': { value: `${prefix4c}.button.lg.height.value` },
     padding: { value: `0 1.25rem` },
     'font-size': { value: `1.125rem` },
+    'line-height': { value: `${prefix4c}.button.lg.height.value` },
   },
   rounded: {
     'border-radius': {
@@ -238,4 +238,23 @@ module.exports = {
     },
   },
   outline: {},
+  link: {
+    'text-color': { value: `{${prefix4g}.color.brand.primary.val.value}` },
+    'bg-color': { value: `transparent` },
+    'border-color': { value: `transparent` },
+    'box-shadow': { value: `none` },
+    hover: {
+      'text-color': { value: `{${prefix4g}.color.brand.primary.light.value}` },
+      'bg-color': { value: `{${prefix4c}.button.link.bg-color.value}` },
+      'border-color': { value: `{${prefix4c}.button.link.border-color.value}` },
+      'box-shadow': { value: `{${prefix4c}.button.link.box-shadow.value}` },
+    },
+    focus: {
+      'text-color': { value: `{${prefix4c}.button.link.text-color.value}` },
+      'bg-color': { value: `{${prefix4c}.button.link.bg-color.value}` },
+      'border-color': { value: `{${prefix4c}.button.link.border-color.value}` },
+      'box-shadow': { value: `{${prefix4c}.button.focus.box-shadow.value}` },
+      outline: { value: `{${prefix4c}.button.focus.outline.value}` },
+    },
+  },
 };

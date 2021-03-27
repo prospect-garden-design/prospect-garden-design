@@ -70,7 +70,6 @@ module.exports = {
     text: {
       val: {
         value: `{${prefix4g}.color.black.hsl.value}`,
-        // value: `#ffff00`,
         modify: [{ type: `setAlpha`, amount: `0.85` }],
       },
       light: {
@@ -126,14 +125,22 @@ module.exports = {
       value: `{${prefix4g}.color.text.on-red-color-bg.value}`,
     },
   },
-  shadow: {
-    value: `{${prefix4g}.color.black.val.value}`,
-    modify: [{ type: `setAlpha`, amount: `0.15` }],
-  },
   link: {
     text: {
       val: { value: `{${prefix4g}.color.brand.primary.val.value}` },
       hover: { value: `{${prefix4g}.color.brand.primary.light.value}` },
     },
+  },
+  hyperlink: {
+    focus: {
+      'box-shadow-color': {
+        value: `{${prefix4g}.color.brand.primary.val.value}`,
+        modify: [{ type: `setAlpha`, amount: 0.6 }],
+      },
+    },
+  },
+  shadow: {
+    value: `{${prefix4g}.color.black.val.value}`,
+    modify: [{ type: `setAlpha`, amount: `0.15` }],
   },
 };

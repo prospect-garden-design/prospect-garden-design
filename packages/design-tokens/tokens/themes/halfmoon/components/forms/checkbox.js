@@ -11,8 +11,8 @@ module.exports = {
   'label-blank': {
     'padding-left': { value: `{${prefix4c}.checkbox.height.value}` },
   },
-  'border-radius': { value: `{${prefix4g}.size.border.base.radius.value}` },
-  'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
+  'border-radius': { value: `{${prefix4g}.size.base.border-radius.value}` },
+  'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
   'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
   'border-color': {
     value: `{${prefix4g}.color.black.val.value}`,

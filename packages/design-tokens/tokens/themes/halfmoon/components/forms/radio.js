@@ -12,7 +12,7 @@ module.exports = {
     'padding-left': { value: `{${prefix4c}.radio.height.value}` },
   },
   'border-radius': { value: `50%` },
-  'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
+  'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
   'form-group': { margin: { value: `0.5rem 0 0 0 ` } },
   'bg-color': { value: `{${prefix4c}.checkbox.bg-color.value}` },
   'border-color': { value: `{${prefix4c}.checkbox.border-color.value}` },

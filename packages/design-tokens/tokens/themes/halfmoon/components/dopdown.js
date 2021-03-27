@@ -7,8 +7,8 @@ module.exports = {
   menu: {
     'min-width': { value: '10.5rem' }, // 168
     padding: { value: '0.25rem' },
-    'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
-    'border-radius': { value: `{${prefix4g}.size.border.base.radius.value}` },
+    'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
+    'border-radius': { value: `{${prefix4g}.size.base.border-radius.value}` },
     'text-color': { value: `{${prefix4g}.color.base.text.val.value}` },
     'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
     'border-color': { value: `{${prefix4g}.color.gray.dim.value}` },

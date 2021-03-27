@@ -5,7 +5,7 @@ const {
 
 module.exports = {
   height: { value: `1.875rem` }, // 30
-  'border-radius': { value: `{${prefix4g}.size.border.base.radius.value}` },
+  'border-radius': { value: `{${prefix4g}.size.base.border-radius.value}` },
   invalid: {
     'box-shadow': {
       value: `0 0 0 0.0625rem {${prefix4g}.color.semantic.danger.val.value}`,

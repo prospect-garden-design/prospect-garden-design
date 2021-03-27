@@ -12,7 +12,7 @@ module.exports = {
   text: {
     'padding-top': { value: `0.5rem` }, // 8
     'padding-bottom': { value: `{${prefix4c}.form.text.padding-top.value}` },
-    'border-width': { value: `{${prefix4g}.size.border.base.width.value}` },
+    'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
     'border-style': { value: `dotted` },
     'border-color': {
       value: `{${prefix4g}.color.black.val.value}`,
