@@ -5,7 +5,7 @@ const {
 
 module.exports = {
   'padding-left': { value: `0` },
-  'margin-y': { value: `0.625rem` },
+  'margin-y': { value: `0.625rem` }, // 10
   'style-position': { value: `inside` },
   item: {
     'margin-bottom': { value: `{${prefix4c}.html-list.margin-y.value}` },

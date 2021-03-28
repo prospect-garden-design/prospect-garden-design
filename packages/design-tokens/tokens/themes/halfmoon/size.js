@@ -16,7 +16,7 @@ module.exports = {
     'border-radius': { value: `0.25rem` }, // 4px
   },
   'letter-spacing': { extra: { value: `0.03rem` } },
-  heading: { 'font-weight': { value: `400` } },
+  heading: { 'font-weight': { value: `500` } },
   border: {
     width1: { value: `{${prefix4g}.size.base.border-width.value}` }, // 1
     width2: { value: `2px` },
@@ -28,9 +28,6 @@ module.exports = {
       rounded2: { value: '0.375rem' }, // 6
       rounded3: { value: '0.5rem' }, // 8
       'rounded-pill': { value: '50rem' }, // 足够大才能显示圆角
-      'hyperlink-focus': {
-        // value: `{${prefix4g}.size.base.border-radius.value}`,
-      },
     },
   },
   shadow: {
@@ -45,13 +42,6 @@ module.exports = {
     large: {
       value: `0 0.25rem 0.5rem {${prefix4g}.color.shadow.value}`,
       replaceRefs: 'all',
-    },
-    hyperlink: {
-      // 'focus-outline': { value: `none` },
-      // focus: {
-      //   value: `0 0 0 0.125rem {${prefix4g}.color.brand.primary.val.value}`,
-      //   replaceRefs: 'all',
-      // },
     },
   },
   container: {

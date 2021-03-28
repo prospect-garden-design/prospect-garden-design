@@ -40,7 +40,7 @@ module.exports = {
     },
   },
   close: {
-    width: { value: `2.5rem` },
+    width: { value: `2.5rem` }, // 40
     height: { value: `2.5rem` },
     'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
     'border-radius': { value: `50%` },

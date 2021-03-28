@@ -21,6 +21,9 @@ module.exports = {
     'text-color': { value: `{${prefix4g}.color.base.text.light.value}` },
     'font-size': { value: `{${prefix4g}.size.base.font-size.value}` },
   },
+  required: {
+    'text-color': { value: `{${prefix4g}.color.semantic.danger.val.value}` },
+  },
   invalid: {
     'padding-top': { value: `0.5rem` }, // 8
     'padding-bottom': { value: `{${prefix4c}.form.invalid.padding-top.value}` },

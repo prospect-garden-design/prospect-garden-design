@@ -1,0 +1,41 @@
+.custom-file {
+  display: block;
+  position: relative;
+}
+
+.custom-file input[type='file'] {
+  /* Hide the default */
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+  /* Needed to stop the default button from interfering in some browsers, such as Safari */
+}
+
+.custom-file label {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: var(--input-file-button-height);
+  line-height: var(--input-file-button-line-height);
+  padding: var(--input-file-button-padding);
+  color: var(--lm-input-file-button-text-color);
+  background-color: var(--lm-input-file-button-bg-color);
+  background-image: var(--lm-input-file-button-bg-image);
+  border: var(--input-file-button-border-width) solid;
+  border-color: var(--lm-input-file-button-border-color);
+  border-radius: var(--input-file-button-border-radius);
+  box-shadow: var(--lm-input-file-button-box-shadow);
+}
+
+.custom-file label:hover {
+  color: var(--lm-input-file-button-text-color-hover);
+  background-color: var(--lm-input-file-button-bg-color-hover);
+  background-image: var(--lm-input-file-button-bg-image-hover);
+  border-color: var(--lm-input-file-button-border-color-hover);
+  box-shadow: var(--lm-input-file-button-box-shadow-hover);
+}

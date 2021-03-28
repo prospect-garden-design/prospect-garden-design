@@ -19,47 +19,47 @@ module.exports = {
     'box-shadow': { value: `none` },
     focus: {
       'text-color': {
-        value: `{${prefix4c}.html-details-collapse.header.text-color.value}`,
+        value: `{${prefix4c}.html-details.header.text-color.value}`,
       },
       'bg-color': {
-        value: `{${prefix4c}.html-details-collapse.header.bg-color.value}`,
+        value: `{${prefix4c}.html-details.header.bg-color.value}`,
       },
       'border-color': {
-        value: `{${prefix4c}.html-details-collapse.header.border-color.value}`,
+        value: `{${prefix4c}.html-details.header.border-color.value}`,
       },
       'box-shadow': {
-        value: `{${prefix4c}.html-details-collapse.header.box-shadow.value}`,
+        value: `{${prefix4c}.html-details.header.box-shadow.value}`,
       },
       outline: { value: `none` },
     },
     open: {
       'text-color': {
-        value: `{${prefix4c}.html-details-collapse.header.text-color.value}`,
+        value: `{${prefix4c}.html-details.header.text-color.value}`,
       },
       'bg-color': {
-        value: `{${prefix4c}.html-details-collapse.header.text-color.value}`,
+        value: `{${prefix4c}.html-details.header.text-color.value}`,
       },
       'border-color': {
-        value: `{${prefix4c}.html-details-collapse.header.border-color.value}`,
+        value: `{${prefix4c}.html-details.header.border-color.value}`,
       },
       'box-shadow': {
-        value: `{${prefix4c}.html-details-collapse.header.box-shadow.value}`,
+        value: `{${prefix4c}.html-details.header.box-shadow.value}`,
       },
       focus: {
         'text-color': {
-          value: `{${prefix4c}.html-details-collapse.header.focus.text-color.value}`,
+          value: `{${prefix4c}.html-details.header.focus.text-color.value}`,
         },
         'bg-color': {
-          value: `{${prefix4c}.html-details-collapse.header.focus.bg-color.value}`,
+          value: `{${prefix4c}.html-details.header.focus.bg-color.value}`,
         },
         'border-color': {
-          value: `{${prefix4c}.html-details-collapse.header.focus.border-color.value}`,
+          value: `{${prefix4c}.html-details.header.focus.border-color.value}`,
         },
         'box-shadow': {
-          value: `{${prefix4c}.html-details-collapse.header.focus.box-shadow.value}`,
+          value: `{${prefix4c}.html-details.header.focus.box-shadow.value}`,
         },
         outline: {
-          value: `{${prefix4c}.html-details-collapse.header.focus.outline.value}`,
+          value: `{${prefix4c}.html-details.header.focus.outline.value}`,
         },
       },
     },
@@ -80,7 +80,7 @@ module.exports = {
     'text-color': { value: `{${prefix4g}.color.base.text.val.value}` },
     'bg-color': { value: `transparent` },
     'border-color': {
-      value: `{${prefix4c}.html-details-collapse.header.border-color.value}`,
+      value: `{${prefix4c}.html-details.header.border-color.value}`,
     },
     'box-shadow': { value: `none` },
   },

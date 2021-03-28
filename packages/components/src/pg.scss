@@ -17,28 +17,33 @@
 @use 'base/reset-normalize';
 @use 'base/reset-base';
 
-// ------------------ common css utils ------------------ //
-@use 'utilities/display-position';
-@use 'utilities/sizing';
-@use 'utilities/spacing';
-@use 'utilities/layout-flex';
-@use 'utilities/layout-css-grid';
-@use 'utilities/color';
-@use 'utilities/text';
-@use 'utilities/border';
-@use 'utilities/transition-animation';
-@use 'utilities/more-utils';
+// ------------------ common css utils ----------------- //
+@use './utilities/utilities';
 
-// ----------------------- layout ----------------------- //
+// --------------- layout & navigation ---------------- //
 @use 'layout/container';
 
 @use 'components/navbar';
 @use 'components/sidebar';
 
-// ------------------ general elements ------------------ //
-@use 'components/code';
+// --------------- general html elements ---------------- //
+@use 'components/html-list';
+@use 'components/html-table';
+@use 'components/html-details';
+@use 'components/common-html-elements';
+
+@use 'components/forms/forms';
 
 // --------------------- components --------------------- //
+
 @use 'components/button';
 @use 'components/button-group';
 @use 'components/card';
+@use 'components/alert';
+@use 'components/badge';
+@use 'components/breadcrumb';
+@use 'components/dropdown';
+@use 'components/modal';
+@use 'components/tooltip';
+@use 'components/pagination';
+@use 'components/progress';

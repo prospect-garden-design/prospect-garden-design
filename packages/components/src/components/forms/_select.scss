@@ -1,0 +1,22 @@
+.select.form-control:not([multiple]) {
+  cursor: pointer;
+  padding-right: var(--pg-c--form-select--padding-right);
+  background-size: var(--pg-c--form-select--bg-size);
+  // background-repeat: var(--pg-c--form-select--bg-repeat);
+  // background-position: var(--pg-c--form-select--bg-position);
+  // background-image: var(--pg-c--form-select--bg-image);
+}
+
+.select.form-control[multiple] {
+  overflow: auto;
+  height: auto;
+  padding: var(--pg-c--form-input--padding-x);
+}
+
+.select.form-control[multiple]>option:not(:checked) {
+  color: var(--pg-c--form-input--text-color);
+}
+
+select.form-control[multiple]>option:disabled {
+  color: var(--pg-c--form-select--item--disabled--text-color);
+}

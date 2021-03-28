@@ -1,12 +1,11 @@
 const { compPrefix: prefix4c } = require('../../../utils/globalConfig');
 const { globalPrefix: prefix4g } = require('../../../utils/globalConfig');
 
-const navbar = require('./navbar');
-const sidebar = require('./sidebar');
-
 const button = require('./button');
 const buttonGroup = require('./button-group');
 const card = require('./card');
+const navbar = require('./navbar');
+const sidebar = require('./sidebar');
 const form = require('./forms/form');
 const input = require('./forms/input');
 const checkbox = require('./forms/checkbox');
@@ -18,14 +17,15 @@ const file = require('./forms/file');
 const code = require('./html-code');
 const list = require('./html-list');
 const table = require('./html-table');
-const htmlDetailsCollapse = require('./html-details-collapse');
+const htmlDetails = require('./html-details');
 const modal = require('./modal');
 const alert = require('./alert');
-const pagination = require('./pagination');
-const breadcrumb = require('./breadcrumb');
-const tooltip = require('./tooltip');
 const badge = require('./badge');
+const breadcrumb = require('./breadcrumb');
+const dropdown = require('./dropdown');
+const pagination = require('./pagination');
 const progress = require('./progress');
+const tooltip = require('./tooltip');
 
 module.exports = {
   [prefix4c]: {
@@ -35,23 +35,24 @@ module.exports = {
     navbar,
     sidebar,
     form,
-    input,
-    checkbox,
-    radio,
-    select,
-    switcher,
-    range,
-    file,
+    'form-input': input,
+    'form-checkbox': checkbox,
+    'form-radio': radio,
+    'form-select': select,
+    'form-switcher': switcher,
+    'form-range': range,
+    'form-file': file,
     'html-code': code,
     'html-list': list,
     'html-table': table,
-    'html-details-collapse': htmlDetailsCollapse,
+    'html-details': htmlDetails,
     modal,
     alert,
-    pagination,
-    breadcrumb,
-    tooltip,
     badge,
+    breadcrumb,
+    dropdown,
+    pagination,
     progress,
+    tooltip,
   },
 };

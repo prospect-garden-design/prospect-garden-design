@@ -48,7 +48,7 @@ module.exports = {
   },
   sticky: {
     top: { value: `0` },
-    right: { value: `1.5rem` },
+    right: { value: `1.5rem` }, // 24
     width: { value: `16.875rem` }, // 270
     'box-shadow-color': {
       value: `{${prefix4g}.color.black.val.value}`,

@@ -6,45 +6,51 @@ const {
 module.exports = {
   width: { value: `2rem` }, // 32
   height: { value: `1.125rem` }, // 18
-  'line-height': { value: `{${prefix4c}.switcher.height.value}` },
+  'line-height': { value: `{${prefix4c}.form-switcher.height.value}` },
   label: { 'padding-left': { value: `2.5rem` } }, // 40
   'label-blank': {
-    'padding-left': { value: `{${prefix4c}.switcher.width.value}` },
+    'padding-left': { value: `{${prefix4c}.form-switcher.width.value}` },
   },
-  'border-radius': { value: `{${prefix4c}.switcher.height.value}` },
+  'border-radius': { value: `{${prefix4c}.form-switcher.height.value}` },
   'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
   'form-group': { margin: { value: `0.5rem 0 0 0 ` } },
-  'bg-color': { value: `{${prefix4c}.checkbox.bg-color.value}` },
-  'border-color': { value: `{${prefix4c}.checkbox.border-color.value}` },
-  'box-shadow': { value: `{${prefix4c}.checkbox.box-shadow.value}` },
+  'bg-color': { value: `{${prefix4c}.form-checkbox.bg-color.value}` },
+  'border-color': { value: `{${prefix4c}.form-checkbox.border-color.value}` },
+  'box-shadow': { value: `{${prefix4c}.form-checkbox.box-shadow.value}` },
 
   checked: {
-    'bg-color': { value: `{${prefix4c}.checkbox.checked.bg-color.value}` },
+    'bg-color': { value: `{${prefix4c}.form-checkbox.checked.bg-color.value}` },
     'border-color': {
-      value: `{${prefix4c}.checkbox.checked.border-color.value}`,
+      value: `{${prefix4c}.form-checkbox.checked.border-color.value}`,
     },
-    'box-shadow': { value: `{${prefix4c}.checkbox.checked.box-shadow.value}` },
+    'box-shadow': {
+      value: `{${prefix4c}.form-checkbox.checked.box-shadow.value}`,
+    },
     focus: {
       'border-color': {
-        value: `{${prefix4c}.checkbox.checked.focus.border-color.value}`,
+        value: `{${prefix4c}.form-checkbox.checked.focus.border-color.value}`,
       },
       'box-shadow': {
-        value: `{${prefix4c}.checkbox.checked.focus.box-shadow.value}`,
+        value: `{${prefix4c}.form-checkbox.checked.focus.box-shadow.value}`,
       },
     },
   },
   hover: {
-    'bg-color': { value: `{${prefix4c}.checkbox.hover.bg-color.value}` },
+    'bg-color': { value: `{${prefix4c}.form-checkbox.hover.bg-color.value}` },
     'border-color': {
-      value: `{${prefix4c}.checkbox.hover.border-color.value}`,
+      value: `{${prefix4c}.form-checkbox.hover.border-color.value}`,
     },
-    'box-shadow': { value: `{${prefix4c}.checkbox.hover.box-shadow.value}` },
+    'box-shadow': {
+      value: `{${prefix4c}.form-checkbox.hover.box-shadow.value}`,
+    },
   },
   focus: {
     'border-color': {
-      value: `{${prefix4c}.checkbox.focus.border-color.value}`,
+      value: `{${prefix4c}.form-checkbox.focus.border-color.value}`,
     },
-    'box-shadow': { value: `{${prefix4c}.checkbox.focus.box-shadow.value}` },
+    'box-shadow': {
+      value: `{${prefix4c}.form-checkbox.focus.box-shadow.value}`,
+    },
   },
   slider: {
     left: { value: `0.25rem` }, // 4
@@ -62,11 +68,13 @@ module.exports = {
     'box-shadow': { value: `none` },
     checked: {
       left: { value: `1rem` },
-      top: { value: `{${prefix4c}.switcher.slider.top.value}` },
-      'bg-color': { value: `{${prefix4c}.checkbox.checkmark.color.value}` },
+      top: { value: `{${prefix4c}.form-switcher.slider.top.value}` },
+      'bg-color': {
+        value: `{${prefix4c}.form-checkbox.checkmark.color.value}`,
+      },
       'border-color': { value: `transparent` },
       'box-shadow': {
-        value: `{${prefix4c}.checkbox.checkmark.box-shadow.value}`,
+        value: `{${prefix4c}.form-checkbox.checkmark.box-shadow.value}`,
       },
     },
   },

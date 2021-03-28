@@ -237,7 +237,6 @@ module.exports = {
       lg: { value: `{${prefix4c}.button.lg.height.value}` },
     },
   },
-  outline: {},
   link: {
     'text-color': { value: `{${prefix4g}.color.brand.primary.val.value}` },
     'bg-color': { value: `transparent` },

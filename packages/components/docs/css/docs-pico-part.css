@@ -95,17 +95,17 @@ form,
 ol,
 p,
 ul {
-  margin-top: 0;
-  margin-bottom: var(--spacing-typography);
+  margin-top: 0; /* 这里会影响navbar显示的高度 */
+  /* margin-bottom: var(--spacing-typography);
   color: var(--text);
   font-size: 1rem;
-  font-style: normal;
+  font-style: normal; */
 }
 
 a {
   /* background-color: transparent; */
   /* color: var(--primary); */
-  text-decoration: none;
+  /* text-decoration: none; */
   /* transition: background-color var(--transition), color var(--transition),
     text-decoration var(--transition), box-shadow var(--transition); */
 }
@@ -143,24 +143,24 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
-  margin-bottom: var(--spacing-typography);
+  /* margin-top: 0;
+  margin-bottom: var(--spacing-typography); */
 }
 
 h1 {
-  margin-bottom: calc(var(--spacing-typography) * 2);
+  /* margin-bottom: calc(var(--spacing-typography) * 2);
   color: var(--h1);
-  font-size: var(--h1-size);
+  font-size: var(--h1-size); */
 }
 
 h2 {
-  margin-bottom: calc(var(--spacing-typography) * 1.75);
+  /* margin-bottom: calc(var(--spacing-typography) * 1.75);
   color: var(--h2);
-  font-size: var(--h2-size);
+  font-size: var(--h2-size); */
 }
 
 p {
-  margin-bottom: var(--spacing-typography);
+  /* margin-bottom: var(--spacing-typography); */
 }
 
 ul,
@@ -178,9 +178,9 @@ ul li {
 }
 
 img {
-  max-width: 100%;
+  /* max-width: 100%;
   height: auto;
-  border-style: none;
+  border-style: none; */
 }
 
 /* button {

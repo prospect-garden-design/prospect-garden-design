@@ -1,0 +1,49 @@
+@use '../../../design-tokens/dist/halfmoon/alert-vars';
+@use '../base/variables' as v;
+
+// code,
+.#{v.$prefix4pg}alert,
+.#{v.$prefix4pg}sticky-alerts {
+  @extend .#{v.$theme-name};
+}
+
+.alert {
+  position: relative;
+  padding: var(--alert-padding);
+  color: var(--lm-alert-text-color);
+  background-color: var(--lm-alert-bg-color);
+  background-image: var(--lm-alert-bg-image);
+  border: var(--alert-border-width) solid;
+  border-color: var(--lm-alert-border-color);
+  border-radius: var(--alert-border-radius);
+}
+
+.alert.dispose {
+  display: none;
+}
+
+.alert .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: var(--alert-close-padding);
+  line-height: var(--alert-close-line-height);
+  font-size: var(--alert-close-font-size);
+  color: var(--lm-alert-close-text-color);
+  background-color: var(--lm-alert-close-bg-color);
+  background-image: var(--lm-alert-close-bg-image);
+  border: var(--alert-close-border-width) solid;
+  border-color: var(--lm-alert-close-border-color);
+  border-radius: var(--alert-close-border-radius);
+  box-shadow: var(--lm-alert-close-box-shadow);
+}
+
+// sticky
+
+.sticky-alerts {
+  position: fixed;
+  top: var(--pg-c--alert--sticky--top);
+  right: var(--pg-c--alert--sticky--right);
+  z-index: 100; // altert is on top of modals
+}

@@ -1,0 +1,24 @@
+.form-range {
+  width: 100%;
+  height: var(--form-range-height);
+  padding: 0;
+  background-color: transparent;
+  border-radius: var(--form-range-border-radius);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.form-range:focus {
+  outline: none;
+}
+
+.form-range:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-range.is-invalid {
+  box-shadow: var(--lm-form-range-invalid-box-shadow);
+}

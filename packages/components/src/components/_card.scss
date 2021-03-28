@@ -1,5 +1,5 @@
 @use '../../../design-tokens/dist/halfmoon/card-vars';
-@use '../base/variables' as v;
+@use '../base/variables'as v;
 
 .#{v.$prefix4pg}card,
 .#{v.$prefix4pg}card-title,
@@ -34,13 +34,17 @@
   margin-top: 0;
 }
 
+// card padding
+
 .p-card {
   padding: var(--pg-c--card--content--spacing--val);
 }
+
 .px-card {
   padding-left: var(--pg-c--card--content--spacing--val);
   padding-right: var(--pg-c--card--content--spacing--val);
 }
+
 .py-card {
   padding-top: var(--pg-c--card--content--spacing--val);
   padding-bottom: var(--pg-c--card--content--spacing--val);

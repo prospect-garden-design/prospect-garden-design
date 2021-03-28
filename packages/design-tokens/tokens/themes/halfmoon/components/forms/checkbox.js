@@ -4,12 +4,12 @@ const {
 } = require('../../../../utils/globalConfig');
 
 module.exports = {
-  width: { value: `1.125rem` },
+  width: { value: `1.125rem` }, // 18
   height: { value: `1.125rem` },
-  'line-height': { value: `{${prefix4c}.checkbox.height.value}` },
+  'line-height': { value: `{${prefix4c}.form-checkbox.height.value}` },
   label: { 'padding-left': { value: `1.5rem` } },
   'label-blank': {
-    'padding-left': { value: `{${prefix4c}.checkbox.height.value}` },
+    'padding-left': { value: `{${prefix4c}.form-checkbox.height.value}` },
   },
   'border-radius': { value: `{${prefix4g}.size.base.border-radius.value}` },
   'border-width': { value: `{${prefix4g}.size.base.border-width.value}` },
@@ -22,32 +22,34 @@ module.exports = {
   checked: {
     'bg-color': { value: `{${prefix4g}.color.brand.primary.val.value}` },
     'border-color': { value: `{${prefix4g}.color.brand.primary.val.value}` },
-    'box-shadow': { value: `{${prefix4c}.checkbox.box-shadow.value}` },
+    'box-shadow': { value: `{${prefix4c}.form-checkbox.box-shadow.value}` },
     focus: {
       'border-color': {
-        value: `{${prefix4c}.checkbox.checked.border-color.value}`,
+        value: `{${prefix4c}.form-checkbox.checked.border-color.value}`,
       },
       'box-shadow-color': {
         value: `{${prefix4g}.color.brand.primary.val.value}`,
         modify: [{ type: `setAlpha`, amount: 0.63 }],
       },
       'box-shadow': {
-        value: `0 0 0 0.0.1875rem {${prefix4c}.checkbox.checked.focus.box-shadow-color.value}`,
+        value: `0 0 0 0.0.1875rem {${prefix4c}.form-checkbox.checked.focus.box-shadow-color.value}`,
         replaceRefs: `all`,
       },
     },
   },
   hover: {
-    'bg-color': { value: `{${prefix4c}.checkbox.bg-color.value}` },
+    'bg-color': { value: `{${prefix4c}.form-checkbox.bg-color.value}` },
     'border-color': {
       value: `{${prefix4g}.color.black.val.value}`,
       modify: [{ type: `setAlpha`, amount: 0.4 }],
     },
-    'box-shadow': { value: `{${prefix4c}.checkbox.box-shadow.value}` },
+    'box-shadow': { value: `{${prefix4c}.form-checkbox.box-shadow.value}` },
   },
   focus: {
-    'border-color': { value: `{${prefix4c}.input.focus.border-color.value}` },
-    'box-shadow': { value: `{${prefix4c}.input.focus.box-shadow.value}` },
+    'border-color': {
+      value: `{${prefix4c}.form-input.focus.border-color.value}`,
+    },
+    'box-shadow': { value: `{${prefix4c}.form-input.focus.box-shadow.value}` },
   },
   checkmark: {
     left: { value: `0.4375rem` }, // 7

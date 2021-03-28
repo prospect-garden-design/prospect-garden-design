@@ -11,7 +11,7 @@ module.exports = {
     'border-radius': { value: `{${prefix4g}.size.base.border-radius.value}` },
     'text-color': { value: `{${prefix4g}.color.base.text.val.value}` },
     'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
-    'border-color': { value: `{${prefix4g}.color.gray.dim.value}` },
+    'border-color': { value: `{${prefix4g}.color.gray.dim.val.value}` },
     'box-shadow': { value: `{${prefix4g}.size.shadow.val.value}` },
   },
   arrow: {
@@ -26,7 +26,7 @@ module.exports = {
     'bg-color': { value: `{${prefix4g}.color.horizontal-rule.value}` },
   },
   item: {
-    padding: { value: `0.6rem {${prefix4c}.dropdown.content.padding.value}` },
+    padding: { value: `0.375rem {${prefix4c}.dropdown.content.padding.value}` },
     'border-radius': { value: `0.125rem` },
     'text-color': { value: `{${prefix4c}.dropdown.menu.text-color.value}` },
     'bg-color': { value: `transparent` },
@@ -39,8 +39,17 @@ module.exports = {
     },
     focus: {
       'box-shadow': {
-        value: `{${prefix4g}.size.shadow.hyperlink.focus.value}`,
+        value: `{${prefix4g}.size.hyperlink.focus.box-shadow.value}`,
       },
     },
+  },
+  header: {
+    padding: { value: `{${prefix4c}.dropdown.item.padding.value}` },
+    margin: { value: `0` },
+    'font-size': { value: `{${prefix4g}.size.base.font-size.value}` },
+    'font-weight': {
+      value: `{${prefix4g}.size.content.title.font-weight.value}`,
+    },
+    'text-color': { value: `{${prefix4g}.color.text.muted.value}` },
   },
 };

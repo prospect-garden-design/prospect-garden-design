@@ -22,7 +22,7 @@ module.exports = {
   },
   foot: {
     row: {
-      'border-bottom-border-width': {
+      'border-top-border-width': {
         value: `{${prefix4c}.html-table.border-width.value}`,
       },
     },

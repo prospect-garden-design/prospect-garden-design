@@ -1,11 +1,83 @@
 /* #region /folded utils-for-text */
 
-.font-italic {
-  font-style: italic !important;
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 500;
 }
 
-.font-bold {
-  font-weight: 700 !important;
+.h1 {
+  font-size: 2.25rem; // 36
+}
+
+.h2 {
+  font-size: 2rem; // 32
+}
+
+.h3 {
+  font-size: 1.75rem; // 28
+}
+
+.h4 {
+  font-size: 1.5rem; // 24
+}
+
+.h5 {
+  font-size: 1.25rem; // 20
+}
+
+.h6 {
+  font-size: 1rem; // 16
+}
+
+.h1-xl,
+.display-1,
+.h2-xl,
+.display-2,
+.h3-xl,
+.display-3,
+.h4-xl,
+.display-4,
+.h5-xl,
+.display-5,
+.h6-xl,
+.display-6 {
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.h1-xl,
+.display-1 {
+  font-size: 5rem; // 80
+}
+
+.h2-xl,
+display-2 {
+  font-size: 4.5rem; // 72
+}
+
+.h3-xl,
+display-3 {
+  font-size: 4rem; // 64
+}
+
+.h4-xl,
+display-4 {
+  font-size: 3.5rem; // 56
+}
+
+.h5-xl,
+display-5 {
+  font-size: 3rem; // 48
+}
+
+.h6-xl,
+display-6 {
+  font-size: 2.5rem; // 40
 }
 
 .font-size-14 {
@@ -43,6 +115,44 @@
 .font-size-40 {
   font-size: 2.5rem !important;
 }
+
+.font-weight-lighter {
+  font-weight: lighter !important;
+}
+
+.font-weight-light {
+  font-weight: 300 !important;
+}
+
+.font-weight-normal {
+  font-weight: 400 !important;
+}
+
+.font-weight-medium {
+  font-weight: 500 !important;
+}
+
+.font-weight-semi-bold {
+  font-weight: 600 !important;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.font-weight-bolder {
+  font-weight: bolder !important;
+}
+
+
+.font-italic {
+  font-style: italic !important;
+}
+
+.font-bold {
+  font-weight: 700 !important;
+}
+
 
 .text-left,
 text-start {

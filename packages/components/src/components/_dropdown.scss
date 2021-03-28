@@ -1,0 +1,22 @@
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  text-align: left;
+  width: auto;
+  min-width: var(--dropdown-menu-min-width);
+  padding: var(--dropdown-menu-padding);
+  color: var(--lm-dropdown-menu-text-color);
+  background-color: var(--lm-dropdown-menu-bg-color);
+  background-image: var(--lm-dropdown-menu-bg-image);
+  border: var(--dropdown-menu-border-width) solid;
+  border-color: var(--lm-dropdown-menu-border-color);
+  border-radius: var(--dropdown-menu-border-radius);
+  box-shadow: var(--lm-dropdown-menu-box-shadow);
+}
