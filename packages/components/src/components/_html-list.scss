@@ -1,7 +1,8 @@
 @use '../../../design-tokens/dist/halfmoon/html-list-vars';
 @use '../base/variables' as v;
 
-.#{v.$prefix4pg}list {
+.#{v.$prefix4pg}ul,
+.#{v.$prefix4pg}ol {
   @extend .#{v.$theme-name};
 }
 

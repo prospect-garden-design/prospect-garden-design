@@ -8,10 +8,10 @@
  * Documentation:
  */
 
-// ------------- variables for themes ------------------- //
+// ------- global variables for themes ----------------- //
 @use '../../design-tokens/dist/halfmoon-vars';
 
-// ----------- config, variables, css reset ------------- //
+// ----------- config, variables, css reset ------------ //
 @use 'base/variables' with ($prefix4pg: ""); // null is ok
 // @use 'base/variables' with ($prefix4pg: pg-);
 @use 'base/reset-normalize';
@@ -26,7 +26,7 @@
 @use 'components/navbar';
 @use 'components/sidebar';
 
-// --------------- general html elements ---------------- //
+// ------------ general html elements & forms ----------- //
 @use 'components/html-list';
 @use 'components/html-table';
 @use 'components/html-details';
