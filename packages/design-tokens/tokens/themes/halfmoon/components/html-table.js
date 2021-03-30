@@ -37,7 +37,7 @@ module.exports = {
       modify: [{ type: `setAlpha`, amount: 0.2 }],
     },
   },
-  stripped: {
+  striped: {
     'bg-color': {
       value: `{${prefix4g}.color.black.val.value}`,
       modify: [{ type: `setAlpha`, amount: 0.03 }],

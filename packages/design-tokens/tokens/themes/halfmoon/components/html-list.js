@@ -16,11 +16,11 @@ module.exports = {
   ul: {
     'padding-left': { value: `0` },
     item: {
-      'padding-left': { value: `1.5rem` },
+      'padding-left': { value: `1.5rem` }, // 24
       bullet: {
         top: { value: `0.5rem` },
         left: { value: `0` },
-        width: { value: `0.5rem` },
+        width: { value: `0.5rem` }, // 8
         height: { value: `{${prefix4c}.html-list.ul.item.bullet.width.value}` },
         'border-width': { value: `0` },
         'border-radius': { value: `50%` },
@@ -36,11 +36,11 @@ module.exports = {
   ol: {
     'padding-left': { value: `0` },
     item: {
-      'padding-left': { value: `2.5rem` },
+      'padding-left': { value: `2.5rem` }, // 40
       numbering: {
         top: { value: `0.125rem` },
         left: { value: `0` },
-        'min-width': { value: `1.25rem` },
+        'min-width': { value: `1.25rem` }, // 20
         height: {
           value: `{${prefix4c}.html-list.ol.item.numbering.min-width.value}`,
         },

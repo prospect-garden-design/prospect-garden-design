@@ -37,7 +37,7 @@ module.exports = {
         value: `{${prefix4c}.html-details.header.text-color.value}`,
       },
       'bg-color': {
-        value: `{${prefix4c}.html-details.header.text-color.value}`,
+        value: `{${prefix4c}.html-details.header.bg-color.value}`,
       },
       'border-color': {
         value: `{${prefix4c}.html-details.header.border-color.value}`,

@@ -220,28 +220,28 @@ a[role="button"] {
 } */
 
 details {
-  display: block;
+  /* display: block;
   margin-bottom: var(--spacing-typography);
   padding-bottom: calc(var(--spacing-typography) / 2);
-  border-bottom: 1px solid var(--muted-border);
+  border-bottom: 1px solid var(--muted-border); */
 }
 
 details summary {
-  line-height: 1rem;
+  /* line-height: 1rem;
   list-style-type: none;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 details summary::-webkit-details-marker {
-  display: none;
+  /* display: none; */
 }
 
 details summary::marker {
-  display: none;
+  /* display: none; */
 }
 
 details summary::-moz-list-bullet {
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 
 /* details summary::after {
@@ -257,24 +257,24 @@ details summary::-moz-list-bullet {
 } */
 
 details summary:focus {
-  outline: none;
+  /* outline: none; */
 }
 
 details summary ~ * {
-  margin-top: calc(var(--spacing-typography) / 2);
+  /* margin-top: calc(var(--spacing-typography) / 2); */
 }
 
 details summary ~ * ~ * {
-  margin-top: 0;
+  /* margin-top: 0; */
 }
 
 details[open] summary {
-  margin-bottom: calc(var(--spacing-typography) / 4);
-  color: var(--muted-text);
+  /* margin-bottom: calc(var(--spacing-typography) / 4);
+  color: var(--muted-text); */
 }
 
 details[open] summary::after {
-  transform: rotate(0);
+  /* transform: rotate(0); */
 }
 
 nav,

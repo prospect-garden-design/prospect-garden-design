@@ -60,7 +60,8 @@
       }
 
       .docs-topmost-block > * {
-        /* min-width: 0; */
+        /* 魔法css，能解决跳转到带hash的url时，左边fixed的目录挡住右边内容的问题 */
+        min-width: 0;
       }
 
       .docs-toc nav {
@@ -157,6 +158,7 @@
       .docs-content-section .eg-preview {
         margin-top: 16px;
         margin-bottom: 16px;
+        border: 1px solid #eee;
       }
 
       #button .eg-preview .btn {
@@ -233,7 +235,7 @@
             <ul>
               <li><a href="#button" class="secondary">button</a></li>
               <li><a href="#code" class="secondary">code</a></li>
-              <li><a href="#list" class="secondary">ul & ol list</a></li>
+              <li><a href="#list" class="secondary">list - ul & ol</a></li>
               <li><a href="#table" class="secondary">table</a></li>
               <li><a href="#details" class="secondary">details collapse</a></li>
             </ul>
@@ -479,30 +481,36 @@
           <h2>sidebar</h2>
 
           <h3>basic sidebar</h3>
-          <div class="sidebar position-static bg-light">
-            <div class="sidebar-menu">
-              <a tabindex="0" class="sidebar-brand">
-                <!-- <img src="..." alt="..." /> -->
-                <span><i class="icono-barChart">logo</i></span>
-                Brand
-              </a>
-              <div class="sidebar-content">
-                <input type="text" class="form-control" placeholder="Search" />
-                <div class="mt-10 font-size-12">
-                  Press <kbd>Enter</kbd> to search
+          <div class="eg-preview">
+            <div class="sidebar position-static bg-light">
+              <div class="sidebar-menu">
+                <a tabindex="0" class="sidebar-brand">
+                  <!-- <img src="..." alt="..." /> -->
+                  <span><i class="icono-barChart">logo</i></span>
+                  Brand
+                </a>
+                <div class="sidebar-content">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search"
+                  />
+                  <div class="mt-10 font-size-12">
+                    Press <kbd>Enter</kbd> to search
+                  </div>
                 </div>
+                <h5 class="sidebar-title">Getting started</h5>
+                <div class="sidebar-divider"></div>
+                <a href="#!" class="sidebar-link active">Installation</a>
+                <a href="#!" class="sidebar-link">CLI commands</a>
+                <br />
+                <h5 class="sidebar-title">Components</h5>
+                <div class="sidebar-divider"></div>
+                <a href="#!" class="sidebar-link">File explorer</a>
+                <a href="#!" class="sidebar-link">Spreadsheet</a>
+                <a href="#!" class="sidebar-link">Map</a>
+                <a href="#!" class="sidebar-link">Messenger</a>
               </div>
-              <h5 class="sidebar-title">Getting started</h5>
-              <div class="sidebar-divider"></div>
-              <a href="#!" class="sidebar-link active">Installation</a>
-              <a href="#!" class="sidebar-link">CLI commands</a>
-              <br />
-              <h5 class="sidebar-title">Components</h5>
-              <div class="sidebar-divider"></div>
-              <a href="#!" class="sidebar-link">File explorer</a>
-              <a href="#!" class="sidebar-link">Spreadsheet</a>
-              <a href="#!" class="sidebar-link">Map</a>
-              <a href="#!" class="sidebar-link">Messenger</a>
             </div>
           </div>
 
@@ -518,6 +526,12 @@
         <!-- #endregion nav -->
 
         <!-- #region general elements -->
+        <p>general html elements can be used in simple use cases.</p>
+        <p>
+          for complex use cases such as high interactivity and flexible styling,
+          it's better to build your own js components with the css of general
+          html elements.
+        </p>
         <section id="code" class="docs-content-section">
           <h2>code & kbd</h2>
           <ul>
@@ -555,24 +569,27 @@
               </li>
               <li>
                 The default kbd style is like this <kbd>ctrl</kbd> +
-                <kbd>D</kbd>..
+                <kbd>D</kbd>.
               </li>
             </ul>
           </div>
         </section>
 
         <section id="list" class="docs-content-section">
-          <h3>ul: unordered list</h3>
+          <h3>list</h3>
+          <h3>ul - unordered list</h3>
           <div class="eg-preview">
             <ul class="ul">
-              <li>This is a list.</li>
-              <li>It appears completely unstyled.</li>
-              <li>Structurally, it's still a list.</li>
+              <li>This is an unordered list.</li>
+              <li>
+                It's styled with only one class <code class="code">.ul</code>.
+              </li>
+              <li>Simple bullet-point list that has no particular order.</li>
               <li>
                 However, this style only applies to immediate child elements.
               </li>
               <li>
-                Nested lists:
+                Nested unordered lists(without classname):
                 <ul>
                   <li>are unaffected by this style</li>
                   <li>will still show a bullet</li>
@@ -581,6 +598,196 @@
               </li>
               <li>This may still come in handy in some situations.</li>
             </ul>
+          </div>
+          <h3>ol - ordered list</h3>
+          <div class="eg-preview">
+            <ol class="ol">
+              <li>This is an ordered list.</li>
+              <li>
+                It's styled with only one class <code class="code">.ol</code>.
+              </li>
+              <li>Ordered item 3</li>
+              <li>
+                Nested ordered lists(without classname):
+                <ol>
+                  <li>are unaffected by this style</li>
+                  <li>will still show a original number counter</li>
+                  <li>and have appropriate left margin</li>
+                </ol>
+              </li>
+              <li>This may still come in handy in some situations.</li>
+              <li>
+                Another nested unordered lists(with classname
+                <code class="code">.ul</code>):
+                <ul class="ul">
+                  <li>are unaffected by this style</li>
+                  <li>will still show a bullet</li>
+                  <li>and have appropriate left margin</li>
+                </ul>
+              </li>
+              <li>This may still come in handy in some situations.</li>
+            </ol>
+          </div>
+
+          <h3>todo inline list</h3>
+          <div class="eg-preview">
+            <ul class="ul list-inline">
+              <li class="list-inline-item">items displayed inline.</li>
+              <li class="list-inline-item">bullets removed.</li>
+              <li class="list-inline-item">margin applied.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="table" class="docs-content-section">
+          <h2>table</h2>
+          <p>
+            html <code class="code">&lt;table&gt;</code> can be styled with just
+            one class <code class="code">table</code>
+          </p>
+          <h3>basic table</h3>
+          <div class="eg-preview">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>striped table</h3>
+          <div class="eg-preview">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="details" class="docs-content-section">
+          <h2>details collapse panel</h2>
+          <p>
+            note: <code class="code">&lt;details&gt;</code> and
+            <code class="code">&lt;summary&gt;</code> tags are not supported in
+            IE 11.
+          </p>
+
+          <h3>browser default details collapse panel</h3>
+          <div class="eg-preview">
+            <details class="">
+              <summary class="">Why are computers important?</summary>
+              <div class="">
+                Computers are important because they are like bicycles for the
+                mind.
+              </div>
+            </details>
+          </div>
+
+          <h3>basic collapse panel</h3>
+          <div class="eg-preview">
+            <!-- <details class="collapse-panel w-400 mw-full" open> -->
+            <details class="collapse-panel">
+              <summary class="collapse-header">
+                Why are computers important?
+              </summary>
+              <div class="collapse-content">
+                Computers are important because they are like bicycles for the
+                mind.
+              </div>
+            </details>
+          </div>
+          <h3>collapse panel group</h3>
+          <div class="eg-preview">
+            <div class="collapse-group w-75 mw-full">
+              <!-- 1st collapse panel (open by default) -->
+              <details class="collapse-panel" open>
+                <summary class="collapse-header">
+                  <strong>Plain White T-Shirt</strong>
+                  <br />
+                  <span class="text-muted">Price: $20.00</span>
+                </summary>
+                <div class="collapse-content">
+                  A long description that lists all the good sides of the
+                  product and none of the bad. Compels the shopper to add this
+                  product to their cart immediately.
+                </div>
+              </details>
+
+              <!-- 2nd collapse panel -->
+              <details class="collapse-panel">
+                <summary class="collapse-header">
+                  <strong>Cool Jeans</strong>
+                  <br />
+                  <span class="text-muted">Price: $41.00</span>
+                </summary>
+                <div class="collapse-content">
+                  A long description that lists all the good sides of the
+                  product and none of the bad. Compels the shopper to add this
+                  product to their cart immediately.
+                </div>
+              </details>
+
+              <!-- 3rd collapse panel -->
+              <details class="collapse-panel">
+                <summary class="collapse-header">
+                  <strong>Plain White Crop Top</strong>
+                  <br />
+                  <span class="text-muted">Price: $20.00</span>
+                </summary>
+                <div class="collapse-content">
+                  A long description that lists all the good sides of the
+                  product and none of the bad. Compels the shopper to add this
+                  product to their cart immediately.
+                </div>
+              </details>
+            </div>
           </div>
         </section>
         <!-- #endregion general elements -->

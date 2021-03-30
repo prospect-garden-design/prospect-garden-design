@@ -23,8 +23,8 @@
   padding-left: var(--pg-c--html-list--nested--padding-left);
 }
 
-.ul > li,
-.ol > li {
+.ul li,
+.ol li {
   margin-bottom: var(--pg-c--html-list--item--margin-bottom);
 }
 
@@ -42,10 +42,10 @@ li:last-child {
   }
 
   & > li::before {
-    content: ' ';
+    content: '';
     position: absolute;
     top: var(--pg-c--html-list--ul--item--bullet--top);
-    left: var(--pg-c--html-list--ul--item--bullet-left);
+    left: var(--pg-c--html-list--ul--item--bullet--left);
     display: inline-block;
     width: var(--pg-c--html-list--ul--item--bullet--width);
     height: var(--pg-c--html-list--ul--item--bullet--height);
@@ -64,18 +64,18 @@ li:last-child {
 
   & > li {
     position: relative;
-    padding-left: var(--ordered-list-item-padding-left);
+    padding-left: var(--pg-c--html-list--ol--item--padding-left);
     counter-increment: ordered-list-counter;
   }
 
   & > li::before {
     content: counter(ordered-list-counter);
     position: absolute;
+    top: var(--pg-c--html-list--ol--item--numbering--top);
+    left: var(--pg-c--html-list--ol--item--numbering--left);
     display: inline-block;
     min-width: var(--pg-c--html-list--ol--item--numbering--min-width);
     height: var(--pg-c--html-list--ol--item--numbering--height);
-    top: var(--pg-c--html-list--ol--item--numbering--top);
-    left: var(--pg-c--html-list--ol--item--numbering--left);
     padding: var(--pg-c--html-list--ol--item--numbering--padding);
     border-radius: var(--pg-c--html-list--ol--item--numbering--border-radius);
     border: var(--pg-c--html-list--ol--item--numbering--border-width) solid;

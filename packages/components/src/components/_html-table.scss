@@ -9,9 +9,9 @@
 
 .#{v.$prefix4pg}table {
   width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
-/* Table cells */
 
 .table th,
 .table td {
@@ -113,6 +113,7 @@
 .table-striped tbody tr:nth-child(odd) {
   background-color: var(--pg-c--html-table--striped--bg-color);
   // background-image: var(--pg-c--html-table--striped-bg-image);
+  // color:red;
 }
 
 /* Hoverable table */
