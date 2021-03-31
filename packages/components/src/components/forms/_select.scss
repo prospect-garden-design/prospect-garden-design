@@ -1,3 +1,7 @@
+select.form-control {
+  text-transform: none;
+}
+
 .select.form-control:not([multiple]) {
   cursor: pointer;
   padding-right: var(--pg-c--form-select--padding-right);
@@ -7,16 +11,16 @@
   // background-image: var(--pg-c--form-select--bg-image);
 }
 
-.select.form-control[multiple] {
+select.form-control[multiple] {
   overflow: auto;
   height: auto;
   padding: var(--pg-c--form-input--padding-x);
-}
 
-.select.form-control[multiple]>option:not(:checked) {
-  color: var(--pg-c--form-input--text-color);
-}
+  & > option:not(:checked) {
+    color: var(--pg-c--form-input--text-color);
+  }
 
-select.form-control[multiple]>option:disabled {
-  color: var(--pg-c--form-select--item--disabled--text-color);
+  & > option:disabled {
+    color: var(--pg-c--form-select--item--disabled--text-color);
+  }
 }

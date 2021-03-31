@@ -59,11 +59,11 @@ module.exports = {
     },
   },
   'slider-thumb': {
-    width: { value: `0.125rem` },
+    width: { value: `1.25rem` },
     height: { value: `{${prefix4c}.form-range.slider-thumb.width.value}` },
     'border-width': { value: `0.125rem` },
     'border-radius': { value: `50%` },
-    'bg-color': { value: `${prefix4g}.color.white.val.value` },
+    'bg-color': { value: `{${prefix4g}.color.white.val.value}` },
     'border-color': {
       value: `{${prefix4g}.color.black.val.value}`,
       modify: [{ type: `setAlpha`, amount: 0.3 }],
