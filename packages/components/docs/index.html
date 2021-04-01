@@ -156,14 +156,21 @@
     } */
 
       .docs-content-section .eg-preview {
-        margin-top: 16px;
-        margin-bottom: 16px;
-        border: 1px solid #eee;
+        width: 100%;
+        padding: 0.25rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+        border: 1px solid #fee;
       }
 
       #button .eg-preview .btn {
-        margin-right: 10px;
-        margin-bottom: 10px;
+        margin-right: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      #progress .eg-preview .progress {
+        margin-right: 0.75rem;
+        margin-bottom: 1.75rem;
       }
     </style>
     <!-- #endregion /folded styles for docsite -->
@@ -293,6 +300,12 @@
       </aside>
 
       <div class="docs-content" role="document">
+        <!-- <section id="icomp" class="docs-content-section">
+          <h2></h2>
+          <h3></h3>
+          <div class="eg-preview"></div>
+        </section> -->
+
         <!-- #region /folded getting started -->
         <section id="overview" class="docs-content-section">
           <h2 class="">overview</h2>
@@ -665,7 +678,7 @@
             it provides consistent sizing/spacing/states/... among form inputs.
           </p>
           <h3>form inline</h3>
-          <div class="eg-preivew"></div>
+          <div class="eg-preview"></div>
         </section>
 
         <section id="input" class="docs-content-section">
@@ -683,7 +696,7 @@
             controls.
           </p>
           <h3>basic text input</h3>
-          <div class="eg-preivew">
+          <div class="eg-preview">
             <div class="form-group">
               <input
                 type="text"
@@ -703,7 +716,7 @@
             <code class="code">&lt;label&gt;</code> to show a tiny red asterisk
             * as a reminder.
           </p>
-          <div class="eg-preivew">
+          <div class="eg-preview">
             <input
               type="text"
               class="form-control mb-3"
@@ -723,7 +736,7 @@
             />
           </div>
           <h3>sizing</h3>
-          <div class="eg-preivew">
+          <div class="eg-preview">
             <input
               type="text"
               class="form-control form-control-lg mb-3"
@@ -752,7 +765,7 @@
 
         <section id="checkbox" class="docs-content-section">
           <h2>checkbox</h2>
-          <div class="eg-preivew">
+          <div class="eg-preview">
             <div class="custom-checkbox mb-3">
               <input type="checkbox" id="checkbox-1" value="" />
               <label for="checkbox-1">Checkbox 1</label>
@@ -790,7 +803,7 @@
 
         <section id="radio" class="docs-content-section">
           <h2>radio</h2>
-          <div class="eg-preivew">
+          <div class="eg-preview">
             <div class="custom-radio mb-3">
               <input
                 type="radio"
@@ -868,7 +881,7 @@
 
         <section id="switcher" class="docs-content-section">
           <h2>switcher</h2>
-          <div class="eg-preivew">
+          <div class="eg-preview">
             <div class="custom-switch mb-3">
               <input type="checkbox" id="switch-1" value="" />
               <label for="switch-1">Switch 1</label>
@@ -903,7 +916,7 @@
           <h2>range</h2>
           <h3>basic range slider</h3>
           <p>note: not working on firefox</p>
-          <div class="eg-preivew">
+          <div class="eg-preview">
             <input
               class="form-range"
               type="range"
@@ -933,7 +946,7 @@
               >live on codepen</a
             >
           </p>
-          <div class="eg-preivew">
+          <div class="eg-preview">
             <input
               class="form-range"
               type="range"
@@ -959,14 +972,14 @@
         <section id="file" class="docs-content-section">
           <h2>file</h2>
           <h3>single file input</h3>
-          <div class="eg-preivew">
+          <div class="eg-preview">
             <div class="custom-file">
               <input type="file" id="file-input-1" />
               <label for="file-input-1">choose one file</label>
             </div>
           </div>
           <h3>multi file input</h3>
-          <div class="eg-preivew">
+          <div class="eg-preview">
             <div class="custom-file">
               <input
                 type="file"
@@ -986,7 +999,72 @@
         <section id="accordion" class="docs-content-section">
           <h2>accordion</h2>
           <h3>basic</h3>
-          <div class="eg-preivew"></div>
+          <div class="eg-preview"></div>
+        </section>
+
+        <section id="alert" class="docs-content-section">
+          <h2>alert</h2>
+          <h3>alert variants</h3>
+          <div class="eg-preview">
+            <div class="alert mb-3" role="alert">
+              <h4 class="alert-heading">Default alert</h4>
+              This is a default alert with some content and
+              <a href="#!" class="alert-link">a link</a>.
+            </div>
+            <div class="alert alert-primary mb-3" role="alert">
+              <h4 class="alert-heading">Primary alert</h4>
+              This is a primary alert with some content and
+              <a href="#!" class="alert-link">a link</a>.
+            </div>
+            <div class="alert alert-success mb-3" role="alert">
+              <h4 class="alert-heading">Success alert</h4>
+              This is a success alert with some content and
+              <a href="#!" class="alert-link">a link</a>.
+            </div>
+            <div class="alert alert-danger mb-3" role="alert">
+              <h4 class="alert-heading">Danger alert</h4>
+              This is a danger alert with some content and
+              <a href="#!" class="alert-link">a link</a>.
+            </div>
+          </div>
+          <h3>todo: sticky alert</h3>
+          <div class="eg-preview"></div>
+        </section>
+
+        <section id="badge" class="docs-content-section">
+          <h2>badge</h2>
+          <h3>badge variants</h3>
+          <div class="eg-preview">
+            <span class="badge">Default</span>
+            <span class="badge badge-primary">Primary</span>
+            <span class="badge badge-success">Success</span>
+            <span class="badge badge-danger">Danger</span>
+          </div>
+
+          <h3>pill badges</h3>
+          <div class="eg-preview">
+            <span class="badge badge-pill">Default</span>
+            <span class="badge badge-primary badge-pill">Primary</span>
+            <span class="badge badge-success badge-pill">Success</span>
+            <span class="badge badge-danger badge-pill">Danger</span>
+          </div>
+
+          <h3>todo: badge group</h3>
+          <div class="eg-preview"></div>
+        </section>
+
+        <section id="breadcrumb" class="docs-content-section">
+          <h2>breadcrumb</h2>
+          <h3>basic breadcrumb</h3>
+          <div class="eg-preview">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#!">Home</a></li>
+              <li class="breadcrumb-item"><a href="#!">Docs</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <a href="#">Breadcrumb</a>
+              </li>
+            </ul>
+          </div>
         </section>
 
         <!-- #region /folded button -->
@@ -1413,6 +1491,7 @@
           <div class="eg-preview w-50">
             <div class="card p-0">
               <img
+              class="img-fluid"
                 src="images/placeholders/640x360.png"
                 alt="img-eg-placeholder-green"
               />
@@ -1481,12 +1560,292 @@
         </section>
         <!-- #endregion /folded card -->
 
+        <!-- #region /folded dropdown -->
+        <section id="dropdown" class="docs-content-section">
+          <h2>dropdown</h2>
+          <p>by default, dropdown is toggled by clicking, not by hovering.</p>
+          <p>dropdown toggling requires js.</p>
+          <p>
+            compared to popover, dropdown in open state has no arrow indicator.
+          </p>
+          <p>
+            .dropdown-header can be used to style title for the dropdown menu.
+          </p>
+          <p>.dropdown-item can be used for the main links.</p>
+          <p>.dropdown-divider can be used to style div as divider.</p>
+          <p>
+            .dropdown-content can provide spacing for content to match with
+            headers and dividers.
+          </p>
+          <h3>basic dropdown</h3>
+          <p>toggle by click.</p>
+          <div class="eg-preview">
+            <div class="dropdown show">
+              <button
+                class="btn active"
+                type="button"
+                id="dropdown-toggle-btn-1"
+              >
+                Click me
+                <span><i class="icono-caretDown"></i></span>
+              </button>
+              <div class="dropdown-menu">
+                <h6 class="dropdown-header">Header</h6>
+                <a href="#!" class="dropdown-item">Link 1</a>
+                <a href="#!" class="dropdown-item">Link 2</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-content">
+                  <button class="btn btn-sm btn-block" type="button">
+                    Button
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>hoverable dropdown</h3>
+          <p>toggle by hover.</p>
+          <div class="eg-preview"></div>
+          <h3>todo: dropup</h3>
+          <div class="eg-preview"></div>
+        </section>
+        <!-- #endregion /folded dropdown -->
+
+        <section id="modal" class="docs-content-section">
+          <h2>modal</h2>
+          <section></section>
+          <section></section>
+          <p>
+            <code class="code">.modal</code> makes use of
+            <code class="code">:target</code> pseudo selector, open whenever the
+            url hash matches the <code class="code">id</code> of the modal.
+          </p>
+          <h3>basic modal</h3>
+          <div class="eg-preview">
+            <div class="modal" id="modal-1" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <a href="#!" class="close" role="button" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </a>
+                  <h5 class="modal-title">Modal title</h5>
+                  <p>
+                    This is the modal content. Almost any type of content can be
+                    presented to the user here.
+                  </p>
+                  <div class="text-right mt-20">
+                    <!-- text-right = text-align: right, mt-20 = margin-top: 2rem (20px) -->
+                    <a href="#!" class="btn mr-5" role="button">Close</a>
+                    <a href="#!" class="btn btn-primary" role="button"
+                      >I understand</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#modal-1" class="btn btn-primary" role="button"
+              >Open modal</a
+            >
+          </div>
+          <h3>scrollable modal</h3>
+          <div class="eg-preview"></div>
+        </section>
+
+        <!-- #region /folded progress bar -->
         <section id="progress" class="docs-content-section">
           <h2>progress</h2>
+          <h3>progress bar variants</h3>
+          <div class="eg-preview">
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="0"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 80%"
+                aria-valuenow="80"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: 60%"
+                aria-valuenow="60"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 20%"
+                aria-valuenow="20"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+
+          <h3>progress bar sizes and labels</h3>
+          <div class="eg-preview">
+            <div class="progress h-4" style="height: 2rem">
+              <div
+                class="progress-bar w-75 rounded-0"
+                role="progressbar"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                75%
+              </div>
+            </div>
+          </div>
+
+          <h3>progress bar group</h3>
+          <div class="eg-preview">
+            <div class="progress-group">
+              <div class="progress">
+                <div
+                  class="progress-bar bg-success"
+                  role="progressbar"
+                  style="width: 100%"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <span class="progress-group-label">
+                <i class="fa fa-check-circle text-success font-size-16"></i>
+                <span class="sr-only">Success</span>
+              </span>
+            </div>
+
+            <div class="progress-group">
+              <div class="progress">
+                <div
+                  class="progress-bar bg-secondary"
+                  role="progressbar"
+                  style="width: 50%"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <span class="progress-group-label">
+                <i class="fa fa-warning text-secondary font-size-16"></i>
+                <span class="sr-only">Warning</span>
+              </span>
+            </div>
+
+            <div class="progress-group">
+              <div class="progress">
+                <div
+                  class="progress-bar bg-danger"
+                  role="progressbar"
+                  style="width: 20%"
+                  aria-valuenow="20"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <span class="progress-group-label">
+                <i class="fa fa-times-circle text-danger font-size-16"></i>
+                <span class="sr-only">Danger</span>
+              </span>
+            </div>
+          </div>
+
+          <h3>animating progress bar</h3>
+          <div class="eg-preview">
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-animated"
+                role="progressbar"
+                style="width: 80%"
+                aria-valuenow="80"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-success progress-bar-animated highlight-dark"
+                role="progressbar"
+                style="width: 60%"
+                aria-valuenow="60"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
         </section>
+        <!-- #endregion /folded progress bar -->
+
         <section id="tooltip" class="docs-content-section">
           <h2>tooltip</h2>
+          <p>
+            tooltip can be created by adding the data-toggle="tooltip" and
+            data-title="..." attributes to an element, and requires no
+            JavaScript.
+          </p>
+          <div class="eg-preview">
+            <button
+              class="btn"
+              data-toggle="tooltip"
+              data-title="Default tooltip"
+              type="button"
+            >
+              Default
+            </button>
+            <button
+              class="btn"
+              data-toggle="tooltip"
+              data-title="Top tooltip"
+              data-placement="top"
+              type="button"
+            >
+              Top
+            </button>
+            <button
+              class="btn"
+              data-toggle="tooltip"
+              data-title="Right tooltip"
+              data-placement="right"
+              type="button"
+            >
+              Right
+            </button>
+            <button
+              class="btn"
+              data-toggle="tooltip"
+              data-title="Bottom tooltip"
+              data-placement="bottom"
+              type="button"
+            >
+              Bottom
+            </button>
+            <button
+              class="btn"
+              data-toggle="tooltip"
+              data-title="Left tooltip"
+              data-placement="left"
+              type="button"
+            >
+              Left
+            </button>
+          </div>
         </section>
+
         <!-- #endregion Components -->
 
         <!-- #region layout -->
@@ -1641,6 +2000,77 @@
           <h3>sidebar with multi-level & collapsible contents</h3>
         </section>
         <!-- #endregion /folded sidebar -->
+
+        <!-- #region /folded pagination -->
+        <section id="pagination" class="docs-content-section">
+          <h2>pagination</h2>
+          <h3>basic pagination</h3>
+          <div class="eg-preview">
+            <ul class="pagination">
+              <!-- Previous page -->
+              <li class="page-item">
+                <a href="#!" class="page-link">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  <span class="sr-only">Previous</span>
+                  <!-- sr-only = only for screen readers -->
+                </a>
+              </li>
+              <!-- Pages and ellipses -->
+              <li class="page-item"><a href="#!" class="page-link">1</a></li>
+              <li class="page-item ellipsis"></li>
+              <li class="page-item"><a href="#!" class="page-link">45</a></li>
+              <!-- Active page item -->
+              <li class="page-item active" aria-current="page">
+                <a href="#!" class="page-link" tabindex="-1">46</a>
+              </li>
+              <li class="page-item"><a href="#!" class="page-link">47</a></li>
+              <li class="page-item ellipsis"></li>
+              <li class="page-item"><a href="#!" class="page-link">86</a></li>
+              <!-- Next page -->
+              <li class="page-item">
+                <a href="#!" class="page-link">
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  <span class="sr-only">Next</span>
+                  <!-- sr-only = only for screen readers -->
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <h3>rounded pagination</h3>
+          <div class="eg-preview">
+            <ul class="pagination pagination-rounded">
+              <!-- Previous page -->
+              <li class="page-item">
+                <a href="#!" class="page-link">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  <span class="sr-only">Previous</span>
+                  <!-- sr-only = only for screen readers -->
+                </a>
+              </li>
+              <!-- Pages and ellipses -->
+              <li class="page-item"><a href="#!" class="page-link">1</a></li>
+              <li class="page-item ellipsis"></li>
+              <li class="page-item"><a href="#!" class="page-link">45</a></li>
+              <!-- Active page item -->
+              <li class="page-item active" aria-current="page">
+                <a href="#!" class="page-link" tabindex="-1">46</a>
+              </li>
+              <li class="page-item"><a href="#!" class="page-link">47</a></li>
+              <li class="page-item ellipsis"></li>
+              <li class="page-item"><a href="#!" class="page-link">86</a></li>
+              <!-- Next page -->
+              <li class="page-item">
+                <a href="#!" class="page-link">
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  <span class="sr-only">Next</span>
+                  <!-- sr-only = only for screen readers -->
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- #endregion /folded pagination -->
 
         <!-- #endregion nav -->
 

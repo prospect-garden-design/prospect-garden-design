@@ -38,6 +38,14 @@
   background-color: var(--pg-g--color--brand--secondary--val) !important;
 }
 
+.bg-success {
+  background-color: var(--pg-g--color--semantic--success--val) !important;
+}
+
+.bg-danger {
+  background-color: var(--pg-g--color--semantic--danger--val) !important;
+}
+
 .text-white {
   // color: var(--white-color) !important;
   color: #ffffff !important;

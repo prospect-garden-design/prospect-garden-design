@@ -2,6 +2,11 @@
 
 # fix
 
+- ## components
+
+- pagination
+  - 首尾两个页码矩形与其他页码图形不在一条线上
+
 # new
 
 # refactor
