@@ -16,6 +16,18 @@
   & * {
     box-sizing: border-box;
   }
+
+  & summary {
+    cursor: pointer;
+
+    &.no-arrow {
+      list-style: none;
+    }
+  }
+
+  & summary:focus {
+    outline: none;
+  }
 }
 
 // summary,
@@ -39,18 +51,19 @@
     box-shadow: var(--pg-c--html-details--header--focus--box-shadow);
     outline: var(--pg-c--html-details--header--focus--outline);
   }
+
+  list-style-type: none; // firefox
+
+  &::-webkit-details-marker {
+    display: none; // chrome
+  }
+
+  &::marker {
+    display: none;
+  }
 }
 
 .collapse-header {
-  list-style-type: none; // firefox
-}
-
-.collapse-header::-webkit-details-marker {
-  display: none; // chrome
-}
-
-.collapse-header::marker {
-  display: none;
 }
 
 .collapse-panel[open] .collapse-header {
