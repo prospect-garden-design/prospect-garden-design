@@ -13,6 +13,43 @@
 
     <!-- #region /folded styles for docsite -->
     <style type="text/css">
+      /* 让第2个部分的内容不上移浮动到第1个部分的底部 */
+      section {
+        /* margin-bottom: calc(var(--spacing-block) * var(--spacing-factor-xl) * 2); */
+        margin-bottom: 8rem;
+      }
+
+      a.secondary {
+        /* color: var(--secondary); */
+        color: #73828c;
+      }
+
+      .docs-toc nav,
+      .docs-toc ol,
+      .docs-toc ul,
+      .docs-toc li {
+        display: block;
+      }
+
+      .nav-header,
+      .nav-header ul {
+        display: flex;
+      }
+
+      .nav-header {
+        justify-content: space-between;
+      }
+
+      .nav-header ul {
+        /* 这里会影响navbar显示的高度 */
+        margin-top: 0;
+      }
+      .nav-header li {
+        display: inline-block;
+        margin: 0;
+        padding: var(--spacing-gutter) calc(var(--spacing-gutter) / 2);
+      }
+
       .nav-header {
         position: fixed;
         top: 0;
@@ -191,7 +228,7 @@
   <body>
     <!-- Top Nav -->
     <nav class="container-fluid nav-header">
-      <ul>
+      <ul class="ul">
         <li>
           <a href="#!" aria-label="Back home">
             <span class=""><i class="icono-barChart"></i></span>
@@ -200,7 +237,7 @@
         <li>css for prospect garden design</li>
         <li><a href="#docsTOC" class="secondary">components</a></li>
       </ul>
-      <ul>
+      <ul class="ul">
         <li>
           <a href="#!" class="secondary">
             <span class=""><i class="icono-moon"></i></span
@@ -226,7 +263,7 @@
           <h1>documentation</h1>
           <details class="collapse-panel" open>
             <summary class="no-arrow">getting started</summary>
-            <ul class="collapse-content">
+            <ul class="collapse-content ul no-bullet">
               <li><a href="#overview" class="secondary">overview</a></li>
               <li><a href="#install" class="secondary">install & usage</a></li>
               <li><a href="#theming" class="secondary">theming</a></li>
@@ -264,7 +301,7 @@
             </ul>
           </details>
           <details class="collapse-panel" open>
-            <summary  class="no-arrow" id="components">components</summary>
+            <summary class="no-arrow" id="components">components</summary>
             <ul class="collapse-content">
               <li><a href="#accordion" class="secondary">accordion</a></li>
               <li><a href="#alert" class="secondary">alert</a></li>
@@ -291,7 +328,7 @@
             </ul>
           </details>
           <details class="collapse-panel" open>
-            <summary  class="no-arrow" >utilities</summary>
+            <summary class="no-arrow">utilities</summary>
             <ul class="collapse-content">
               <li><a href="#utext" class="secondary">text</a></li>
               <li><a href="#uspacing" class="secondary">spacing</a></li>
@@ -331,7 +368,7 @@
             heavily based on css variables(a.k.a. css custom properties).
           </p>
           <h3 class="h3">features</h3>
-          <ul>
+          <ul class="ul">
             <li>themeable components</li>
             <li>
               theming styles are built on top of design tokens, across platform
@@ -344,12 +381,12 @@
             <li>easy to customize your own theme or components</li>
           </ul>
           <h3>notes</h3>
-          <ul>
+          <ul class="ul">
             <li>
               almost all the design tokens are extracted directly from other
               popular ui frameworks.
             </li>
-            <ul>
+            <ul class="ul">
               <li>
                 halfmoon is used as the primary css variables/tokens source.
               </li>
@@ -363,7 +400,7 @@
               </li>
             </ul>
             <li>IE browsers are not supported for lack of css variables.</li>
-            <ul>
+            <ul class="ul">
               <li>
                 as of 2021-03,
                 <a href="https://caniuse.com/css-variables">caniuse</a> shows
@@ -408,7 +445,7 @@
         </p>
         <section id="code" class="docs-content-section">
           <h2>code & kbd</h2>
-          <ul>
+          <ul class="ul">
             <li>
               <code class="code">.code</code> and
               <code class="code">.kbd</code> are designed to only style inline
@@ -421,7 +458,7 @@
           </ul>
           <h3>code</h3>
           <div class="eg-preview">
-            <ul>
+            <ul class="ul">
               <li>
                 Add the class <code class="code">.some-class</code> to the
                 element to format it.
@@ -436,7 +473,7 @@
 
           <h3>keyboard character</h3>
           <div class="eg-preview">
-            <ul>
+            <ul class="ul">
               <li>
                 Toggle dark mode by pressing <kbd class="kbd">shift</kbd> +
                 <kbd class="kbd">D</kbd>.
@@ -450,7 +487,7 @@
         </section>
 
         <section id="list" class="docs-content-section">
-          <h3>list</h3>
+          <h2>list</h2>
           <h3>ul - unordered list</h3>
           <div class="eg-preview">
             <ul class="ul">
@@ -464,7 +501,7 @@
               </li>
               <li>
                 Nested unordered lists(without classname):
-                <ul>
+                <ul class="ul">
                   <li>are unaffected by this style</li>
                   <li>will still show a bullet</li>
                   <li>and have appropriate left margin</li>
@@ -473,6 +510,7 @@
               <li>This may still come in handy in some situations.</li>
             </ul>
           </div>
+
           <h3>ol - ordered list</h3>
           <div class="eg-preview">
             <ol class="ol">
@@ -501,6 +539,29 @@
               </li>
               <li>This may still come in handy in some situations.</li>
             </ol>
+          </div>
+
+          <h3>list without bullets</h3>
+          <div class="eg-preview">
+            <ul class="ul no-bullet">
+              <li>This is an unordered list.</li>
+              <li>
+                It's styled with only one class <code class="code">.ul</code>.
+              </li>
+              <li>Simple bullet-point list that has no particular order.</li>
+              <li>
+                However, this style only applies to immediate child elements.
+              </li>
+              <li>
+                Nested unordered lists(without classname):
+                <ul class="ul">
+                  <li>are unaffected by this style</li>
+                  <li>will still show a bullet</li>
+                  <li>and have appropriate left margin</li>
+                </ul>
+              </li>
+              <li>This may still come in handy in some situations.</li>
+            </ul>
           </div>
 
           <h3>todo inline list</h3>
@@ -1084,7 +1145,7 @@
           <h2>button</h2>
 
           <h3>button tags</h3>
-          <ul>
+          <ul class="ul">
             <li>
               <code>.btn/.btn-*</code> classes are designed to style the html
               <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code>,
@@ -1205,7 +1266,7 @@
 
           <h3>square/circular Buttons</h3>
 
-          <ul>
+          <ul class="ul">
             <li>
               <code>.rounded-circle</code> should be put after
               <code>.btn-square</code> to style a rounded button.
@@ -1264,7 +1325,7 @@
         <section id="button-group" class="docs-content-section">
           <h2>button group</h2>
 
-          <ul>
+          <ul class="ul">
             <li>
               use button group to group multiple buttons in a single line or in
               a vertical column.
@@ -1319,7 +1380,7 @@
           </div>
 
           <h3>semantic button group</h3>
-          <ul>
+          <ul class="ul">
             <li>
               It would be better to add some js for toggling interactivity
             </li>
@@ -1394,7 +1455,7 @@
           </div>
 
           <h3>button toolbar</h3>
-          <ul>
+          <ul class="ul">
             <li>
               use button toolbar to group multiple button groups in a single
               line.
@@ -1865,7 +1926,7 @@
           <h2>container</h2>
           <p>containers can be used to center the content horizontally.</p>
           <p>3 types of containers are provided:</p>
-          <ul>
+          <ul class="ul">
             <li><code>.container</code> is responsive at all breakpoints.</li>
             <li>
               <code>.container-fluid</code> is <code>width: 100%;</code> at all
@@ -1878,7 +1939,7 @@
             </li>
           </ul>
           <p><code>.container</code> has no padding and margin by default.</p>
-          <ul>
+          <ul class="ul">
             <li>
               built-in margins tend to make it unexpected and confusing to align
               contents.
@@ -1904,7 +1965,7 @@
           <h2>navbar</h2>
 
           <p>classes in the navbar:</p>
-          <ul>
+          <ul class="ul">
             <li>brand: text/image</li>
             <li>nav-link/item: active</li>
             <li>text: muted color</li>

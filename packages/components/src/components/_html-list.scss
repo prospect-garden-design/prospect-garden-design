@@ -14,6 +14,10 @@
   margin-top: var(--pg-c--html-list--margin-y);
   margin-bottom: var(--pg-c--html-list--margin-y);
   list-style-position: var(--pg-c--html-list--style-position);
+
+  &.no-bullet li {
+    list-style-type: none;
+  }
 }
 
 .ul .ul,
@@ -41,7 +45,7 @@ li:last-child {
     padding-left: var(--pg-c--html-list--ul--item--padding-left);
   }
 
-  & > li::before {
+  &:not(.no-bullet) > li::before {
     content: '';
     position: absolute;
     top: var(--pg-c--html-list--ul--item--bullet--top);

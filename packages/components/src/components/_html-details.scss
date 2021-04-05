@@ -1,5 +1,5 @@
 @use '../../../design-tokens/dist/halfmoon/html-details-vars';
-@use '../base/variables'as v;
+@use '../base/variables' as v;
 
 .#{v.$prefix4pg}collapse,
 .#{v.$prefix4pg}collapse-panel,
@@ -52,15 +52,15 @@
     outline: var(--pg-c--html-details--header--focus--outline);
   }
 
-  list-style-type: none; // firefox
+  list-style-type: none; // remove triangle by default
 
-  &::-webkit-details-marker {
-    display: none; // chrome
-  }
+  // &::-webkit-details-marker {
+  //   display: none; // chrome<89
+  // }
 
-  &::marker {
-    display: none;
-  }
+  // &::marker {
+  //   display: none; // chrome<89
+  // }
 }
 
 .collapse-header {

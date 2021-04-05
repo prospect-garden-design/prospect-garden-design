@@ -80,7 +80,7 @@ html {
 
 /* 让第2个部分的内容不上移浮动到第1个部分的底部 */
 section {
-  margin-bottom: calc(var(--spacing-block) * var(--spacing-factor-xl) * 2);
+  /* margin-bottom: calc(var(--spacing-block) * var(--spacing-factor-xl) * 2); */
 }
 
 ol ol,
@@ -95,7 +95,8 @@ form,
 ol,
 p,
 ul {
-  margin-top: 0; /* 这里会影响navbar显示的高度 */
+  /* 这里会影响navbar显示的高度 */
+  /* margin-top: 0; */
   /* margin-bottom: var(--spacing-typography);
   color: var(--text);
   font-size: 1rem;
@@ -123,7 +124,7 @@ a:focus {
 }
 
 a.secondary {
-  color: var(--secondary);
+  /* color: var(--secondary); */
   /* text-decoration: underline; */
 }
 
@@ -279,73 +280,69 @@ details[open] summary::after {
 
 nav,
 nav ul {
-  display: flex;
+  /* display: flex; */
 }
 
 nav {
   justify-content: space-between;
 }
 
+/* 这里影响顶部导航条高度 */
 nav ol,
 nav ul {
-  align-items: center;
+  /* align-items: center;
   margin-bottom: 0;
   padding: 0;
-  list-style: none;
+  list-style: none; */
 }
 
 /* 第一个元素对齐 */
 nav ol:first-of-type,
 nav ul:first-of-type {
-  margin-left: calc(var(--spacing-gutter) * -0.5);
+  /* margin-left: calc(var(--spacing-gutter) * -0.5); */
 }
 
 /* 最后一个元素对齐 */
 nav ol:last-of-type,
 nav ul:last-of-type {
-  margin-right: calc(var(--spacing-gutter) * -0.5);
+  /* margin-right: calc(var(--spacing-gutter) * -0.5); */
 }
 
 nav li {
-  display: inline-block;
+  /* display: inline-block;
   margin: 0;
-  padding: var(--spacing-gutter) calc(var(--spacing-gutter) / 2);
-}
-
-nav li > *,
-nav li > input:not([type='checkbox']):not([type='radio']) {
-  /* margin-bottom: 0; */
+  padding: var(--spacing-gutter) calc(var(--spacing-gutter) / 2); */
 }
 
 nav a {
-  display: block;
+  /* display: block;
   margin: calc(var(--spacing-gutter) * -1) calc(var(--spacing-gutter) * -0.5);
   padding: var(--spacing-gutter) calc(var(--spacing-gutter) / 2);
   border-radius: var(--block-round);
-  text-decoration: none !important;
+  text-decoration: none !important; */
 }
 
 nav a:hover,
 nav a:active,
 nav a:focus {
-  text-decoration: none !important;
+  /* text-decoration: none !important; */
 }
 
 aside nav,
 aside ol,
 aside ul,
 aside li {
-  display: block;
+  /* display: block; */
 }
 
 aside li {
-  padding: calc(var(--spacing-gutter) / 2);
+  /* padding: calc(var(--spacing-gutter) / 2); */
 }
 
 aside li a {
   /* 设置元素间间隔 */
-  margin: calc(var(--spacing-gutter) * -0.5);
-  padding: calc(var(--spacing-gutter) / 2);
+  /* margin: calc(var(--spacing-gutter) * -0.5);
+  padding: calc(var(--spacing-gutter) / 2); */
 }
 
 /* .container,
