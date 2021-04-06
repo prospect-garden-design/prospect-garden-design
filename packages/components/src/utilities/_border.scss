@@ -3,24 +3,24 @@
 // default border: 1px solid black
 
 .border {
-  border: var(--pg-g--size--border--base--width) solid
-    var(--pg-g--color--border--lm) !important;
+  border: var(--pg-g--size--base--border-width, 1px) solid
+    var(--pg-g--color--border--lm, rgba(0, 0, 0, 0.2)) !important;
 }
 .border-top {
-  border-top: var(--pg-g--size--border--base--width) solid
-    var(--pg-g--color--border--lm) !important;
+  border-top: var(--pg-g--size--base--border-width, 1px) solid
+    var(--pg-g--color--border--lm, rgba(0, 0, 0, 0.2)) !important;
 }
 .border-bottom {
-  border-bottom: var(--pg-g--size--border--base--width) solid
-    var(--pg-g--color--border--lm) !important;
+  border-bottom: var(--pg-g--size--base--border-width, 1px) solid
+    var(--pg-g--color--border--lm, rgba(0, 0, 0, 0.2)) !important;
 }
 .border-left {
-  border-left: var(--pg-g--size--border--base--width) solid
-    var(--pg-g--color--border--lm) !important;
+  border-left: var(--pg-g--size--base--border-width, 1px) solid
+    var(--pg-g--color--border--lm, rgba(0, 0, 0, 0.2)) !important;
 }
 .border-right {
-  border-right: var(--pg-g--size--border--base--width) solid
-    var(--pg-g--color--border--lm) !important;
+  border-right: var(--pg-g--size--base--border-width, 1px) solid
+    var(--pg-g--color--border--lm, rgba(0, 0, 0, 0.2)) !important;
 }
 
 .border-none {

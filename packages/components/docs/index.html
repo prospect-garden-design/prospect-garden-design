@@ -6,64 +6,20 @@
     <!-- <link rel="icon" href="path/to/fav.png" /> -->
     <title>css for prospect garden design</title>
 
-    <!-- <link href="../dist/pg-vars.css" rel="stylesheet"> -->
-    <link href="css/docs-pico-part.css" rel="stylesheet" />
     <link href="css/docs-icons.css" rel="stylesheet" />
     <link href="../dist/pg.css" rel="stylesheet" />
 
     <!-- #region /folded styles for docsite -->
     <style type="text/css">
-      /* 让第2个部分的内容不上移浮动到第1个部分的底部 */
-      section {
-        /* margin-bottom: calc(var(--spacing-block) * var(--spacing-factor-xl) * 2); */
-        margin-bottom: 8rem;
+      :root {
       }
 
       a.secondary {
-        /* color: var(--secondary); */
         color: #73828c;
       }
 
-      .docs-toc nav,
-      .docs-toc ol,
-      .docs-toc ul,
-      .docs-toc li {
-        display: block;
-      }
-
-      .nav-header,
-      .nav-header ul {
-        display: flex;
-      }
-
-      .nav-header {
-        justify-content: space-between;
-      }
-
-      .nav-header ul {
-        /* 这里会影响navbar显示的高度 */
-        margin-top: 0;
-      }
-      .nav-header li {
-        display: inline-block;
-        margin: 0;
-        padding: var(--spacing-gutter) calc(var(--spacing-gutter) / 2);
-      }
-
-      .nav-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-        background-color: var(--nav-background);
-        box-shadow: 0px 1px 0 var(--nav-border);
-        -webkit-backdrop-filter: saturate(180%) blur(20px);
-        backdrop-filter: saturate(180%) blur(20px);
-      }
-
-      .nav-header ul:last-of-type {
-        margin-right: calc(var(--spacing-gutter) * 1.5);
+      .nav-header .list-inline > li:not(:last-child) {
+        margin-right: 0.125rem;
       }
 
       .nav-header ul:first-of-type li:nth-of-type(2) {
@@ -76,46 +32,25 @@
         }
       }
 
-      .docs-topmost-block {
-        padding-top: calc(1rem * var(--spacing-factor-xs) + 3.5rem);
-        overflow: hidden;
+      .docs-outmost-block {
+        padding-top: 5rem;
       }
 
       @media (min-width: 768px) {
-        .docs-topmost-block {
-          padding-top: calc(1rem * var(--spacing-factor-sm) + 3.5rem);
-        }
-      }
-
-      @media (min-width: 768px) {
-        .docs-topmost-block {
+        .docs-outmost-block {
           display: grid;
-          grid-column-gap: calc(var(--spacing-gutter) * 4);
-          grid-template-columns: 200px auto;
-          padding-top: calc(1rem * var(--spacing-factor-lg) + 3.5rem);
+          column-gap: 4rem;
+          grid-template-columns: 12.5rem auto;
+          padding-top: 5rem;
         }
-      }
-
-      .docs-topmost-block > * {
-        /* 魔法css，能解决跳转到带hash的url时，左边fixed的目录挡住右边内容的问题 */
-        min-width: 0;
-      }
-
-      .docs-toc nav {
-        width: 100%;
-        margin-bottom: var(--spacing-block);
-      }
-
-      .docs-toc nav h1 {
-        margin-bottom: var(--spacing-typography);
       }
 
       @media (min-width: 768px) {
         .docs-toc nav {
           position: fixed;
-          width: 200px;
+          width: 12.5rem;
+          /* max-height: 100%; 100%会导致最底部的内容无法显示在屏幕上，被挡住了*/
           max-height: calc(100vh - 5.5rem);
-          margin-bottom: 0;
           overflow-x: hidden;
           overflow-y: auto;
         }
@@ -125,73 +60,32 @@
         }
       }
 
-      .docs-toc li,
-      .docs-toc summary {
-        padding-top: 0;
-        padding-bottom: 0;
-        /* 让目录toc的文字看起来比右侧内容文字小一点 */
-        font-size: 16px;
+      .docs-toc .collapse-panel {
+        margin-bottom: 1.5rem;
       }
 
-      .docs-toc li a {
-        /* 修改第1个配置，加大上下padding-y，可能导致出现竖直滚动条 */
-        padding: 0.375rem 0.5rem;
+      .docs-toc .collapse-panel li {
+        padding-left: 0;
       }
 
-      .docs-toc a.secondary:focus {
-        background-color: transparent;
-        color: var(--primary-hover);
-      }
-
-      .docs-toc a.active,
-      .docs-toc a.active:hover {
-        color: var(--primary);
-      }
-
-      .docs-toc details {
-        /* padding-bottom: 0.25rem; */
-        /* border-bottom: none; */
-      }
-
-      .docs-toc details summary {
-        /* color: var(--h3); */
-        /* font-size: 14px;
-        font-weight: 300; */
-        /* text-transform: uppercase; */
-      }
-
-      .docs-toc details summary::after {
-        /* display: none; */
-      }
-
-      .docs-toc details[open] summary {
-        /* color: var(--h3); */
+      .docs-toc .collapse-content {
+        border-width: 0px;
       }
 
       .docs-content-section {
-        /* height: 240px; */
+        margin-bottom: 1.5rem;
       }
 
       /* when clicking the toc, the section title should be visible，
     使小标题跳到top位置时不会被header挡住 */
       .docs-content-section::before {
-        display: block;
         content: '';
-        height: calc(1rem * var(--spacing-factor-xl) + 3.5rem);
-        margin-top: calc(-1rem * var(--spacing-factor-xl) - 3.5rem);
+        display: block;
+        height: 5rem;
+        margin-top: -5rem;
       }
 
-      /* .docs-content-section a[href*="//"]:not([href*="https://picocss.com"]):not([role])::after {
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      background-image: var(--icon-external);
-      background-position: top center;
-      background-repeat: no-repeat;
-      background-size: .66rem auto;
-      content: '';
-    } */
-
+      /*------------ pgd docs components styling css ------------*/
       .docs-content-section .eg-preview {
         width: 100%;
         padding: 0.25rem;
@@ -209,35 +103,26 @@
         margin-right: 0.75rem;
         margin-bottom: 1.75rem;
       }
-
-      .docs-toc .collapse-content {
-        border-width: 0px;
-      }
-
-      /* .docs-toc details > summary::-webkit-details-marker {
-        display: none;
-      } */
-
-      .docs-toc details > summary {
-        /* list-style: none; */
-      }
     </style>
     <!-- #endregion /folded styles for docsite -->
   </head>
 
   <body>
     <!-- Top Nav -->
-    <nav class="container-fluid nav-header">
-      <ul class="ul">
+    <!-- <nav class="nav-header container-fluid border-bottom"> -->
+    <nav
+      class="nav-header navbar container-fluid fixed-top justify-content-between"
+    >
+      <ul class="ul no-bullet list-inline">
         <li>
           <a href="#!" aria-label="Back home">
             <span class=""><i class="icono-barChart"></i></span>
           </a>
         </li>
         <li>css for prospect garden design</li>
-        <li><a href="#docsTOC" class="secondary">components</a></li>
+        <!-- <li><a href="#docsTOC" class="secondary">components</a></li> -->
       </ul>
-      <ul class="ul">
+      <ul class="ul no-bullet list-inline">
         <li>
           <a href="#!" class="secondary">
             <span class=""><i class="icono-moon"></i></span
@@ -256,30 +141,30 @@
       </ul>
     </nav>
 
-    <main class="container docs-topmost-block">
+    <main class="container docs-outmost-block">
       <!-- Aside -->
       <aside class="docs-toc" id="docsTOC">
         <nav>
           <h1>documentation</h1>
-          <details class="collapse-panel" open>
-            <summary class="no-arrow">getting started</summary>
-            <ul class="collapse-content ul no-bullet">
+          <details class="collapse-panel no-arrow" open>
+            <summary class="">getting started</summary>
+            <ul class="ul no-bullet">
               <li><a href="#overview" class="secondary">overview</a></li>
               <li><a href="#install" class="secondary">install & usage</a></li>
               <li><a href="#theming" class="secondary">theming</a></li>
             </ul>
           </details>
-          <details class="collapse-panel" open>
+          <details class="collapse-panel no-arrow" open>
             <summary class="no-arrow">design tokens</summary>
-            <ul class="collapse-content">
+            <ul class="ul no-bullet">
               <li><a href="#color" class="secondary">color palette</a></li>
               <li><a href="#typography" class="secondary">typography</a></li>
               <li><a href="#spacing" class="secondary">spacing</a></li>
             </ul>
           </details>
-          <details class="collapse-panel" open>
+          <details class="collapse-panel no-arrow" open>
             <summary class="no-arrow">general elements</summary>
-            <ul class="collapse-content">
+            <ul class="ul no-bullet">
               <li><a href="#button" class="secondary">button</a></li>
               <li><a href="#code" class="secondary">code</a></li>
               <li><a href="#list" class="secondary">list - ul & ol</a></li>
@@ -287,9 +172,9 @@
               <li><a href="#details" class="secondary">details collapse</a></li>
             </ul>
           </details>
-          <details class="collapse-panel" open>
+          <details class="collapse-panel no-arrow" open>
             <summary class="no-arrow">forms</summary>
-            <ul class="collapse-content">
+            <ul class="ul no-bullet">
               <li><a href="#form" class="secondary">form</a></li>
               <li><a href="#input" class="secondary">input</a></li>
               <li><a href="#checkbox" class="secondary">checkbox</a></li>
@@ -300,9 +185,9 @@
               <li><a href="#file" class="secondary">file</a></li>
             </ul>
           </details>
-          <details class="collapse-panel" open>
+          <details class="collapse-panel no-arrow" open>
             <summary class="no-arrow" id="components">components</summary>
-            <ul class="collapse-content">
+            <ul class="ul no-bullet">
               <li><a href="#accordion" class="secondary">accordion</a></li>
               <li><a href="#alert" class="secondary">alert</a></li>
               <li><a href="#badge" class="secondary">badge</a></li>
@@ -318,26 +203,26 @@
               <li><a href="#tooltip" class="secondary">tooltip</a></li>
             </ul>
           </details>
-          <details class="collapse-panel" open>
+          <details class="collapse-panel no-arrow" open>
             <summary class="no-arrow">layout & navigation</summary>
-            <ul class="collapse-content">
+            <ul class="ul no-bullet">
               <li><a href="#container" class="secondary">container</a></li>
               <li><a href="#grid" class="secondary">grid</a></li>
               <li><a href="#navbar" class="secondary">navbar</a></li>
               <li><a href="#sidebar" class="secondary">sidebar</a></li>
             </ul>
           </details>
-          <details class="collapse-panel" open>
+          <details class="collapse-panel no-arrow" open>
             <summary class="no-arrow">utilities</summary>
-            <ul class="collapse-content">
+            <ul class="ul no-bullet">
               <li><a href="#utext" class="secondary">text</a></li>
               <li><a href="#uspacing" class="secondary">spacing</a></li>
               <li><a href="#uposition" class="secondary">position</a></li>
             </ul>
           </details>
-          <details class="collapse-panel" open>
+          <details class="collapse-panel no-arrow" open>
             <summary class="no-arrow">tools & resources</summary>
-            <ul class="collapse-content">
+            <ul class="ul no-bullet">
               <li>
                 <a href="#changelog" class="secondary">changelog</a>
                 <a href="#codebase" class="secondary">sass codebase</a>
@@ -546,7 +431,8 @@
             <ul class="ul no-bullet">
               <li>This is an unordered list.</li>
               <li>
-                It's styled with only one class <code class="code">.ul</code>.
+                It's styled with two classes
+                <code class="code">.ul.no-bullet</code>.
               </li>
               <li>Simple bullet-point list that has no particular order.</li>
               <li>
@@ -564,12 +450,12 @@
             </ul>
           </div>
 
-          <h3>todo inline list</h3>
+          <h3>inline list</h3>
           <div class="eg-preview">
-            <ul class="ul list-inline">
-              <li class="list-inline-item">items displayed inline.</li>
-              <li class="list-inline-item">bullets removed.</li>
-              <li class="list-inline-item">margin applied.</li>
+            <ul class="ul no-bullet list-inline">
+              <li class="">items displayed inline.</li>
+              <li class="">bullets removed.</li>
+              <li class="">margin applied.</li>
             </ul>
           </div>
         </section>
@@ -648,6 +534,9 @@
 
         <section id="details" class="docs-content-section">
           <h2>details collapse panel</h2>
+          <p>.collapse-panel > details</p>
+          <p>.collapse-header > summary</p>
+          <p>.collapse-content > contents below summary</p>
           <p>
             note: <code class="code">&lt;details&gt;</code> and
             <code class="code">&lt;summary&gt;</code> elements are not supported
@@ -682,7 +571,7 @@
           <div class="eg-preview">
             <div class="collapse-group w-75 mw-full">
               <!-- 1st collapse panel (open by default) -->
-              <details class="collapse-panel" open>
+              <details class="collapse-panel 1st" open>
                 <summary class="collapse-header">
                   <strong>Plain White T-Shirt</strong>
                   <br />
@@ -2004,7 +1893,7 @@
           <h3>collapsible navbar</h3>
           <p>collapsible for mobile screens.</p>
           <div class="eg-preview">
-            <nav class="navbar bg-light" id="navbar-6">
+            <nav class="navbar bg-light" id="navbar-collapsible">
               <div class="navbar-content">
                 <button class="btn btn-action" type="button">
                   <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
@@ -2151,7 +2040,7 @@
         <section id="codebase" class="docs-content-section">
           <h2>sass codebase</h2>
           <p>
-            body只有2个直接子元素，nav[class="nav-header"]是顶部导航条，main[class="docs-topmost-block"]是文档部分区块
+            body只有2个直接子元素，nav[class="nav-header"]是顶部导航条，main[class="docs-outmost-block"]是文档部分区块
           </p>
           <p>
             main元素也包含2个直接子元素，aside[class="docs-toc"]代表左侧目录，div[class="docs-content"]代表右侧长文档，由多个小节多个部分的内容组成

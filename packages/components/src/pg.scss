@@ -17,9 +17,6 @@
 @use 'base/reset-normalize';
 @use 'base/reset-base';
 
-// ------------------ common css utils ----------------- //
-@use './utilities/utilities';
-
 // --------------- layout & navigation ---------------- //
 @use 'layout/container';
 
@@ -47,3 +44,6 @@
 @use 'components/tooltip';
 @use 'components/pagination';
 @use 'components/progress';
+
+// ------------------ common css utils ----------------- //
+@use './utilities/utilities';
