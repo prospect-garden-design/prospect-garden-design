@@ -18,19 +18,18 @@
   &.no-bullet li {
     list-style-type: none;
   }
+}
 
-  &.list-inline {
-    padding-left: 0;
-    list-style-type: none;
+.#{v.$prefix4pg}list-inline {
+  list-style-type: none;
+  padding-left: 0;
 
-    & > li {
-      display: inline-block;
-    }
+  & > li {
+    display: inline-block;
+  }
 
-    & > li:not(:last-child) {
-      display: inline-block;
-      margin-right: 0.5rem;
-    }
+  & > li:not(:last-child) {
+    margin-right: 0.5rem;
   }
 }
 
@@ -46,9 +45,9 @@
   margin-bottom: var(--pg-c--html-list--item--margin-bottom);
 }
 
-li:last-child {
-  // margin-bottom: 0;
-}
+// li:last-child {
+//   margin-bottom: 0;
+// }
 
 .#{v.$prefix4pg}ul {
   list-style: none;

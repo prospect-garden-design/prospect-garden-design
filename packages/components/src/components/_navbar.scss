@@ -42,13 +42,13 @@
 .navbar .container-lg,
 .navbar .container-xl,
 .navbar .container-fluid {
-  width: 100%;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   flex-flow: row nowrap;
   justify-content: flex-start;
+  width: 100%;
   padding-left: var(--pg-c--navbar--container--padding-x);
   padding-right: var(--pg-c--navbar--container--padding-x);
 }

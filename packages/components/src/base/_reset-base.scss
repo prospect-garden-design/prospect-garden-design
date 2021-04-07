@@ -1,7 +1,7 @@
 // @use '../../../design-tokens/dist/halfmoon-vars';
 // @use '../base/variables' as v;
 
-// reset html font-family, font-size, h1-h6 typography
+// reset html font-family, font-size, h1-h6 typography, hr
 // if these css variables are undefined, browser defaults will be used
 
 html {
@@ -49,8 +49,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.625rem; // 10
-  margin-bottom: 1.25rem; // 20
+  // margin-top: 0.625rem; // 10
+  // margin-bottom: 1.25rem; // 20
   font-weight: var(--pg-g--size--heading--font-weight); // 500
 }
 

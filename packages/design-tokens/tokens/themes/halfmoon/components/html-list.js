@@ -16,11 +16,13 @@ module.exports = {
   ul: {
     'padding-left': { value: `0` },
     item: {
-      'padding-left': { value: `1.5rem` }, // 24
+      // 'padding-left': { value: `1.5rem` }, // 24
+      'padding-left': { value: `1.25rem` }, // 20
       bullet: {
         top: { value: `0.5rem` },
         left: { value: `0` },
-        width: { value: `0.5rem` }, // 8
+        // width: { value: `0.5rem` }, // 8
+        width: { value: `0.375rem` }, // 6
         height: { value: `{${prefix4c}.html-list.ul.item.bullet.width.value}` },
         'border-width': { value: `0` },
         'border-radius': { value: `50%` },

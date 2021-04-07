@@ -7,6 +7,7 @@
     <title>css for prospect garden design</title>
 
     <link href="css/docs-icons.css" rel="stylesheet" />
+    <!-- <link href="css/halfmoon-variables.css" rel="stylesheet" /> -->
     <link href="../dist/pg.css" rel="stylesheet" />
 
     <!-- #region /folded styles for docsite -->
@@ -18,8 +19,9 @@
         color: #73828c;
       }
 
-      .nav-header .list-inline > li:not(:last-child) {
-        margin-right: 0.125rem;
+      .nav-header .container {
+        padding-left: 0;
+        padding-right: 0;
       }
 
       .nav-header ul:first-of-type li:nth-of-type(2) {
@@ -109,36 +111,35 @@
 
   <body>
     <!-- Top Nav -->
-    <!-- <nav class="nav-header container-fluid border-bottom"> -->
-    <nav
-      class="nav-header navbar container-fluid fixed-top justify-content-between"
-    >
-      <ul class="ul no-bullet list-inline">
-        <li>
-          <a href="#!" aria-label="Back home">
-            <span class=""><i class="icono-barChart"></i></span>
-          </a>
-        </li>
-        <li>css for prospect garden design</li>
-        <!-- <li><a href="#docsTOC" class="secondary">components</a></li> -->
-      </ul>
-      <ul class="ul no-bullet list-inline">
-        <li>
-          <a href="#!" class="secondary">
-            <span class=""><i class="icono-moon"></i></span
-          ></a>
-        </li>
-        <li><a href="#!" class="secondary">themes</a></li>
-        <li><a href="#!" class="secondary">i18n</a></li>
-        <li>
-          <a
-            href="https://github.com/prospect-garden-design/prospect-garden-design/tree/main/packages/components"
-            class=""
-            aria-label="prospect garden design css gitHub repository"
-            >github
-          </a>
-        </li>
-      </ul>
+    <nav class="nav-header navbar fixed-top">
+      <div class="container">
+        <ul class="list-inline">
+          <li>
+            <a href="#!" aria-label="Back home">
+              <span class=""><i class="icono-barChart"></i></span>
+            </a>
+          </li>
+          <li>css for prospect garden design</li>
+          <!-- <li><a href="#docsTOC" class="secondary">components</a></li> -->
+        </ul>
+        <ul class="list-inline ml-auto">
+          <li>
+            <a href="#!" class="secondary">
+              <span class=""><i class="icono-moon"></i></span
+            ></a>
+          </li>
+          <li><a href="#!" class="secondary">themes</a></li>
+          <li><a href="#!" class="secondary">i18n</a></li>
+          <li>
+            <a
+              href="https://github.com/prospect-garden-design/prospect-garden-design/tree/main/packages/components"
+              class=""
+              aria-label="prospect garden design css gitHub repository"
+              >github
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <main class="container docs-outmost-block">
@@ -155,7 +156,7 @@
             </ul>
           </details>
           <details class="collapse-panel no-arrow" open>
-            <summary class="no-arrow">design tokens</summary>
+            <summary>design tokens</summary>
             <ul class="ul no-bullet">
               <li><a href="#color" class="secondary">color palette</a></li>
               <li><a href="#typography" class="secondary">typography</a></li>
@@ -163,7 +164,7 @@
             </ul>
           </details>
           <details class="collapse-panel no-arrow" open>
-            <summary class="no-arrow">general elements</summary>
+            <summary>general elements</summary>
             <ul class="ul no-bullet">
               <li><a href="#button" class="secondary">button</a></li>
               <li><a href="#code" class="secondary">code</a></li>
@@ -173,7 +174,7 @@
             </ul>
           </details>
           <details class="collapse-panel no-arrow" open>
-            <summary class="no-arrow">forms</summary>
+            <summary>forms</summary>
             <ul class="ul no-bullet">
               <li><a href="#form" class="secondary">form</a></li>
               <li><a href="#input" class="secondary">input</a></li>
@@ -186,7 +187,7 @@
             </ul>
           </details>
           <details class="collapse-panel no-arrow" open>
-            <summary class="no-arrow" id="components">components</summary>
+            <summary id="components">components</summary>
             <ul class="ul no-bullet">
               <li><a href="#accordion" class="secondary">accordion</a></li>
               <li><a href="#alert" class="secondary">alert</a></li>
@@ -195,6 +196,7 @@
               <li>
                 <a href="#button-group" class="secondary">button-group</a>
               </li>
+              <li><a href="#callout" class="secondary">callout sidenote</a></li>
               <li><a href="#card" class="secondary">card</a></li>
               <li><a href="#dropdown" class="secondary">dropdown</a></li>
               <li><a href="#modal" class="secondary">modal</a></li>
@@ -204,7 +206,7 @@
             </ul>
           </details>
           <details class="collapse-panel no-arrow" open>
-            <summary class="no-arrow">layout & navigation</summary>
+            <summary>layout & navigation</summary>
             <ul class="ul no-bullet">
               <li><a href="#container" class="secondary">container</a></li>
               <li><a href="#grid" class="secondary">grid</a></li>
@@ -213,21 +215,23 @@
             </ul>
           </details>
           <details class="collapse-panel no-arrow" open>
-            <summary class="no-arrow">utilities</summary>
+            <summary>utilities</summary>
             <ul class="ul no-bullet">
               <li><a href="#utext" class="secondary">text</a></li>
+              <li><a href="#ucolor" class="secondary">color</a></li>
               <li><a href="#uspacing" class="secondary">spacing</a></li>
+              <li><a href="#usizing" class="secondary">sizing</a></li>
               <li><a href="#uposition" class="secondary">position</a></li>
             </ul>
           </details>
           <details class="collapse-panel no-arrow" open>
-            <summary class="no-arrow">tools & resources</summary>
+            <summary>tools & resources</summary>
             <ul class="ul no-bullet">
+              <li><a href="#changelog" class="secondary">changelog</a></li>
               <li>
-                <a href="#changelog" class="secondary">changelog</a>
-                <a href="#codebase" class="secondary">sass codebase</a>
-                <a href="#references" class="secondary">references</a>
+                <a href="#codebase" class="secondary">codebase overview</a>
               </li>
+              <li><a href="#references" class="secondary">references</a></li>
             </ul>
           </details>
         </nav>
@@ -255,57 +259,77 @@
           <h3 class="h3">features</h3>
           <ul class="ul">
             <li>themeable components</li>
+            <li>easy to customize your own components or theme</li>
             <li>
-              theming styles are built on top of design tokens, across platform
-              kept in mind
+              themeable styles are built on top of design tokens, with
+              across-platform kept in mind
             </li>
             <li>
               [WIP]popular themes out of the box, such as bootstrap, material
               design...
             </li>
-            <li>easy to customize your own theme or components</li>
           </ul>
-          <h3>notes</h3>
+          <h3>how it works</h3>
           <ul class="ul">
             <li>
-              almost all the design tokens are extracted directly from other
-              popular ui frameworks.
+              almost all design tokens are extracted directly from popular open
+              source ui frameworks.
             </li>
             <ul class="ul">
               <li>
-                halfmoon is used as the primary css variables/tokens source.
+                <a
+                  target="_blank"
+                  href="https://www.gethalfmoon.com/docs/introduction/"
+                  >halfmoon v1.1.0</a
+                >
+                is used as the primary css variables/tokens source.
               </li>
               <li>
-                bootstrap 5 is used as the primary css class names source.
+                <a
+                  target="_blank"
+                  href="https://getbootstrap.com/docs/5.0/getting-started/introduction/"
+                  >bootstrap v5.0.0</a
+                >
+                is used as the primary css class names source.
               </li>
               <li>
-                thanks to these existing ui frameworks, the design tokens from
-                them can save many ux-unfriendly developers from choosing colors
-                and sizes.
+                thanks to these open source frameworks, the design tokens from
+                them can save the ux-unfriendly developers from choosing
+                colors/sizes/...
               </li>
             </ul>
             <li>IE browsers are not supported for lack of css variables.</li>
             <ul class="ul">
               <li>
                 as of 2021-03,
-                <a href="https://caniuse.com/css-variables">caniuse</a> shows
-                that the global usage of css variables is 95.06%.
+                <a target="_blank" href="https://caniuse.com/css-variables"
+                  >caniuse</a
+                >
+                shows that the global usage of css variables is 95.06%.
               </li>
               <li>
                 since the design tokens of
                 <code class="code">@pgd/components</code> is generated using
-                style-dictionary, it seems possible to generate raw style values
-                directly, and then use the raw values in IE.
+                <a
+                  target="_blank"
+                  href="https://amzn.github.io/style-dictionary/#/"
+                  >style-dictionary</a
+                >, it seems possible to generate raw style values directly, and
+                then use the raw values for IE or even other platforms.
               </li>
             </ul>
           </ul>
         </section>
         <section id="install" class="docs-content-section">
           <h2 class="h2">install & usage</h2>
+          <h3>install</h3>
+          <h3>starter template</h3>
           <p></p>
         </section>
         <section id="theming" class="docs-content-section">
           <h2>theming</h2>
+          <h3>default theme</h3>
+          <h3>switch themes</h3>
         </section>
         <!-- #endregion getting started -->
 
@@ -322,23 +346,23 @@
         <!-- #endregion design tokens  -->
 
         <!-- #region general html elements -->
-        <p>general html elements can be used in simple use cases.</p>
-        <p>
-          for complex use cases such as high interactivity and flexible styling,
-          it's better to build your own components with css utilities here and
-          js.
-        </p>
         <section id="code" class="docs-content-section">
+          <p>general html elements can be used in simple use cases.</p>
+          <p>
+            for complex use cases like high interactivity and flexible styling,
+            it's better to build your own components with css here and custom
+            js.
+          </p>
           <h2>code & kbd</h2>
           <ul class="ul">
             <li>
               <code class="code">.code</code> and
-              <code class="code">.kbd</code> are designed to only style inline
+              <code class="code">.kbd</code> are designed to style inline
               elements.
             </li>
             <li>
               code blocks are recommended to be styled with other libs like
-              highlight.js.
+              highlight.js/prismjs.
             </li>
           </ul>
           <h3>code</h3>
@@ -356,7 +380,7 @@
             </ul>
           </div>
 
-          <h3>keyboard character</h3>
+          <h3>kbd: keyboard character</h3>
           <div class="eg-preview">
             <ul class="ul">
               <li>
@@ -386,7 +410,7 @@
               </li>
               <li>
                 Nested unordered lists(without classname):
-                <ul class="ul">
+                <ul class="">
                   <li>are unaffected by this style</li>
                   <li>will still show a bullet</li>
                   <li>and have appropriate left margin</li>
@@ -440,7 +464,7 @@
               </li>
               <li>
                 Nested unordered lists(without classname):
-                <ul class="ul">
+                <ul class="">
                   <li>are unaffected by this style</li>
                   <li>will still show a bullet</li>
                   <li>and have appropriate left margin</li>
@@ -452,10 +476,21 @@
 
           <h3>inline list</h3>
           <div class="eg-preview">
-            <ul class="ul no-bullet list-inline">
+            <!-- <ul class="ul no-bullet list-inline"> -->
+            <ul class="list-inline">
               <li class="">items displayed inline.</li>
               <li class="">bullets removed.</li>
               <li class="">margin applied.</li>
+            </ul>
+          </div>
+
+          <h3>todo</h3>
+          <div class="">
+            <ul class="ul text-muted">
+              <li>
+                bullet position for unordered list is a little higher than
+                expected
+              </li>
             </ul>
           </div>
         </section>
@@ -717,7 +752,7 @@
           </div>
           <h3>textarea</h3>
           <p>allow users to input multi-line plain text.</p>
-          <div class="eg-preivew p-1">
+          <div class="eg-preview p-1">
             <textarea
               class="form-control"
               placeholder="Normal textarea for multi-line input"
@@ -785,34 +820,34 @@
               />
               <label for="radio-2">Radio 2</label>
             </div>
-          </div>
-          <div class="custom-radio mb-3">
-            <input
-              type="radio"
-              name="radio-set-3"
-              id="radio-3"
-              disabled="disabled"
-              value="radio-3"
-            />
-            <label for="radio-3">Radio 3 (disabled)</label>
-          </div>
-          <div class="custom-radio">
-            <input
-              type="radio"
-              name="radio-set-3"
-              id="radio-4"
-              checked="checked"
-              disabled="disabled"
-              value="radio-4"
-            />
-            <label for="radio-4">Radio 4 (disabled)</label>
+            <div class="custom-radio mb-3">
+              <input
+                type="radio"
+                name="radio-set-3"
+                id="radio-3"
+                disabled="disabled"
+                value="radio-3"
+              />
+              <label for="radio-3">Radio 3 (disabled)</label>
+            </div>
+            <div class="custom-radio">
+              <input
+                type="radio"
+                name="radio-set-3"
+                id="radio-4"
+                checked="checked"
+                disabled="disabled"
+                value="radio-4"
+              />
+              <label for="radio-4">Radio 4 (disabled)</label>
+            </div>
           </div>
         </section>
 
         <section id="select" class="docs-content-section">
           <h2>select</h2>
           <h3>default single select</h3>
-          <div class="eg-preivew p-1">
+          <div class="eg-preview p-1">
             <select class="form-control mb-3" id="select-1">
               <option value="" selected="selected" disabled="disabled">
                 Select a color
@@ -823,10 +858,10 @@
             </select>
           </div>
           <h3>multi select</h3>
-          <div class="eg-preivew p-1">
+          <div class="eg-preview p-1">
             <label for="multi-select-1" class="label"
-              >Select one or more colors with <kbd>Ctrl</kbd> or
-              <kbd>Shift</kbd></label
+              >Select one or more colors with <kbd class="kbd">Ctrl</kbd> or
+              <kbd class="kbd">Shift</kbd></label
             >
             <select
               class="form-control"
@@ -904,7 +939,7 @@
           <h3>todo: range with values</h3>
           <p>
             note: js required.
-            <a href="https://codepen.io/uptonking/pen/bGggqxr"
+            <a target="_blank" href="https://codepen.io/uptonking/pen/bGggqxr"
               >live on codepen</a
             >
           </p>
@@ -1036,17 +1071,18 @@
           <h3>button tags</h3>
           <ul class="ul">
             <li>
-              <code>.btn/.btn-*</code> classes are designed to style the html
-              <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code>,
-              <code>&lt;input&gt;</code> elements
+              <code class="code">.btn/.btn-*</code> classes are designed to
+              style the html <code class="code">&lt;button&gt;</code>,
+              <code class="code">&lt;a&gt;</code>,
+              <code class="code">&lt;input&gt;</code> elements
             </li>
             <li>
-              <code>&lt;a&gt;</code> as button is designed to trigger in-page
-              functionality, instead of jumping to new pages.
+              <code class="code">&lt;a&gt;</code> as button is designed to
+              trigger in-page functionality, instead of jumping to new pages.
             </li>
             <li>
-              <code>role="button"</code> should be put on
-              <code>&lt;a&gt;</code> elements for a11y.
+              <code class="code">role="button"</code> should be put on
+              <code class="code">&lt;a&gt;</code> elements for a11y.
             </li>
           </ul>
           <div class="eg-preview">
@@ -1157,8 +1193,8 @@
 
           <ul class="ul">
             <li>
-              <code>.rounded-circle</code> should be put after
-              <code>.btn-square</code> to style a rounded button.
+              <code class="code">.rounded-circle</code> should be put after
+              <code class="code">.btn-square</code> to style a rounded button.
             </li>
           </ul>
 
@@ -1220,12 +1256,13 @@
               a vertical column.
             </li>
             <li>
-              <code>.btn-group</code> is designed to be put on the container
-              element of multiple <code>.btn</code> elements
+              <code class="code">.btn-group</code> is designed to be put on the
+              container element of multiple
+              <code class="code">.btn</code> elements
             </li>
             <li>
-              <code>.btn-group</code> uses
-              <code>display: inline-flex;</code> layout.
+              <code class="code">.btn-group</code> uses
+              <code class="code">display: inline-flex;</code> layout.
             </li>
             <li>all button tags can be used inside the button group.</li>
             <li>all button variants can be used inside the button group.</li>
@@ -1390,32 +1427,33 @@
             attractive contents.
           </p>
           <p>
-            <code>.content</code> can be used to provide a nice margin around
-            the content inside.
+            <code class="code">.content</code> can be used to provide a nice
+            margin around the content inside.
           </p>
           <p>
-            <code>.card</code> can be used to provide a visual box with nice
-            padding, border and margin.
+            <code class="code">.card</code> can be used to provide a visual box
+            with nice padding, border and margin.
           </p>
           <p>
-            <code>.card</code> and <code>.content</code> can be nested inside
-            one another in any combination to help to organize the content
-            better.
+            <code class="code">.card</code> and
+            <code class="code">.content</code> can be nested inside one another
+            in any combination to help to organize the content better.
           </p>
           <p>
-            the margin around <code>.content</code> is equal to the padding
-            inside <code>.card</code>. This makes nested content and cards have
-            proper alignment.
+            the margin around <code class="code">.content</code> is equal to the
+            padding inside <code class="code">.card</code>. This makes nested
+            content and cards have proper alignment.
           </p>
 
           <h3>Basic Card</h3>
           <p>
-            By default, <code>.content</code> and <code>.card</code> will fit
-            the full width of its parent element.
+            By default, <code class="code">.content</code> and
+            <code class="code">.card</code> will fit the full width of its
+            parent element.
           </p>
           <p>
             However, it's easy to change their parent element's width with
-            utility classes like <code>.w-0/25/50/75</code>.
+            utility classes like <code class="code">.w-0/25/50/75</code>.
           </p>
           <div class="eg-preview">
             <div class="card">
@@ -1471,14 +1509,15 @@
           </div>
           <h3>card with padding</h3>
           <p>
-            the margin around <code>.content</code> is equal to the padding
-            inside <code>.card</code>.
+            the margin around <code class="code">.content</code> is equal to the
+            padding inside <code class="code">.card</code>.
           </p>
           <p>This makes nested content and cards have proper alignment</p>
           <p>
             Elements and containers can also be given the same padding as cards
-            using <code>.p-card</code>, <code>.px-card</code>,
-            <code>.py-card</code>
+            using <code class="code">.p-card</code>,
+            <code class="code">.px-card</code>,
+            <code class="code">.py-card</code>
           </p>
           <div class="eg-preview w-75 mw-100">
             <!-- <div class="eg-preview mw-100"> -->
@@ -1753,6 +1792,7 @@
         </section>
         <!-- #endregion /folded progress bar -->
 
+        <!-- #region /folded tooltip -->
         <section id="tooltip" class="docs-content-section">
           <h2>tooltip</h2>
           <p>
@@ -1807,6 +1847,7 @@
             </button>
           </div>
         </section>
+        <!-- #endregion /folded tooltip -->
 
         <!-- #endregion Components -->
 
@@ -1816,31 +1857,38 @@
           <p>containers can be used to center the content horizontally.</p>
           <p>3 types of containers are provided:</p>
           <ul class="ul">
-            <li><code>.container</code> is responsive at all breakpoints.</li>
             <li>
-              <code>.container-fluid</code> is <code>width: 100%;</code> at all
-              breakpoints.
+              <code class="code">.container</code> is responsive at all
+              breakpoints with prefined <code class="code">max-width</code>.
             </li>
             <li>
-              <code>.container-sm/md/lg/xl/xxl</code> is
-              <code>width: 100%;</code> before the specified breakpoints, then
-              responsive at the specified breakpoint width and greater width.
+              <code class="code">.container-fluid</code> is full width at all
+              breakpoints with <code class="code">width: 100%;</code>.
+            </li>
+            <li>
+              <code class="code">.container-sm/md/lg/xl/xxl</code> is
+              <code class="code">width: 100%;</code> before the specified
+              breakpoints, then responsive at the specified breakpoint width and
+              greater width.
             </li>
           </ul>
-          <p><code>.container</code> has no padding and margin by default.</p>
+          <p>
+            <code class="code">.container</code> has no padding and margin by
+            default.
+          </p>
           <ul class="ul">
             <li>
               built-in margins tend to make it unexpected and confusing to align
               contents.
             </li>
             <li>
-              <code>.content</code> is recommended to add margin for contents of
-              containers and cards.
+              <code class="code">.content</code> is recommended to add margin
+              for contents of containers and cards.
             </li>
           </ul>
           <p>
-            this site use <code>.container</code>, responsive for all screen
-            sizes.
+            this site use <code class="code">.container</code>, responsive for
+            all screen sizes.
           </p>
         </section>
         <section id="grid" class="docs-content-section">
@@ -2039,13 +2087,33 @@
         <!-- #region Tools & Resources -->
         <section id="codebase" class="docs-content-section">
           <h2>sass codebase</h2>
-          <p>
-            body只有2个直接子元素，nav[class="nav-header"]是顶部导航条，main[class="docs-outmost-block"]是文档部分区块
-          </p>
-          <p>
-            main元素也包含2个直接子元素，aside[class="docs-toc"]代表左侧目录，div[class="docs-content"]代表右侧长文档，由多个小节多个部分的内容组成
-          </p>
-          <p>每个小节部分的元素是section[class="docs-content-section"]</p>
+
+          <h3>about this documentation site</h3>
+
+          <ul class="ul">
+            <li>
+              <code class="code">&lt;body&gt;</code> 只有2个直接子元素，<code
+                class="code"
+                >&lt;nav class="nav-header" &gt;</code
+              >是顶部导航条，<code class="code"
+                >&lt;main class="docs-outmost-block" &gt;</code
+              >是文档内容
+            </li>
+            <ul class="ul">
+              <li>
+                main元素也包含2个直接子元素，<code class="code"
+                  >&lt;aside class="docs-toc" &gt;</code
+                >代表左侧目录，<code class="code"
+                  >&lt;div class="docs-content" &gt;</code
+                >代表右侧长文档，由多个小节多个部分的内容组成
+              </li>
+              <li>
+                每个小节部分的元素是<code class="code"
+                  >&lt;section class="docs-content-section" &gt;</code
+                >
+              </li>
+            </ul>
+          </ul>
         </section>
       </div>
       <!-- #endregion Tools & Resources -->
