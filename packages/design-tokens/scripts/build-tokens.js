@@ -83,10 +83,10 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerFormat({
   name: 'css/variables-references',
   formatter: function ({ dictionary, options }) {
-    return `${this.selectorName} {
+    return `${this.selector} {
       ${dictionary.allProperties
         .map((token) => {
-          if (token.name.includes('pg-c--button--box-shadow-color')) {
+          if (token.name.includes('pg-c--button--box-shadow')) {
             // if (dictionary.usesReference(prop.original.value)) {
             // console.log('==out, ', JSON.stringify(token));
           }
@@ -113,17 +113,16 @@ StyleDictionary.registerFormat({
             // p.original.value.h.startsWith('{') ||
             // p.original.value.s.startsWith('{') ||
             // p.original.value.l.startsWith('{')
-
-            // dictionary.getReference(p.original.value.h.toString()) ||
-            // dictionary.getReference(p.original.value.s) ||
-            // dictionary.getReference(p.original.value.l)
           }
 
           function outputHslProp(valStr, fallback) {
             // if (valStr.startsWith('{')) {
-            if (dictionary.getReference(valStr.toString())) {
+            // if (dictionary.getReferences(valStr.toString())) {
+            if (dictionary.usesReference(valStr.toString())) {
               const fbOut = fallback !== undefined ? `, ${fallback}` : '';
-              return `var(--${dictionary.getReference(valStr).name}${fbOut})`;
+              return `var(--${
+                dictionary.getReferences(valStr)[0].name
+              }${fbOut})`;
             }
             return valStr;
           }
@@ -144,7 +143,7 @@ StyleDictionary.registerFormat({
                 dictionary.usesReference(token.original.value) &&
                 token.modify
               ) {
-                // 若原值是引用，且包含颜色处理的modify配置，则直接输出颜色值，不输出引用名
+                // 若原值是引用，且包含颜色处理的modify配置，则直接输出颜色值，不输出变量
                 return `  --${token.name}: ${value};`;
               }
 
@@ -179,7 +178,9 @@ StyleDictionary.registerFormat({
               ) {
                 // 若原值不是hsl，但解析后的值却是hsl，则直接输出解析值对应的裸颜色值
                 // 这里对应的场景是一个变量引用的另一个变量是包含hsl的值
-                const reference = dictionary.getReference(token.original.value);
+                const reference = dictionary.getReferences(
+                  token.original.value,
+                )[0];
                 // console.log('==refedHsl, ', JSON.stringify(reference));
                 return `  --${token.name}: var(--${reference.name}, ${value});`;
               }
@@ -187,7 +188,9 @@ StyleDictionary.registerFormat({
 
             if (dictionary.usesReference(token.original.value)) {
               // 若是普通css变量
-              const reference = dictionary.getReference(token.original.value);
+              const reference = dictionary.getReferences(
+                token.original.value,
+              )[0];
               // console.log('==||=, ', JSON.stringify(reference));
               // console.trace();
               // value = reference.name;
@@ -242,6 +245,8 @@ StyleDictionary.registerFormat({
               return `  --${token.name}: var(--${reference.name}, ${fallback});`;
             }
           }
+
+          // 对于不满足前面所有条件的情况，默认直接输出css变量名和输入值
           return `  --${token.name}: ${token.value};`;
         })
         .join('\n')}
@@ -286,7 +291,7 @@ function getSDConfig(themeName) {
           {
             destination: `${themeName}-vars.css`,
             format: 'css/variables-references',
-            selectorName: `.pg-t-${themeName}`,
+            selector: `.pg-t-${themeName}`,
             filterInFormatter: (token) => {
               return !token.name.includes(`${prefix4c}`);
             },
@@ -309,7 +314,7 @@ function getSDConfig(themeName) {
           return {
             destination: `${compType}-vars.css`,
             format: 'css/variables-references',
-            selectorName: `.pg-t-${themeName}`,
+            selector: `.pg-t-${themeName}`,
             filterInFormatter: (token) => {
               return token.name.includes(`${prefix4c}--${compType}`);
             },
@@ -332,7 +337,7 @@ function getSDConfig(themeName) {
           {
             destination: `${themeName}-vars-bundle.css`,
             format: 'css/variables-references',
-            selectorName: `.pg-t-${themeName}`,
+            selector: `.pg-t-${themeName}`,
             options: {
               outputReferences: true,
             },
