@@ -222,13 +222,13 @@ module.exports = {
     height: { value: `1.625rem` }, // 26
     padding: { value: `0 1rem` },
     'font-size': { value: `0.75rem` },
-    'line-height': { value: `${prefix4c}.button.sm.height.value` },
+    'line-height': { value: `{${prefix4c}.button.sm.height.value}` },
   },
   lg: {
     height: { value: `2.5rem` }, // 40
     padding: { value: `0 1.25rem` },
     'font-size': { value: `1.125rem` },
-    'line-height': { value: `${prefix4c}.button.lg.height.value` },
+    'line-height': { value: `{${prefix4c}.button.lg.height.value}` },
   },
   rounded: {
     'border-radius': {

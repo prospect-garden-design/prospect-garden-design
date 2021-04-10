@@ -1,5 +1,5 @@
-@use '../../../design-tokens/dist/halfmoon/sidebar-vars';
-@use '../base/variables'as v;
+@use '../../../design-tokens/dist/pg/sidebar-vars';
+@use '../base/variables' as v;
 
 .#{v.$prefix4pg}sidebar {
   @extend .#{v.$theme-name};

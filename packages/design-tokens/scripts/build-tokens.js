@@ -254,31 +254,14 @@ StyleDictionary.registerFormat({
   },
 });
 
-function getSDConfig(themeName) {
+function getSDConfigForBaseTheme(theme) {
   return {
-    // 指定source时，tokens文件的声明顺序不重要，可以去掉component文件夹
-    // include: ['tokens/global/**/*.js', `tokens/theme/pg/**/*.js`],
-    include: [
-      // 'tokens/globals/**/*.js',
-      // `tokens/themes/pg/index.js`,
-      // `tokens/themes/pg/components/index.js`,
-    ],
     source: [
-      `tokens/themes/${themeName}/index.js`,
-      `tokens/themes/${themeName}/components/index.js`,
+      `tokens/themes/${theme}/index.js`,
+      `tokens/themes/${theme}/components/index.js`,
     ],
     platforms: {
-      // scss: {
-      //   transformGroup: 'scss',
-      //   buildPath: `build/${themeName}/`,
-      //   files: [
-      //     {
-      //       destination: 'variables.scss',
-      //       format: 'scss/variables',
-      //     },
-      //   ],
-      // },
-      themesCss: {
+      globalCss: {
         transforms: [
           'attribute/cti-comp',
           'name/cti/kebab-double',
@@ -289,12 +272,13 @@ function getSDConfig(themeName) {
         buildPath: `dist/`,
         files: [
           {
-            destination: `${themeName}-vars.css`,
+            destination: `${theme}-global-vars.css`,
             format: 'css/variables-references',
-            selector: `.pg-t-${themeName}`,
-            filterInFormatter: (token) => {
-              return !token.name.includes(`${prefix4c}`);
-            },
+            selector: `.pg-t-${theme}`,
+            // filterInFormatter: (token) => {
+            //   return !token.name.includes(`${prefix4c}`);
+            // },
+            filter: (token) => !token.name.includes(`${prefix4c}`),
             options: {
               outputReferences: true,
             },
@@ -309,22 +293,23 @@ function getSDConfig(themeName) {
           'color/css-modify',
           'color/css',
         ],
-        buildPath: `dist/${themeName}/`,
+        buildPath: `dist/${theme}/`,
         files: Object.keys(compTokens[prefix4c]).map((compType) => {
           return {
             destination: `${compType}-vars.css`,
             format: 'css/variables-references',
-            selector: `.pg-t-${themeName}`,
-            filterInFormatter: (token) => {
-              return token.name.includes(`${prefix4c}--${compType}`);
-            },
+            selector: `.pg-t-${theme}`,
+            // filterInFormatter: (token) => {
+            //   return token.name.includes(`${prefix4c}--${compType}`);
+            // },
+            filter: (token) => token.name.includes(`${prefix4c}--${compType}`),
             options: {
               outputReferences: true,
             },
           };
         }),
       },
-      bundleCss: {
+      fullCss: {
         transforms: [
           'attribute/cti-comp',
           'name/cti/kebab-double',
@@ -335,9 +320,9 @@ function getSDConfig(themeName) {
         buildPath: `dist/`,
         files: [
           {
-            destination: `${themeName}-vars-bundle.css`,
+            destination: `${theme}-vars.css`,
             format: 'css/variables-references',
-            selector: `.pg-t-${themeName}`,
+            selector: `.pg-t-${theme}`,
             options: {
               outputReferences: true,
             },
@@ -349,21 +334,171 @@ function getSDConfig(themeName) {
   };
 }
 
-function startBuildMultiThemes() {
-  const themeNameArr = ['halfmoon'];
-  // const themeNameArr = ['pg', 'bootstrap', 'halfmoon'];
-  // const themeNameArr = ['halfmoon', 'spectrum', 'pg'];
-  themeNameArr.forEach((themeName) => {
+function getSDConfigForThemesExt(theme) {
+  return {
+    include: [
+      `tokens/themes/pg/index.js`,
+      `tokens/themes/pg/components/index.js`,
+    ],
+    source: [
+      `tokens/themes/${theme}/index.js`,
+      `tokens/themes/${theme}/components/index.js`,
+    ],
+    platforms: {
+      globalCss: {
+        transforms: [
+          'attribute/cti-comp',
+          'name/cti/kebab-double',
+          // 'size/rem',
+          'color/css-modify',
+          'color/css',
+        ],
+        buildPath: `dist/`,
+        files: [
+          {
+            destination: `${theme}-global-vars.css`,
+            format: 'css/variables-references',
+            selector: `.pg-t-${theme}`,
+            // filterInFormatter: (token) => {
+            //   return !token.name.includes(`${prefix4c}`);
+            // },
+            filter: (token) => !token.name.includes(`${prefix4c}`),
+            options: {
+              outputReferences: true,
+            },
+          },
+        ],
+      },
+      compCss: {
+        transforms: [
+          'attribute/cti-comp',
+          'name/cti/kebab-double',
+          // 'size/rem',
+          'color/css-modify',
+          'color/css',
+        ],
+        buildPath: `dist/${theme}/`,
+        files: Object.keys(compTokens[prefix4c]).map((compType) => {
+          return {
+            destination: `${compType}-vars.css`,
+            format: 'css/variables-references',
+            selector: `.pg-t-${theme}`,
+            // filterInFormatter: (token) => {
+            //   return token.name.includes(`${prefix4c}--${compType}`);
+            // },
+            filter: (token) => token.name.includes(`${prefix4c}--${compType}`),
+            options: {
+              outputReferences: true,
+            },
+          };
+        }),
+      },
+      fullCss: {
+        transforms: [
+          'attribute/cti-comp',
+          'name/cti/kebab-double',
+          // 'size/rem',
+          'color/css-modify',
+          'color/css',
+        ],
+        buildPath: `dist/`,
+        files: [
+          {
+            destination: `${theme}-vars.css`,
+            format: 'css/variables-references',
+            selector: `.pg-t-${theme}`,
+            options: {
+              outputReferences: true,
+            },
+          },
+        ],
+      },
+      // ... platformN
+    },
+  };
+}
+
+function getSDConfigForThemesVariantsDark([theme, variant]) {
+  return {
+    include: [
+      `tokens/themes/pg/index.js`,
+      `tokens/themes/pg/components/index.js`,
+      `tokens/themes/${theme}/index.js`,
+      `tokens/themes/${theme}/components/index.js`,
+    ],
+    source: [
+      `tokens/themes/${theme}--${variant}/index.js`,
+      `tokens/themes/${theme}--${variant}/components/index.js`,
+    ],
+    platforms: {
+      fullCss: {
+        transforms: [
+          'attribute/cti-comp',
+          'name/cti/kebab-double',
+          // 'size/rem',
+          'color/css-modify',
+          'color/css',
+        ],
+        buildPath: `dist/`,
+        files: [
+          {
+            destination: `${theme}--${variant}-vars.css`,
+            format: 'css/variables-references',
+            selector: `.pg-t-${theme}--${variant}`,
+            filter: (token) => token.isSource,
+            options: {
+              outputReferences: true,
+            },
+          },
+        ],
+      },
+      // ... platformN
+    },
+  };
+}
+
+/** build only one base theme, a.k.a. default theme */
+function buildBaseTheme() {
+  console.log('\n============buildBaseTheme start: pg tokens============\n');
+  StyleDictionary.extend(getSDConfigForBaseTheme('pg')).buildAllPlatforms();
+}
+
+/** build multi extended themes based on base theme, like material, pico... */
+function buildThemesExtensions() {
+  console.log('\n============buildThemesExtensions start=============\n');
+  const themesExtensions = ['halfmoon'];
+  // const themeNameArr = ['bootstrap', 'halfmoon'];
+  themesExtensions.forEach((theme) => {
     console.log('\n==============================================');
-    console.log(`\nprocessing:  [${themeName}]`);
-    const SD = StyleDictionary.extend(getSDConfig(themeName));
+    console.log(`\nprocessing:  [${theme}]`);
+    const SD = StyleDictionary.extend(getSDConfigForThemesExt(theme));
     SD.buildAllPlatforms();
-    console.log('\nend processing');
+    // console.log('\nend processing');
   });
 }
-console.log('build started');
 
-startBuildMultiThemes();
+/** build theme variants for existing themes, like dark mode */
+function buildThemesVariantsLikeDark() {
+  console.log('\n===========buildThemesVariantsLikeDark start============\n');
+
+  const themesVariants = [['halfmoon', 'dark']];
+  // const themeNameArr = ['bootstrap', 'halfmoon'];
+  themesVariants.forEach((themeVar) => {
+    console.log('\n==============================================');
+    console.log(`\nprocessing:  [${themeVar}]`);
+    const SD = StyleDictionary.extend(
+      getSDConfigForThemesVariantsDark(themeVar),
+    );
+    SD.buildAllPlatforms();
+    // console.log('\nend processing');
+  });
+}
+
+console.log('====build started');
+
+buildBaseTheme();
+buildThemesExtensions();
+buildThemesVariantsLikeDark();
 
 // startBuildThemeVariants();
 console.log('\n==============================================');

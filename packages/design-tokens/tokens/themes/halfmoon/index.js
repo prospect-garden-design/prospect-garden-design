@@ -3,13 +3,13 @@ const palette = require('./color-palette');
 const colorGlobal = require('./color-global');
 const size = require('./size');
 
-const prefixedVars = {
+const prefixedTokens = {
   [prefix4g]: {
     color: { ...palette, ...colorGlobal },
     size,
   },
 };
 
-// console.log('==halfmoon prefixed global vars: ', JSON.stringify(prefix4g));
+// console.log('==halfmoon prefixed global tokens: ', JSON.stringify(prefix4g));
 
-module.exports = prefixedVars;
+module.exports = prefixedTokens;

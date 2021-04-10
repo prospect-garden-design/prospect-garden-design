@@ -9,10 +9,10 @@
  */
 
 // ------- global variables for themes ----------------- //
-@use '../../design-tokens/dist/halfmoon-vars';
+@use '../../design-tokens/dist/pg-global-vars';
 
 // ----------- config, variables, css reset ------------ //
-@use 'base/variables' with ($prefix4pg: ""); // null is ok
+@use 'base/variables' with ($prefix4pg: "",$theme-name: pg-t-pg); // null is ok
 // @use 'base/variables' with ($prefix4pg: pg-);
 @use 'base/reset-normalize';
 @use 'base/reset-base';

@@ -1,5 +1,5 @@
-@use '../../../design-tokens/dist/halfmoon/card-vars';
-@use '../base/variables'as v;
+@use '../../../design-tokens/dist/pg/card-vars';
+@use '../base/variables' as v;
 
 .#{v.$prefix4pg}card,
 .#{v.$prefix4pg}card-title,
