@@ -2,7 +2,7 @@
 @use '../base/variables' as v;
 
 .#{v.$prefix4pg}navbar {
-  @extend .#{v.$theme-name};
+  // @extend .#{v.$theme-name};
 
   position: relative;
   display: flex;

@@ -3,7 +3,7 @@
 @use './button-utils' as u;
 
 .#{v.$prefix4pg}btn {
-  @extend .#{v.$theme-name}; // all component variables
+  // @extend .#{v.$theme-name}; // all component variables
 
   /* #region btn-default-base */
   // position: relative;

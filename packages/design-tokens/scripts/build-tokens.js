@@ -362,7 +362,8 @@ function getSDConfigForThemesExt(theme) {
             // filterInFormatter: (token) => {
             //   return !token.name.includes(`${prefix4c}`);
             // },
-            filter: (token) => !token.name.includes(`${prefix4c}`),
+            filter: (token) =>
+              token.isSource && !token.name.includes(`${prefix4c}`),
             options: {
               outputReferences: true,
             },
@@ -386,7 +387,8 @@ function getSDConfigForThemesExt(theme) {
             // filterInFormatter: (token) => {
             //   return token.name.includes(`${prefix4c}--${compType}`);
             // },
-            filter: (token) => token.name.includes(`${prefix4c}--${compType}`),
+            filter: (token) =>
+              token.isSource && token.name.includes(`${prefix4c}--${compType}`),
             options: {
               outputReferences: true,
             },
@@ -407,6 +409,7 @@ function getSDConfigForThemesExt(theme) {
             destination: `${theme}-vars.css`,
             format: 'css/variables-references',
             selector: `.pg-t-${theme}`,
+            filter: (token) => token.isSource,
             options: {
               outputReferences: true,
             },

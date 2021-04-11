@@ -8,7 +8,9 @@
 
 # later
 
-- provide config to make css variables prefix, like `pg-g` `pg-c`, optional
+- in dark mode, scrollbar in the page is white and bold.
+
+- provide config to make token name prefix, like `pg-g` `pg-c`, optional
 
 # engineering
 
