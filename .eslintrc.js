@@ -63,6 +63,7 @@ module.exports = {
     'react/sort-comp': 1,
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 1,
+    'react/jsx-fragments': 0,
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-unused-vars': 1,
     '@typescript-eslint/no-empty-interface': 1,
