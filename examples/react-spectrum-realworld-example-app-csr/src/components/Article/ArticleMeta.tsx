@@ -1,4 +1,6 @@
 import React from 'react';
+import { View, Flex, Grid } from '@adobe/react-spectrum';
+
 import ArticleActions from './ArticleActions';
 import { IArticle } from '../../types';
 import { ArticleAction } from '../../reducers/article';

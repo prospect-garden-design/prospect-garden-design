@@ -1,4 +1,6 @@
 import React from 'react';
+import { View, Flex, Grid } from '@adobe/react-spectrum';
+
 import marked from 'marked';
 import ArticleMeta from './ArticleMeta';
 import ArticleTags from '../common/ArticleTags';
@@ -56,17 +58,18 @@ export default function Article({
 
   return (
     article && (
-      <div className="article-page">
-        <div className="banner">
-          <div className="container">
+      <Grid>
+        {/* <div className="article-page"> */}
+        <div className='banner'>
+          <div className='container'>
             <h1>{article.title}</h1>
             <ArticleMeta article={article} dispatch={dispatch} />
           </div>
         </div>
 
-        <div className="container page">
-          <div className="row article-content">
-            <div className="col-md-12">
+        <div className='container page'>
+          <div className='row article-content'>
+            <div className='col-md-12'>
               <p dangerouslySetInnerHTML={convertToMarkdown(article.body)} />
               <ArticleTags tagList={article.tagList} />
             </div>
@@ -74,7 +77,7 @@ export default function Article({
 
           <hr />
 
-          <div className="article-actions">
+          <div className='article-actions'>
             <ArticleMeta article={article} dispatch={dispatch} />
           </div>
 
@@ -84,7 +87,8 @@ export default function Article({
             dispatch={dispatch}
           />
         </div>
-      </div>
+        {/* </div> */}
+      </Grid>
     )
   );
 }
