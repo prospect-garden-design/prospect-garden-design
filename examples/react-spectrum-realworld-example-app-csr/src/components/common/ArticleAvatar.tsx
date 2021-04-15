@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
+import { View, Flex, Grid, Text, Heading } from '@adobe/react-spectrum';
+
 import { IArticle } from '../../types';
 import { ALT_IMAGE_URL } from '../../utils';
 
@@ -11,17 +13,21 @@ export default function ArticleAvatar({
   article: { author, createdAt },
 }: ArticleAvatarProps) {
   return (
-    <React.Fragment>
+    <Flex gap='size-100' justifyContent='start' alignItems='center'>
       <Link to={`/${author.username}`}>
-        <img src={author.image || ALT_IMAGE_URL} alt={author.username} />
+        <img
+          src={author.image || ALT_IMAGE_URL}
+          alt={author.username}
+          style={{ width: '32px', height: '32px', borderRadius: '30px' }}
+        />
       </Link>
 
-      <div className="info">
-        <Link className="author" to={`/${author.username}`}>
+      <Grid>
+        <Link className='author' to={`/${author.username}`}>
           {author.username}
         </Link>
-        <span className="date">{new Date(createdAt).toDateString()}</span>
-      </div>
-    </React.Fragment>
+        <span className='date'>{new Date(createdAt).toDateString()}</span>
+      </Grid>
+    </Flex>
   );
 }

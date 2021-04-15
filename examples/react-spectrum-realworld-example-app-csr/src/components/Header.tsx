@@ -1,69 +1,57 @@
 import React from 'react';
 import { Link, LinkGetProps, LinkProps } from '@reach/router';
+import { View, Flex, Grid, Text, Heading } from '@adobe/react-spectrum';
+
 import useAuth from '../context/auth';
 import { IUser } from '../types';
 import { APP_NAME } from '../utils';
 
-export default function Header() {
+export function Header() {
   const {
     state: { user },
   } = useAuth();
 
   return (
-    <nav className='navbar navbar-light'>
-      <div className='container'>
-        <Link to='/' className='navbar-brand'>
+    <Grid
+      columns={['3fr', '1fr']}
+      columnGap='size-300'
+      marginX='size-1000'
+      marginY='size-200'
+    >
+      <Heading level={3}>
+        <Link to='/' className=''>
           {APP_NAME}
         </Link>
-        {user ? <LoggedInView user={user} /> : <LoggedOutView />}
-      </div>
-    </nav>
+      </Heading>
+      {user ? <LoggedInView user={user} /> : <LoggedOutView />}
+    </Grid>
   );
 }
 
 const LoggedInView = ({ user: { username, image } }: { user: IUser }) => (
-  <ul className='nav navbar-nav pull-xs-right'>
-    <li className='nav-item'>
-      <NavLink to='/'>Home</NavLink>
-    </li>
-
-    <li className='nav-item'>
-      <NavLink to='/editor'>
-        <i className='ion-compose' />
-        &nbsp;New Post
-      </NavLink>
-    </li>
-
-    <li className='nav-item'>
-      <NavLink to='/settings'>
-        <i className='ion-gear-a' />
-        &nbsp;Settings
-      </NavLink>
-    </li>
-
-    <li className='nav-item'>
-      <NavLink to={`/${username}`}>
-        {image && <img src={image} className='user-pic' alt={username} />}
-        {username}
-      </NavLink>
-    </li>
-  </ul>
+  <Flex gap='size-300' marginStart='size-200'>
+    <NavLink to='/'>Home</NavLink>
+    <NavLink to='/editor'>
+      <i className='ion-compose' />
+      &nbsp;New Post
+    </NavLink>
+    <NavLink to='/settings'>
+      <i className='ion-gear-a' />
+      &nbsp;Settings
+    </NavLink>
+    <NavLink to={`/${username}`}>
+      {image && <img src={image} className='user-pic' alt={username} />}
+      {username}
+    </NavLink>
+  </Flex>
 );
 
 const LoggedOutView = () => (
-  <ul className='nav navbar-nav pull-xs-right'>
-    <li className='nav-item'>
-      <NavLink to='/'>Home</NavLink>
-    </li>
-
-    <li className='nav-item'>
-      <NavLink to='/login'>Sign in</NavLink>
-    </li>
-
-    <li className='nav-item'>
-      <NavLink to='/register'>Sign up</NavLink>
-    </li>
-  </ul>
+  <Flex gap='size-300' marginStart='size-200'>
+    <NavLink to='/'>Home</NavLink>
+    <NavLink to='/login'>Sign in</NavLink>
+    <NavLink to='/register'>Sign up</NavLink>
+  </Flex>
 );
 
 const NavLink = (props: LinkProps<{}>) => {
@@ -76,3 +64,5 @@ const isActive = ({ isCurrent }: LinkGetProps) => {
     ? { className: 'nav-link active' }
     : { className: 'nav-link' };
 };
+
+export default Header;

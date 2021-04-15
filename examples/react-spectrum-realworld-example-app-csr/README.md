@@ -5,3 +5,11 @@
 # overview
 
 # usage
+
+# notes
+
+- components required
+  - home page
+    - badge for Tags
+    - tabs for TabList
+    - pagination for ArticleList

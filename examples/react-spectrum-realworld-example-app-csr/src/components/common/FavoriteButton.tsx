@@ -45,11 +45,12 @@ export default function FavoriteButton({
 
   return (
     <button
+      // style={{ display: 'inline-block', width: '36px', height: '28px' }}
       className={classNames.join(' ')}
       onClick={handleClick}
       disabled={loading}
     >
-      <i className="ion-heart" />
+      <i className='ion-heart' />
       &nbsp;
       {children}
     </button>

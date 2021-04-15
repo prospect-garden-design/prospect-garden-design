@@ -28,10 +28,11 @@ export function RHome(props: RouteComponentProps) {
     <Grid
       areas={['mainView tagsView']}
       columns={['3fr', '1fr']}
+      columnGap='size-300'
       marginX='size-1000'
     >
       <ArticlesProvider>
-        <View gridArea='mainView' padding='size-500'>
+        <View gridArea='mainView'>
           <MainView />
         </View>
         <View gridArea='tagsView'>
@@ -41,5 +42,6 @@ export function RHome(props: RouteComponentProps) {
     </Grid>
   );
 }
+
 // export default Home;
 export default RHome;
