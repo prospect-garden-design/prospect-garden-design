@@ -13,10 +13,10 @@ type ArticleMetaProps = {
 
 function ArticleMeta({ article, dispatch }: ArticleMetaProps) {
   return (
-    <div className="article-meta">
+    <Flex gap='size-100' alignItems='end'>
       <ArticleAvatar article={article} />
       <ArticleActions article={article} dispatch={dispatch} />
-    </div>
+    </Flex>
   );
 }
 

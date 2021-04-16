@@ -10,6 +10,7 @@
 
 - components required
   - home page
+    - responsive container for layout
     - badge for Tags
     - tabs for TabList
     - pagination for ArticleList

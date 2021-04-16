@@ -25,11 +25,12 @@ export default function FollowUserButton({
 
   return (
     <button
+      style={{ height: '28px' }}
       className={classNames.join(' ')}
       onClick={onClick}
       disabled={loading}
     >
-      <i className="ion-plus-round" />
+      <i className='ion-plus-round' />
       &nbsp;
       {text}
     </button>

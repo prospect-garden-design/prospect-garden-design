@@ -11,12 +11,13 @@ export function Header() {
     state: { user },
   } = useAuth();
 
+  // 用grid布局是为了将header右侧文字菜单和Home的MainView右侧标签对齐
   return (
     <Grid
       columns={['3fr', '1fr']}
       columnGap='size-300'
       marginX='size-1000'
-      marginY='size-200'
+      marginY='size-160'
     >
       <Heading level={3}>
         <Link to='/' className=''>

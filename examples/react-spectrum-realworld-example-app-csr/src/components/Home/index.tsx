@@ -7,22 +7,6 @@ import Tags from './Tags';
 import { ArticlesProvider } from '../../context/articles';
 import { RouteComponentProps } from '@reach/router';
 
-export function Home(props: RouteComponentProps) {
-  return (
-    <div className='home-page'>
-      <Banner />
-      <div className='container page'>
-        <div className='row'>
-          <ArticlesProvider>
-            <MainView />
-            <Tags />
-          </ArticlesProvider>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function RHome(props: RouteComponentProps) {
   return (
     <Grid

@@ -14,8 +14,12 @@ export default function DeleteButton({ article }: { article: IArticle }) {
   };
 
   return (
-    <button className="btn btn-outline-danger btn-sm" onClick={handleDelete}>
-      <i className="ion-trash-a" /> Delete Article
+    <button
+      style={{ height: '28px' }}
+      className='btn btn-outline-danger btn-sm'
+      onClick={handleDelete}
+    >
+      <i className='ion-trash-a' /> Delete Article
     </button>
   );
 }

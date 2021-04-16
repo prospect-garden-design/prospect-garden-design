@@ -40,9 +40,9 @@ export default function ArticleActions({
     <React.Fragment>
       <Link
         to={`/editor/${article.slug}`}
-        className="btn btn-outline-secondary btn-sm"
+        className='btn btn-outline-secondary btn-sm'
       >
-        <i className="ion-edit" /> Edit Article
+        <i className='ion-edit' /> Edit Article
       </Link>
       <DeleteButton article={article} />
     </React.Fragment>
@@ -55,7 +55,7 @@ export default function ArticleActions({
       />
       <FavoriteButton article={article} dispatch={dispatch}>
         {article.favorited ? 'Unfavorite Article' : 'Favorite Article'}
-        <span className="counter">({article.favoritesCount})</span>
+        <span className=''>({article.favoritesCount})</span>
       </FavoriteButton>
     </React.Fragment>
   );

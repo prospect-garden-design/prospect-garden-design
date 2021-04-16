@@ -18,7 +18,7 @@ export default function ArticleAvatar({
         <img
           src={author.image || ALT_IMAGE_URL}
           alt={author.username}
-          style={{ width: '32px', height: '32px', borderRadius: '30px' }}
+          style={{ height: '32px', borderRadius: '30px' }}
         />
       </Link>
 

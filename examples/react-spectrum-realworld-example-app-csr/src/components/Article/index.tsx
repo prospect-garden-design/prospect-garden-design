@@ -58,37 +58,41 @@ export default function Article({
 
   return (
     article && (
-      <Grid>
-        {/* <div className="article-page"> */}
-        <div className='banner'>
-          <div className='container'>
+      <View>
+        <View
+          paddingY='size-160'
+          backgroundColor='gray-900'
+          UNSAFE_style={{ color: '#fff' }}
+        >
+          <Grid
+            rowGap='size-200'
+            marginX='size-2400'
+            marginY='size-400'
+            backgroundColor='blue-600'
+          >
             <h1>{article.title}</h1>
             <ArticleMeta article={article} dispatch={dispatch} />
+          </Grid>
+        </View>
+
+        <View marginX='size-2400' marginY='size-400'>
+          <div className=''>
+            <p dangerouslySetInnerHTML={convertToMarkdown(article.body)} />
+            <ArticleTags tagList={article.tagList} />
+            <hr style={{ color: '#333' }} />
           </div>
-        </div>
 
-        <div className='container page'>
-          <div className='row article-content'>
-            <div className='col-md-12'>
-              <p dangerouslySetInnerHTML={convertToMarkdown(article.body)} />
-              <ArticleTags tagList={article.tagList} />
-            </div>
-          </div>
-
-          <hr />
-
-          <div className='article-actions'>
+          <Grid justifyContent='center' rowGap='size-400' marginTop='size-400'>
             <ArticleMeta article={article} dispatch={dispatch} />
-          </div>
 
-          <CommentContainer
-            comments={comments}
-            slug={slug}
-            dispatch={dispatch}
-          />
-        </div>
-        {/* </div> */}
-      </Grid>
+            <CommentContainer
+              comments={comments}
+              slug={slug}
+              dispatch={dispatch}
+            />
+          </Grid>
+        </View>
+      </View>
     )
   );
 }
