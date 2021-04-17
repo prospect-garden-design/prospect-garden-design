@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { IUser } from '../../types';
 import { ArticleAction } from '../../reducers/article';
 import { createComment } from '../../api/CommentsAPI';
@@ -31,25 +31,25 @@ export default function CommentInput({
   };
 
   return (
-    <form className="card comment-form" onSubmit={handleSubmit}>
-      <div className="card-block">
+    <form className='card comment-form' onSubmit={handleSubmit}>
+      <div className='card-block'>
         <textarea
-          className="form-control"
-          placeholder="Write a comment..."
+          className='form-control'
+          placeholder='Write a comment...'
           value={body}
           onChange={(event) => setBody(event.target.value)}
           rows={3}
         />
       </div>
-      <div className="card-footer">
+      <div className='card-footer'>
         <img
           src={user.image}
-          className="comment-author-img"
+          className='comment-author-img'
           alt={user.username}
         />
         <button
-          className="btn btn-sm btn-primary"
-          type="submit"
+          className='btn btn-sm btn-primary'
+          type='submit'
           disabled={loading}
         >
           Post Comment

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { navigate, RouteComponentProps } from '@reach/router';
 import ListErrors from './common/ListErrors';
 import useAuth from '../context/auth';
@@ -76,67 +76,67 @@ export default function Settings(_: RouteComponentProps) {
   };
 
   return (
-    <div className="settings-page">
-      <div className="container page">
-        <div className="row">
-          <div className="col-md-6 offset-md-3 col-xs-12">
-            <h1 className="text-xs-center">Your Settings</h1>
+    <div className='settings-page'>
+      <div className='container page'>
+        <div className='row'>
+          <div className='col-md-6 offset-md-3 col-xs-12'>
+            <h1 className='text-xs-center'>Your Settings</h1>
             {errors && <ListErrors errors={errors} />}
             <form onSubmit={handleSubmit}>
               <fieldset>
-                <div className="form-group">
+                <div className='form-group'>
                   <input
-                    name="image"
-                    className="form-control"
-                    type="text"
-                    placeholder="URL of profile picture"
+                    name='image'
+                    className='form-control'
+                    type='text'
+                    placeholder='URL of profile picture'
                     value={form.image}
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group">
+                <div className='form-group'>
                   <input
-                    name="username"
-                    className="form-control form-control-lg"
-                    type="text"
-                    placeholder="Username"
+                    name='username'
+                    className='form-control form-control-lg'
+                    type='text'
+                    placeholder='Username'
                     value={form.username}
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group">
+                <div className='form-group'>
                   <textarea
-                    name="bio"
-                    className="form-control form-control-lg"
+                    name='bio'
+                    className='form-control form-control-lg'
                     rows={8}
-                    placeholder="Short bio about you"
+                    placeholder='Short bio about you'
                     value={form.bio}
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group">
+                <div className='form-group'>
                   <input
-                    name="email"
-                    className="form-control form-control-lg"
-                    type="email"
-                    placeholder="Email"
+                    name='email'
+                    className='form-control form-control-lg'
+                    type='email'
+                    placeholder='Email'
                     value={form.email}
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group">
+                <div className='form-group'>
                   <input
-                    name="password"
-                    className="form-control form-control-lg"
-                    type="password"
-                    placeholder="New Password"
+                    name='password'
+                    className='form-control form-control-lg'
+                    type='password'
+                    placeholder='New Password'
                     value={form.password}
                     onChange={handleChange}
                   />
                 </div>
                 <button
-                  className="btn btn-lg btn-primary pull-xs-right"
-                  type="submit"
+                  className='btn btn-lg btn-primary pull-xs-right'
+                  type='submit'
                   disabled={loading}
                 >
                   Update Settings
@@ -144,7 +144,7 @@ export default function Settings(_: RouteComponentProps) {
               </fieldset>
             </form>
             <hr />
-            <button className="btn btn-outline-danger" onClick={handleLogout}>
+            <button className='btn btn-outline-danger' onClick={handleLogout}>
               Or click here to logout.
             </button>
           </div>

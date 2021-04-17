@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, Flex, Grid } from '@adobe/react-spectrum';
 
 import Banner from './Banner';
@@ -16,12 +16,8 @@ export function RHome(props: RouteComponentProps) {
       marginX='size-1000'
     >
       <ArticlesProvider>
-        <View gridArea='mainView'>
-          <MainView />
-        </View>
-        <View gridArea='tagsView'>
-          <Tags />
-        </View>
+        <MainView />
+        <Tags />
       </ArticlesProvider>
     </Grid>
   );

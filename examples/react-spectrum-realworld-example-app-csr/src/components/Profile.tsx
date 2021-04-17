@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Link, RouteComponentProps } from '@reach/router';
 import ProfileArticles from './ProfileArticles';
 import FollowUserButton from './common/FollowUserButton';

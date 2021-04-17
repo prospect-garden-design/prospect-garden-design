@@ -17,7 +17,7 @@
   "scripts": {
     "clean": "rimraf \"packages/**/dist\"",
     "dev": "",
-    "formatter": "prettier \"**/*.{js,jsx,ts,tsx,json,css}\" --write",
+    "formatter": "prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
     "formatter:check": "npm run formatter -- --check",
     "help": "echo 'exec npm start to view the demo'",
     "lint": "npm run formatter:check",

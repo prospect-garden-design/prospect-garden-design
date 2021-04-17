@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Link, LinkGetProps, LinkProps } from '@reach/router';
 import { View, Flex, Grid, Text, Heading } from '@adobe/react-spectrum';
 

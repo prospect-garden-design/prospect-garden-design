@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { ITab } from '../reducers/articleList';
 import { ArticlesProvider } from '../context/articles';
 import TabList from './common/TabList';
@@ -17,10 +17,10 @@ function ProfileArticles({ username }: { username: string }) {
 
   return (
     <ArticlesProvider>
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-md-10 offset-md-1">
-            <div className="articles-toggle">
+      <div className='container'>
+        <div className='row'>
+          <div className='col-xs-12 col-md-10 offset-md-1'>
+            <div className='articles-toggle'>
               <TabList data={tabsData} />
             </div>
             <ArticleList />

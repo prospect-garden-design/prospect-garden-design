@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { ArticleListAction } from '../reducers/articleList';
 
 type ListPaginationProps = {
@@ -24,7 +24,7 @@ export default function ListPagination({
 
   return (
     <nav>
-      <div className="pagination">
+      <div className='pagination'>
         {pageNumbers.map((number) => {
           const isCurrent = number === page;
           return (
@@ -33,7 +33,7 @@ export default function ListPagination({
               onClick={() => dispatch({ type: 'SET_PAGE', page: number })}
               key={number}
             >
-              <button className="page-link">{number + 1}</button>
+              <button className='page-link'>{number + 1}</button>
             </li>
           );
         })}

@@ -72,6 +72,7 @@ module.exports = {
     '@typescript-eslint/no-invalid-this': 1,
     '@typescript-eslint/no-var-requires': 1,
     '@typescript-eslint/no-require-imports': 1,
+    '@typescript-eslint/no-duplicate-imports': 1,
     '@typescript-eslint/ban-types': 1,
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/explicit-function-return-type': 0,

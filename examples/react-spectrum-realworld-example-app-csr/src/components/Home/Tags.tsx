@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, Flex, Grid, Button } from '@adobe/react-spectrum';
 
 import { getTags } from '../../api/TagsAPI';
@@ -34,36 +34,33 @@ function Tags() {
   }, []);
 
   return (
-    // <div className='sidebar'>
-    <View
-      backgroundColor='gray-200'
-      padding='size-200'
-      marginTop='size-400'
-      maxWidth='size-3600'
-    >
-      <p>Popular Tags</p>
-      {loading ? (
-        <div>Loading Tags...</div>
-      ) : (
-        <div className='tag-list'>
-          {tags.map((tag) => (
-            <button
-              key={tag}
-              className='tag-pill tag-default'
-              onClick={() =>
-                dispatch({
-                  type: 'SET_TAB',
-                  tab: { type: 'TAG', label: tag },
-                })
-              }
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-      )}
+    <View gridArea='tagsView' marginTop='size-400' maxWidth='size-3600'>
+      <View padding='size-200' backgroundColor='gray-200'>
+        <p>Popular Tags</p>
+        {loading ? (
+          <div>Loading Tags...</div>
+        ) : (
+          <View>
+            <div className='tag-list'>
+              {tags.map((tag) => (
+                <button
+                  key={tag}
+                  className='tag-pill tag-default'
+                  onClick={() =>
+                    dispatch({
+                      type: 'SET_TAB',
+                      tab: { type: 'TAG', label: tag },
+                    })
+                  }
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </View>
+        )}
+      </View>
     </View>
-    // </div>
   );
 }
 

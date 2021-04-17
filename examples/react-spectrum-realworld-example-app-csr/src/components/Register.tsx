@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Link, navigate, RouteComponentProps, Redirect } from '@reach/router';
 import { register } from '../api/AuthAPI';
 import useAuth from '../context/auth';
@@ -44,52 +44,52 @@ export default function Register(_: RouteComponentProps) {
   };
 
   if (user) {
-    return <Redirect to="/" noThrow />;
+    return <Redirect to='/' noThrow />;
   }
 
   return (
-    <div className="auth-page">
-      <div className="container page">
-        <div className="row">
-          <div className="col-md-6 offset-md-3 col-xs-12">
-            <h1 className="text-xs-center">Sign up</h1>
-            <p className="text-xs-center">
-              <Link to="/login">Have an account?</Link>
+    <div className='auth-page'>
+      <div className='container page'>
+        <div className='row'>
+          <div className='col-md-6 offset-md-3 col-xs-12'>
+            <h1 className='text-xs-center'>Sign up</h1>
+            <p className='text-xs-center'>
+              <Link to='/login'>Have an account?</Link>
             </p>
             {errors && <ListErrors errors={errors} />}
             <form onSubmit={handleSubmit}>
-              <fieldset className="form-group">
+              <fieldset className='form-group'>
                 <input
-                  name="username"
-                  className="form-control form-control-lg"
-                  type="text"
+                  name='username'
+                  className='form-control form-control-lg'
+                  type='text'
                   value={form.username}
-                  placeholder="Your Name"
+                  placeholder='Your Name'
                   onChange={handleChange}
                 />
               </fieldset>
-              <fieldset className="form-group">
+              <fieldset className='form-group'>
                 <input
-                  name="email"
-                  className="form-control form-control-lg"
-                  type="email"
+                  name='email'
+                  className='form-control form-control-lg'
+                  type='email'
                   value={form.email}
-                  placeholder="Email"
+                  placeholder='Email'
                   onChange={handleChange}
                 />
               </fieldset>
-              <fieldset className="form-group">
+              <fieldset className='form-group'>
                 <input
-                  name="password"
-                  className="form-control form-control-lg"
-                  type="password"
+                  name='password'
+                  className='form-control form-control-lg'
+                  type='password'
                   value={form.password}
-                  placeholder="Password"
+                  placeholder='Password'
                   onChange={handleChange}
                 />
               </fieldset>
               <button
-                className="btn btn-lg btn-primary pull-xs-right"
+                className='btn btn-lg btn-primary pull-xs-right'
                 disabled={loading}
               >
                 Sign Up

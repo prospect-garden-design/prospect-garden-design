@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { navigate } from '@reach/router';
 import { IArticle } from '../../types';
 import { deleteArticle } from '../../api/ArticlesAPI';

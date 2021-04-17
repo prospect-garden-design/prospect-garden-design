@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { login } from '../api/AuthAPI';
 import ListErrors from './common/ListErrors';
 import useAuth from '../context/auth';
@@ -32,43 +32,43 @@ export default function Login(_: RouteComponentProps) {
   };
 
   if (user) {
-    return <Redirect to="/" noThrow />;
+    return <Redirect to='/' noThrow />;
   }
 
   return (
-    <div className="auth-page">
-      <div className="container page">
-        <div className="row">
-          <div className="col-md-6 offset-md-3 col-xs-12">
-            <h1 className="text-xs-center">Sign in</h1>
-            <p className="text-xs-center">
-              <Link to="/register">Need an account?</Link>
+    <div className='auth-page'>
+      <div className='container page'>
+        <div className='row'>
+          <div className='col-md-6 offset-md-3 col-xs-12'>
+            <h1 className='text-xs-center'>Sign in</h1>
+            <p className='text-xs-center'>
+              <Link to='/register'>Need an account?</Link>
             </p>
             {errors && <ListErrors errors={errors} />}
             <form onSubmit={handleSubmit}>
-              <fieldset className="form-group">
+              <fieldset className='form-group'>
                 <input
-                  name="email"
-                  className="form-control form-control-lg"
-                  type="email"
+                  name='email'
+                  className='form-control form-control-lg'
+                  type='email'
                   value={email}
-                  placeholder="Email"
+                  placeholder='Email'
                   onChange={(event) => setEmail(event.target.value)}
                 />
               </fieldset>
-              <fieldset className="form-group">
+              <fieldset className='form-group'>
                 <input
-                  name="password"
-                  className="form-control form-control-lg"
-                  type="password"
+                  name='password'
+                  className='form-control form-control-lg'
+                  type='password'
                   value={password}
-                  placeholder="Password"
+                  placeholder='Password'
                   onChange={(event) => setPassword(event.target.value)}
                 />
               </fieldset>
               <button
-                className="btn btn-lg btn-primary pull-xs-right"
-                type="submit"
+                className='btn btn-lg btn-primary pull-xs-right'
+                type='submit'
                 disabled={loading}
               >
                 Sign In

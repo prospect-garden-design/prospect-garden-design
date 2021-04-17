@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
 import {
   Provider,
   defaultTheme,
   lightTheme,
+  darkTheme,
   Button,
 } from '@adobe/react-spectrum';
 import { Router } from '@reach/router';
@@ -54,24 +56,27 @@ function App() {
 
   return (
     // <Provider theme={defaultTheme}>
-    <Provider theme={lightTheme}>
-      <Header />
-      <Router>
-        <Home default path='/' />
-        <Article path='article/:slug' />
-        {/* <Register path='register' />
+    // <Provider theme={darkTheme}>
+    <AuthProvider>
+      <Provider theme={lightTheme}>
+        <Header />
+        <Router>
+          <Home default path='/' />
+          <Article path='article/:slug' />
+          {/* <Register path='register' />
         <Login path='login' />
         <Profile path=':username' />
         <PrivateRoute as={Settings} path='/settings' />
         <PrivateRoute as={Editor} path='/editor' />
         <PrivateRoute as={Editor} path='/editor/:slug' /> */}
-      </Router>
-    </Provider>
+        </Router>
+      </Provider>
+    </AuthProvider>
   );
 }
 
-export default () => (
-  <AuthProvider>
-    <App />
-  </AuthProvider>
-);
+export default App;
+
+// export default () => (
+//     <App />
+// );

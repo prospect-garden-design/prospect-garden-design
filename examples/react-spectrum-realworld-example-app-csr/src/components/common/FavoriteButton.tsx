@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { IArticle } from '../../types';
 import { ArticleAction } from '../../reducers/article';
 import { ArticleListAction } from '../../reducers/articleList';

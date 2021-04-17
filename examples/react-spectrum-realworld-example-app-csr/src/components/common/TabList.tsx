@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import useArticles from '../../context/articles';
 import { ITab } from '../../reducers/articleList';
 
@@ -30,7 +30,7 @@ export default function TabList({ data }: TabsListProps) {
     );
   }
 
-  return <ul className="nav nav-pills outline-active">{tabs}</ul>;
+  return <ul className='nav nav-pills outline-active'>{tabs}</ul>;
 }
 
 type TabProps = {
@@ -45,7 +45,7 @@ function Tab({ isSelected, onClick, children }: TabProps) {
     classNames.push('active');
   }
   return (
-    <li className="nav-item">
+    <li className='nav-item'>
       <button className={classNames.join(' ')} onClick={onClick}>
         {children}
       </button>

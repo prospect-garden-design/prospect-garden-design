@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { CheckboxWithLabel } from '@examples-hub/sample-react-components-ts';
 
 import './index.css';

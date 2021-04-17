@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, Flex, Grid } from '@adobe/react-spectrum';
 
 import marked from 'marked';

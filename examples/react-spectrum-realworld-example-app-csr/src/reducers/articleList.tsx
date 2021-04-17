@@ -33,8 +33,8 @@ export const initialState: ArticleListState = {
   loading: false,
   error: null,
   articlesCount: 0,
-  selectedTab: { type: 'ALL', label: 'Global Feed' },
   page: 0,
+  selectedTab: { type: 'ALL', label: 'Global Feed' },
 };
 
 export function articlesReducer(
