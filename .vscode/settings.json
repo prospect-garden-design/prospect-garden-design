@@ -78,5 +78,8 @@
       "foldEnd": "// #endregion",
       "foldEndRegex": "//[\\s]*#endregion(.*)"
     }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

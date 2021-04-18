@@ -17,6 +17,7 @@ export default function ArticlePreview({
   article,
   dispatch,
 }: ArticlePreviewProps) {
+  // console.log('==ArticlePreview, ', article);
   return (
     <Grid UNSAFE_style={{ borderTop: '1px solid rgba(0,0,0,.1)' }}>
       <Flex justifyContent='space-between' marginY='size-200'>

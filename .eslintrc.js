@@ -45,6 +45,7 @@ module.exports = {
     'one-var': 1,
     'no-inner-declarations': 1,
     'guard-for-in': 1,
+    'no-promise-executor-return': 1,
     complexity: 1,
     'prefer-const': 1,
     'prefer-spread': 1,

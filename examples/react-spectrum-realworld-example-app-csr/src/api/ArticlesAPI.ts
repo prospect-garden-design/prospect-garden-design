@@ -1,4 +1,5 @@
 import API from './APIUtils';
+import mockApi from './mockApi';
 import { IArticle } from '../types';
 
 const encode = encodeURIComponent;
@@ -27,7 +28,8 @@ function omitSlug(article: {
 }
 
 export function getArticles(page: number) {
-  return API.get<Articles>(`/articles?${limit(10, page)}`);
+  // return API.get<Articles>(`/articles?${limit(10, page)}`);
+  return mockApi.getArticles(10, page);
 }
 
 export function getArticlesByAuthor(username: string, page: number) {

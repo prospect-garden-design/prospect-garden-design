@@ -43,7 +43,10 @@ export default function ArticleList() {
       try {
         const payload = await loadArticles(selectedTab, page);
         if (!ignore) {
-          dispatch({ type: 'FETCH_ARTICLES_SUCCESS', payload: payload.data });
+          dispatch({
+            type: 'FETCH_ARTICLES_SUCCESS',
+            payload: (payload as any).data,
+          });
         }
       } catch (error) {
         if (!ignore) {
@@ -65,9 +68,10 @@ export default function ArticleList() {
     return <div className='article-preview'>No articles are here... yet.</div>;
   }
 
+  console.log('==articles, ', articles);
   return (
     <React.Fragment>
-      {articles.map((article) => (
+      {articles.map((article, index) => (
         <ArticlePreview
           key={article.slug}
           article={article}
