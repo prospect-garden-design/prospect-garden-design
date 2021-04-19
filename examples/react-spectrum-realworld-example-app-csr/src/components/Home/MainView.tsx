@@ -6,8 +6,8 @@ import TabList from '../common/TabList';
 import { ITab } from '../../reducers/articleList';
 
 const tabsData: Array<ITab> = [
-  { type: 'ALL', label: 'Global Feed' },
   { type: 'FEED', label: 'Your Feed' },
+  { type: 'ALL', label: 'Global Feed' },
 ];
 
 export function RMainView() {

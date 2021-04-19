@@ -1,6 +1,8 @@
 # react-spectrum-realworld-example-app-csr
 
-> blog-style real world example web app built with react-spectrum, react-hooks & faker.js. no server needed.
+> blog-style real world example web app built with react-spectrum, react-hooks & faker.js.
+
+- **NOTE**: no backend database/server needed. apis are all mocked in the frontend.
 
 # overview
 
@@ -14,3 +16,6 @@
     - badge for Tags
     - tabs for TabList
     - pagination for ArticleList
+
+- spectrum limitations
+  - width dimension values: no percent

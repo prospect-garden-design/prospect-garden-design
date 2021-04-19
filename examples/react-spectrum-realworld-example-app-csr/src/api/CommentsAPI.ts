@@ -1,4 +1,5 @@
 import API from './APIUtils';
+import mockApi from './mockApi';
 import { IComment } from '../types';
 
 type Comment = {
@@ -18,5 +19,6 @@ export function deleteComment(slug: string, commentId: number) {
 }
 
 export function getArticleComments(slug: string) {
-  return API.get<Comments>(`/articles/${slug}/comments`);
+  // return API.get<Comments>(`/articles/${slug}/comments`);
+  return mockApi.getArticleComments(slug);
 }

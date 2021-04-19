@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Flex, Grid } from '@adobe/react-spectrum';
-
 import marked from 'marked';
+
 import ArticleMeta from './ArticleMeta';
 import ArticleTags from '../common/ArticleTags';
 import CommentContainer from './CommentContainer';
@@ -32,8 +32,8 @@ export default function Article({
           dispatch({
             type: 'FETCH_ARTICLE_SUCCESS',
             payload: {
-              article: articlePayload.data.article,
-              comments: commentsPayload.data.comments,
+              article: (articlePayload as any).data.article,
+              comments: (commentsPayload as any).data.comments,
             },
           });
         }
@@ -53,7 +53,8 @@ export default function Article({
   }, [dispatch, slug]);
 
   const convertToMarkdown = (text: string) => ({
-    __html: marked(text, { sanitize: true }),
+    // __html: marked(text, { sanitize: true }),
+    __html: marked(text),
   });
 
   return (

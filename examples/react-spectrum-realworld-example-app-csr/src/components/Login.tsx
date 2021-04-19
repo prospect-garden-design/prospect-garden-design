@@ -1,4 +1,15 @@
 import * as React from 'react';
+import {
+  View,
+  Flex,
+  Grid,
+  Text,
+  Heading,
+  Form,
+  TextField,
+  Button,
+} from '@adobe/react-spectrum';
+
 import { login } from '../api/AuthAPI';
 import ListErrors from './common/ListErrors';
 import useAuth from '../context/auth';
@@ -36,47 +47,46 @@ export default function Login(_: RouteComponentProps) {
   }
 
   return (
-    <div className='auth-page'>
-      <div className='container page'>
-        <div className='row'>
-          <div className='col-md-6 offset-md-3 col-xs-12'>
-            <h1 className='text-xs-center'>Sign in</h1>
-            <p className='text-xs-center'>
-              <Link to='/register'>Need an account?</Link>
-            </p>
-            {errors && <ListErrors errors={errors} />}
-            <form onSubmit={handleSubmit}>
-              <fieldset className='form-group'>
-                <input
-                  name='email'
-                  className='form-control form-control-lg'
-                  type='email'
-                  value={email}
-                  placeholder='Email'
-                  onChange={(event) => setEmail(event.target.value)}
-                />
-              </fieldset>
-              <fieldset className='form-group'>
-                <input
-                  name='password'
-                  className='form-control form-control-lg'
-                  type='password'
-                  value={password}
-                  placeholder='Password'
-                  onChange={(event) => setPassword(event.target.value)}
-                />
-              </fieldset>
-              <button
-                className='btn btn-lg btn-primary pull-xs-right'
-                type='submit'
-                disabled={loading}
-              >
-                Sign In
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <View UNSAFE_style={{}}>
+      <View
+        UNSAFE_style={{
+          width: `32%`,
+          margin: `0 auto`,
+          // backgroundColor: 'beige',
+        }}
+      >
+        <Grid justifyContent='center'>
+          <View>
+            <Heading level={2}>Sign in</Heading>
+          </View>
+          <View>
+            <Link to='/register'>Need an account?</Link>
+          </View>
+        </Grid>
+        <View marginTop='size-200'>
+          {errors && <ListErrors errors={errors} />}
+        </View>
+        <Form
+          method='post'
+          onSubmit={handleSubmit}
+          labelPosition='top'
+          labelAlign='start'
+        >
+          <TextField label='Email' placeholder='name@email.com' />
+          <TextField
+            label='Password'
+            placeholder='length must be 8 or greater'
+          />
+          <Button
+            variant='cta'
+            type='submit'
+            marginTop='size-400'
+            UNSAFE_style={{ width: '25%', marginLeft: `auto` }}
+          >
+            Login
+          </Button>
+        </Form>
+      </View>
+    </View>
   );
 }

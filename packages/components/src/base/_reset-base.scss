@@ -1,4 +1,4 @@
-// @use '../../../design-tokens/dist/pg-vars';
+@use '../../../design-tokens/dist/pg-vars';
 // @use '../base/variables' as v;
 
 // reset html font-family, font-size, h1-h6 typography, hr
@@ -6,20 +6,20 @@
 
 html {
   // default 16px for width <768px
-  font-size: var(--pg-g--size--base--html--font-size);
+  font-size: var(--pg-g--size--base--html--font-size, 100%);
 }
 
 @media (min-width: 768px) {
   html {
     // 18px, for 768px <= width < 1400px
-    font-size: var(--pg-g--size--base--html--font-size-md);
+    font-size: var(--pg-g--size--base--html--font-size-md, 112.5%);
   }
 }
 
 @media (min-width: 1400px) {
   html {
     // 20px, for width >= 1400px
-    font-size: var(--pg-g--size--base--html--font-size-xxl);
+    font-size: var(--pg-g--size--base--html--font-size-xxl, 125%);
   }
 }
 
@@ -84,11 +84,11 @@ h6 {
 }
 
 a {
-  color: var(--pg-g--color--link--text--val);
+  color: var(--pg-g--color--link--text--val, #1a90ff);
   text-decoration: none;
 
   &:hover {
-    color: var(--pg-g--color--link--text--hover);
+    color: var(--pg-g--color--link--text--hover, #1a90ff);
     text-decoration: none;
   }
 }

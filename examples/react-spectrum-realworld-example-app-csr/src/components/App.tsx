@@ -63,12 +63,12 @@ function App() {
         <Router>
           <Home default path='/' />
           <Article path='article/:slug' />
-          {/* <Register path='register' />
-        <Login path='login' />
-        <Profile path=':username' />
-        <PrivateRoute as={Settings} path='/settings' />
-        <PrivateRoute as={Editor} path='/editor' />
-        <PrivateRoute as={Editor} path='/editor/:slug' /> */}
+          <Login path='login' />
+          <Register path='register' />
+          <Profile path=':username' />
+          {/* <PrivateRoute as={Settings} path='/settings' /> */}
+          {/* <PrivateRoute as={Editor} path='/editor' /> */}
+          {/* <PrivateRoute as={Editor} path='/editor/:slug' /> */}
         </Router>
       </Provider>
     </AuthProvider>

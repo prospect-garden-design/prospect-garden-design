@@ -51,7 +51,9 @@ const LoggedOutView = () => (
   <Flex gap='size-300' marginStart='size-200'>
     <NavLink to='/'>Home</NavLink>
     <NavLink to='/login'>Sign in</NavLink>
-    <NavLink to='/register'>Sign up</NavLink>
+    <NavLink to='/register'>
+      <Text>Sign up</Text>
+    </NavLink>
   </Flex>
 );
 

@@ -17,7 +17,7 @@ function Tags() {
       try {
         const payload = await getTags();
         if (!ignore) {
-          setTags(payload.data.tags);
+          setTags((payload as any).data.tags);
         }
       } catch (error) {
         console.log(error);
