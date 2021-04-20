@@ -1,12 +1,13 @@
+import faker from 'faker';
 import { userList, articleList } from './mockData';
 
-function mockGetListPromise(dataList) {
+function mockResPromise(dataOrList: unknown, timeout = 250) {
   return new Promise((resolve, reject) => {
-    if (!dataList) {
-      return setTimeout(() => reject(new Error('res data not found')), 250);
+    if (!dataOrList) {
+      return setTimeout(() => reject(new Error('res data not found')), timeout);
     }
 
-    setTimeout(() => resolve({ data: dataList }), 250);
+    setTimeout(() => resolve({ data: dataOrList }), timeout);
   });
 }
 
@@ -18,7 +19,7 @@ export function getArticles(pCount = 10, pNum) {
     articlesCount: articleList.length,
   };
 
-  return mockGetListPromise(retData);
+  return mockResPromise(retData);
 }
 
 export function getTags() {
@@ -27,7 +28,7 @@ export function getTags() {
     articleTagList = new Set([...articleTagList, ...article.tagList]);
   });
   const retData = { tags: Array.from(articleTagList) };
-  return mockGetListPromise(retData);
+  return mockResPromise(retData);
 }
 
 export function getArticle(slug) {
@@ -37,7 +38,7 @@ export function getArticle(slug) {
     article: retArticle,
   };
 
-  return mockGetListPromise(retData);
+  return mockResPromise(retData);
 }
 
 export function getArticleComments(slug) {
@@ -47,9 +48,48 @@ export function getArticleComments(slug) {
     comments: retComments,
   };
 
-  return mockGetListPromise(retData);
+  return mockResPromise(retData);
 }
 
-const mockApi = { getArticles, getTags, getArticle, getArticleComments };
+export function registerUser({ user }) {
+  const retUser = {
+    ...user,
+    id: userList.length,
+    // token: faker.datatype.uuid(),
+    token: `--test--${faker.datatype.uuid()}`,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    bio: null,
+    image: null,
+  };
+
+  userList.push(retUser);
+
+  // console.log(`==, mock register ${user} success`);
+
+  const retData = {
+    user: retUser,
+  };
+
+  return mockResPromise(retData);
+}
+export function loginByEmail({ user }) {
+  const retUser = userList.find((curUser) => curUser.email === user.email);
+
+  const retData = {
+    user: retUser,
+  };
+
+  return mockResPromise(retData);
+}
+
+const mockApi = {
+  getArticles,
+  getTags,
+  getArticle,
+  getArticleComments,
+  registerUser,
+  loginByEmail,
+};
 
 export default mockApi;

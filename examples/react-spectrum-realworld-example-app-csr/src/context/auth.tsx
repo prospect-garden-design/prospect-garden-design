@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { useEffect, useReducer, useContext, createContext } from 'react';
 import { getLocalStorageValue } from '../utils';
-import { TOKEN_KEY, setToken, isTokenValid } from '../api/APIUtils';
+import {
+  TOKEN_KEY,
+  setToken,
+  isTokenValid,
+  isTokenValidForTest,
+} from '../api/APIUtils';
 import { logout } from '../api/AuthAPI';
 import {
   authReducer,
@@ -25,8 +30,15 @@ export function AuthProvider(props: React.PropsWithChildren<{}>) {
 
   useEffect(() => {
     const token = getLocalStorageValue(TOKEN_KEY);
+    console.log('==AuthProvider-token, ', token);
 
     if (!token) return;
+
+    if (isTokenValidForTest(token)) {
+      console.log('==isTokenValidForTest');
+      setToken(token);
+      dispatch({ type: 'LOGIN' });
+    }
 
     if (isTokenValid(token)) {
       setToken(token);

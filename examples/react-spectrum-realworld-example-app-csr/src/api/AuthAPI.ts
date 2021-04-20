@@ -1,4 +1,5 @@
 import API, { TOKEN_KEY } from './APIUtils';
+import mockApi from './mockApi';
 import { IUser } from '../types';
 import { setLocalStorage } from '../utils';
 import { setToken } from './APIUtils';
@@ -18,9 +19,18 @@ export function getCurrentUser() {
 }
 
 export function login(email: string, password: string) {
-  return API.post<User>('/users/login', {
-    user: { email, password },
-  }).then((user) => handleUserResponse(user.data));
+  // return API.post<User>('/users/login', {
+  //   user: { email, password },
+  // }).then((user) => handleUserResponse(user.data));
+
+  return mockApi
+    .loginByEmail({
+      user: { email, password },
+    })
+    .then((resUser) => {
+      console.log(`==logging user, `, JSON.stringify(resUser));
+      return handleUserResponse((resUser as any).data);
+    });
 }
 
 export function register(user: {
@@ -28,9 +38,14 @@ export function register(user: {
   email: string;
   password: string;
 }) {
-  return API.post<User>('/users', { user }).then((user) =>
-    handleUserResponse(user.data),
-  );
+  // return API.post<User>('/users', { user }).then((user) =>
+  //   handleUserResponse(user.data),
+  // );
+
+  return mockApi.registerUser({ user }).then((resUser) => {
+    console.log(`==registered user, `, JSON.stringify(resUser));
+    return handleUserResponse((resUser as any).data);
+  });
 }
 
 export function updateUser(user: IUser & Partial<{ password: string }>) {

@@ -1,16 +1,26 @@
 import * as React from 'react';
-import { Link, navigate, RouteComponentProps, Redirect } from '@reach/router';
+import { useState, useEffect } from 'react';
+import {
+  View,
+  Flex,
+  Grid,
+  Text,
+  Heading,
+  Form,
+  TextField,
+  Button,
+} from '@adobe/react-spectrum';
+import { navigate, Link, RouteComponentProps, Redirect } from '@reach/router';
+
 import { register } from '../api/AuthAPI';
 import useAuth from '../context/auth';
 import ListErrors from './common/ListErrors';
 import { IErrors } from '../types';
 
 export default function Register(_: RouteComponentProps) {
-  const [form, setForm] = React.useState({
-    username: '',
-    email: '',
-    password: '',
-  });
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const [loading, setLoading] = React.useState(false);
   const [errors, setErrors] = React.useState<IErrors | null>(null);
@@ -19,17 +29,10 @@ export default function Register(_: RouteComponentProps) {
     dispatch,
   } = useAuth();
 
-  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-    setForm({
-      ...form,
-      [event.currentTarget.name]: event.currentTarget.value,
-    });
-  };
-
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
     setLoading(true);
-    const { username, email, password } = form;
+    // const { username, email, password } = form;
     try {
       const user = await register({ username, email, password });
       dispatch({ type: 'LOAD_USER', user });
@@ -48,56 +51,69 @@ export default function Register(_: RouteComponentProps) {
   }
 
   return (
-    <div className='auth-page'>
-      <div className='container page'>
-        <div className='row'>
-          <div className='col-md-6 offset-md-3 col-xs-12'>
-            <h1 className='text-xs-center'>Sign up</h1>
-            <p className='text-xs-center'>
-              <Link to='/login'>Have an account?</Link>
-            </p>
-            {errors && <ListErrors errors={errors} />}
-            <form onSubmit={handleSubmit}>
-              <fieldset className='form-group'>
-                <input
-                  name='username'
-                  className='form-control form-control-lg'
-                  type='text'
-                  value={form.username}
-                  placeholder='Your Name'
-                  onChange={handleChange}
-                />
-              </fieldset>
-              <fieldset className='form-group'>
-                <input
-                  name='email'
-                  className='form-control form-control-lg'
-                  type='email'
-                  value={form.email}
-                  placeholder='Email'
-                  onChange={handleChange}
-                />
-              </fieldset>
-              <fieldset className='form-group'>
-                <input
-                  name='password'
-                  className='form-control form-control-lg'
-                  type='password'
-                  value={form.password}
-                  placeholder='Password'
-                  onChange={handleChange}
-                />
-              </fieldset>
-              <button
-                className='btn btn-lg btn-primary pull-xs-right'
-                disabled={loading}
-              >
-                Sign Up
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <View UNSAFE_style={{}}>
+      <View
+        UNSAFE_style={{
+          width: `32%`,
+          margin: `0 auto`,
+          // backgroundColor: 'beige',
+        }}
+      >
+        <Grid justifyContent='center'>
+          <View>
+            <Heading level={2}>Sign up</Heading>
+          </View>
+          <View>
+            <Link to='/login'>Already have an account?</Link>
+          </View>
+        </Grid>
+        <View marginTop='size-200'>
+          {errors && <ListErrors errors={errors} />}
+        </View>
+        <Form
+          method='post'
+          onSubmit={handleSubmit}
+          labelPosition='top'
+          labelAlign='start'
+        >
+          <TextField
+            // value={form.username}
+            // onChange={handleChange as any}
+            value={username}
+            onChange={setUsername}
+            name='username'
+            label='User Name'
+            placeholder='input name will be checked for uniqueness'
+          />
+          <TextField
+            // value={form.email}
+            // onChange={handleChange as any}
+            value={email}
+            onChange={setEmail}
+            name='email'
+            label='Email'
+            placeholder='name@email.com'
+          />
+          <TextField
+            // value={form.password}
+            // onChange={handleChange as any}
+            value={password}
+            onChange={setPassword}
+            name='password'
+            label='Password'
+            placeholder='length must be 8 or greater'
+          />
+          <Button
+            variant='cta'
+            type='submit'
+            minWidth='size-1200'
+            marginTop='size-400'
+            UNSAFE_style={{ width: '25%', marginLeft: `auto` }}
+          >
+            Sign Up
+          </Button>
+        </Form>
+      </View>
+    </View>
   );
 }

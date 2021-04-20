@@ -66,7 +66,7 @@ function App() {
           <Login path='login' />
           <Register path='register' />
           <Profile path=':username' />
-          {/* <PrivateRoute as={Settings} path='/settings' /> */}
+          <PrivateRoute as={Settings} path='/settings' />
           {/* <PrivateRoute as={Editor} path='/editor' /> */}
           {/* <PrivateRoute as={Editor} path='/editor/:slug' /> */}
         </Router>

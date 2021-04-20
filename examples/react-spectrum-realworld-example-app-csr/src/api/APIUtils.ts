@@ -37,6 +37,10 @@ type JWTPayload = {
   exp: number;
 };
 
+export function isTokenValidForTest(token: string) {
+  return token.startsWith('--test--');
+}
+
 export function isTokenValid(token: string) {
   try {
     const decoded_jwt: JWTPayload = jwtDecode(token);

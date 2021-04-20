@@ -1,4 +1,5 @@
 import faker from 'faker';
+
 const userNum = 8;
 const articleNum = 800;
 
