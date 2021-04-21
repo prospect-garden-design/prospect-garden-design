@@ -1,4 +1,5 @@
 import API from './APIUtils';
+import mockApi from './mockApi';
 import { IProfile } from '../types';
 
 type Profile = {
@@ -10,7 +11,9 @@ export function followProfile(username: string) {
 }
 
 export function getProfile(username: string) {
-  return API.get<Profile>(`/profiles/${username}`);
+  // return API.get<Profile>(`/profiles/${username}`);
+
+  return mockApi.getUserProfile(username);
 }
 
 export function unfollowProfile(username: string) {

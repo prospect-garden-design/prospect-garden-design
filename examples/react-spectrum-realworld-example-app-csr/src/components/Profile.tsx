@@ -1,5 +1,18 @@
 import * as React from 'react';
-import { Link, RouteComponentProps } from '@reach/router';
+import { useState, useEffect } from 'react';
+import {
+  View,
+  Flex,
+  Grid,
+  Text,
+  Heading,
+  Image,
+  Form,
+  TextField,
+  Button,
+} from '@adobe/react-spectrum';
+import { navigate, Link, RouteComponentProps, Redirect } from '@reach/router';
+
 import ProfileArticles from './ProfileArticles';
 import FollowUserButton from './common/FollowUserButton';
 import { IProfile } from '../types';
@@ -10,20 +23,22 @@ import { ALT_IMAGE_URL } from '../utils';
 export default function Profile({
   username = '',
 }: RouteComponentProps<{ username: string }>) {
-  const [profile, setProfile] = React.useState<IProfile | null>(null);
-  const [loading, setLoading] = React.useState(false);
+  const [profile, setProfile] = useState<IProfile | null>(null);
+  const [loading, setLoading] = useState(false);
   const {
     state: { user },
   } = useAuth();
 
-  React.useEffect(() => {
+  useEffect(() => {
     let ignore = false;
 
     async function fetchProfile() {
       try {
         const payload = await getProfile(username);
+
+        console.log('==profile-payload, ', JSON.stringify(payload));
         if (!ignore) {
-          setProfile(payload.data.profile);
+          setProfile((payload as any).data.profile);
         }
       } catch (error) {
         console.log(error);
@@ -57,18 +72,43 @@ export default function Profile({
 
   return (
     profile && (
-      <div className='profile-page'>
-        <div className='user-info'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-xs-12 col-md-10 offset-md-1'>
-                <img
+      <View UNSAFE_style={{}}>
+        <View
+          paddingY='size-400'
+          backgroundColor='gray-300'
+          // UNSAFE_style={{
+          //   backgroundColor: 'beige',
+          // }}
+        >
+          <View
+            UNSAFE_style={{
+              width: `70%`,
+              margin: `0 auto`,
+              // backgroundColor: 'beige',
+            }}
+          >
+            <Grid justifyContent='center'>
+              <View
+                UNSAFE_style={{
+                  textAlign: 'center',
+                }}
+              >
+                <Image
                   src={profile.image || ALT_IMAGE_URL}
-                  className='user-img'
                   alt={profile.username}
+                  width='size-1200'
+                  UNSAFE_style={{
+                    borderRadius: '50%',
+                  }}
                 />
-                <h4>{profile.username}</h4>
+                <Heading level={3} marginTop='size-100'>
+                  {profile.username}
+                </Heading>
                 <p>{profile.bio}</p>
+              </View>
+            </Grid>
+            <Flex justifyContent='end'>
+              <View>
                 {isUser ? (
                   <EditProfileSettings />
                 ) : (
@@ -78,12 +118,22 @@ export default function Profile({
                     loading={loading}
                   />
                 )}
-              </div>
-            </div>
-          </div>
-        </div>
-        <ProfileArticles username={username} />
-      </div>
+              </View>
+            </Flex>
+          </View>
+        </View>
+
+        <View
+          marginTop='size-200'
+          UNSAFE_style={{
+            width: `70%`,
+            margin: `0 auto`,
+            // backgroundColor: 'beige',
+          }}
+        >
+          <ProfileArticles username={username} />
+        </View>
+      </View>
     )
   );
 }

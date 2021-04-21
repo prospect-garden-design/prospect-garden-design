@@ -49,7 +49,9 @@ export function register(user: {
 }
 
 export function updateUser(user: IUser & Partial<{ password: string }>) {
-  return API.put<User>('/user', { user });
+  // return API.put<User>('/user', { user });
+
+  return mockApi.updateUser({ user });
 }
 
 export function logout() {

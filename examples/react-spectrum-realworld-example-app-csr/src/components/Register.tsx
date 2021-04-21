@@ -67,6 +67,7 @@ export default function Register(_: RouteComponentProps) {
             <Link to='/login'>Already have an account?</Link>
           </View>
         </Grid>
+
         <View marginTop='size-200'>
           {errors && <ListErrors errors={errors} />}
         </View>
@@ -77,8 +78,6 @@ export default function Register(_: RouteComponentProps) {
           labelAlign='start'
         >
           <TextField
-            // value={form.username}
-            // onChange={handleChange as any}
             value={username}
             onChange={setUsername}
             name='username'
@@ -86,8 +85,6 @@ export default function Register(_: RouteComponentProps) {
             placeholder='input name will be checked for uniqueness'
           />
           <TextField
-            // value={form.email}
-            // onChange={handleChange as any}
             value={email}
             onChange={setEmail}
             name='email'
@@ -95,8 +92,6 @@ export default function Register(_: RouteComponentProps) {
             placeholder='name@email.com'
           />
           <TextField
-            // value={form.password}
-            // onChange={handleChange as any}
             value={password}
             onChange={setPassword}
             name='password'
@@ -108,7 +103,10 @@ export default function Register(_: RouteComponentProps) {
             type='submit'
             minWidth='size-1200'
             marginTop='size-400'
-            UNSAFE_style={{ width: '25%', marginLeft: `auto` }}
+            UNSAFE_style={{
+              width: '25%',
+              // marginLeft: `auto`
+            }}
           >
             Sign Up
           </Button>

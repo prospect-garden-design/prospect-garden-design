@@ -64,6 +64,7 @@ export default function Login(_: RouteComponentProps) {
             <Link to='/register'>Need an account?</Link>
           </View>
         </Grid>
+
         <View marginTop='size-200'>
           {errors && <ListErrors errors={errors} />}
         </View>
@@ -92,7 +93,10 @@ export default function Login(_: RouteComponentProps) {
             type='submit'
             minWidth='size-1200'
             marginTop='size-400'
-            UNSAFE_style={{ width: '25%', marginLeft: `auto` }}
+            UNSAFE_style={{
+              width: '25%',
+              // marginLeft: `auto`
+            }}
           >
             Login
           </Button>

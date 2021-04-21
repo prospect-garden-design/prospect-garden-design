@@ -73,11 +73,38 @@ export function registerUser({ user }) {
 
   return mockResPromise(retData);
 }
-export function loginByEmail({ user }) {
-  const retUser = userList.find((curUser) => curUser.email === user.email);
+export function getUserProfile(username: string) {
+  const matchedUser = userList.find((curUser) => curUser.username === username);
 
   const retData = {
-    user: retUser,
+    profile: {
+      username,
+      bio: matchedUser?.bio ?? '',
+      image: matchedUser?.image ?? '',
+      following: false,
+    },
+  };
+
+  return mockResPromise(retData);
+}
+
+export function updateUser({ user }) {
+  let matchedUser = userList.find((curUser) => curUser.email === user.email);
+  const updatedUser = { ...matchedUser, ...user };
+  matchedUser = updatedUser;
+
+  const retData = {
+    user: updatedUser,
+  };
+
+  return mockResPromise(retData);
+}
+
+export function loginByEmail({ user }) {
+  const matchedUser = userList.find((curUser) => curUser.email === user.email);
+
+  const retData = {
+    user: matchedUser,
   };
 
   return mockResPromise(retData);
@@ -90,6 +117,8 @@ const mockApi = {
   getArticleComments,
   registerUser,
   loginByEmail,
+  updateUser,
+  getUserProfile,
 };
 
 export default mockApi;
