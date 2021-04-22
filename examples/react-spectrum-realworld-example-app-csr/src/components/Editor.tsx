@@ -1,27 +1,56 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
+import {
+  View,
+  Flex,
+  Grid,
+  Text,
+  Heading,
+  Form,
+  TextField,
+  TextArea,
+  Button,
+  ActionButton,
+} from '@adobe/react-spectrum';
+import { navigate, Link, RouteComponentProps, Redirect } from '@reach/router';
+
+import useAuth from '../context/auth';
 import { editorReducer, initalState } from '../reducers/editor';
-import { RouteComponentProps, navigate } from '@reach/router';
 import { getArticle, updateArticle, createArticle } from '../api/ArticlesAPI';
 import ListErrors from './common/ListErrors';
 
 export default function Editor({
   slug = '',
 }: RouteComponentProps<{ slug: string }>) {
-  const [state, dispatch] = React.useReducer(editorReducer, initalState);
+  // const [state, dispatch] = React.useReducer(editorReducer, initalState);
 
-  React.useEffect(() => {
+  const {
+    state: { user },
+  } = useAuth();
+
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [body, setBody] = useState('');
+  const [tag, setTag] = useState('');
+
+  useEffect(() => {
     let ignore = false;
 
     const fetchArticle = async () => {
       try {
         const payload = await getArticle(slug);
-        const { title, description, body, tagList } = payload.data.article;
+        const {
+          title,
+          description,
+          body,
+          tagList,
+        } = (payload as any).data.article;
         if (!ignore) {
-          dispatch({
-            type: 'SET_FORM',
-            form: { title, description, body, tag: '' },
-          });
-          dispatch({ type: 'SET_TAGS', tagList });
+          // dispatch({
+          //   type: 'SET_FORM',
+          //   form: { title, description, body, tag: '' },
+          // });
+          // dispatch({ type: 'SET_TAGS', tagList });
         }
       } catch (error) {
         console.log(error);
@@ -39,27 +68,35 @@ export default function Editor({
   const handleChange = (
     event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    dispatch({
-      type: 'UPDATE_FORM',
-      field: {
-        key: event.currentTarget.name,
-        value: event.currentTarget.value,
-      },
-    });
+    // dispatch({
+    //   type: 'UPDATE_FORM',
+    //   field: {
+    //     key: event.currentTarget.name,
+    //     value: event.currentTarget.value,
+    //   },
+    // });
   };
 
   const handelKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.keyCode === 13) {
-      dispatch({ type: 'ADD_TAG', tag: event.currentTarget.value });
-      dispatch({ type: 'UPDATE_FORM', field: { key: 'tag', value: '' } });
+    console.log(event.key, event.code);
+    // if (event.keyCode === 13) {
+    if (event.key === 'enter') {
+      // dispatch({ type: 'ADD_TAG', tag: event.currentTarget.value });
+      // dispatch({ type: 'UPDATE_FORM', field: { key: 'tag', value: '' } });
     }
   };
 
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
     try {
-      const { title, description, body } = state.form;
-      const article = { title, description, body, tagList: state.tagList };
+      // const { title, description, body } = state.form;
+      const article = {
+        title,
+        description,
+        body,
+        tagList: [tag],
+        user,
+      };
       let payload;
       if (slug) {
         payload = await updateArticle({ slug, ...article });
@@ -70,87 +107,115 @@ export default function Editor({
     } catch (error) {
       console.log(error);
       if (error.status === 422) {
-        dispatch({ type: 'SET_ERRORS', errors: error.data.errors });
+        // dispatch({ type: 'SET_ERRORS', errors: error.data.errors });
       }
     }
   };
+
   return (
-    <div className='editor-page'>
-      <div className='container page'>
-        <div className='row'>
-          <div className='col-md-10 offset-md-1 col-xs-12'>
-            <ListErrors errors={state.errors} />
+    <View UNSAFE_style={{}}>
+      <View
+        UNSAFE_style={{
+          width: `70%`,
+          margin: `0 auto`,
+          // backgroundColor: 'beige',
+        }}
+      >
+        {/* <Grid justifyContent='center'>
+          <View>
+            <Heading level={2}>Sign in</Heading>
+          </View>
+          <View>
+            <Link to='/register'>Need an account?</Link>
+          </View>
+        </Grid> */}
 
-            <form onSubmit={handleSubmit}>
-              <div className='form-group'>
-                <input
-                  name='title'
-                  className='form-control form-control-lg'
-                  type='text'
-                  placeholder='Article Title'
-                  value={state.form.title}
-                  onChange={handleChange}
-                />
-              </div>
+        <View marginTop='size-2s00'>
+          {/* {state.errors && <ListErrors errors={state.errors} />} */}
+        </View>
+        <Form
+          method='post'
+          onSubmit={handleSubmit}
+          labelPosition='top'
+          labelAlign='start'
+        >
+          <TextField
+            value={title}
+            onChange={setTitle}
+            name='title'
+            label='Title'
+            placeholder='Article Title'
+          />
+          <TextField
+            value={description}
+            onChange={setDescription}
+            name='description'
+            label='Description'
+            placeholder="What's this article about?"
+          />
+          <TextArea
+            value={body}
+            onChange={setBody}
+            minHeight='size-3000'
+            name='body'
+            label='Article Contents'
+            placeholder='Write your article (in markdown)'
+          />
+          <TextField
+            value={tag}
+            onChange={setTag}
+            name='tag'
+            label='Tag'
+            placeholder='write a tag and hit Enter'
+          />
+          <View>{tag && <ArticleTag tag={tag} />}</View>
+          <Button
+            variant='cta'
+            type='submit'
+            minWidth='size-1200'
+            marginTop='size-400'
+            UNSAFE_style={{
+              width: '25%',
+              // marginLeft: `auto`
+            }}
+          >
+            Publish
+          </Button>
+        </Form>
+      </View>
+    </View>
+  );
+}
 
-              <div className='form-group'>
-                <input
-                  name='description'
-                  className='form-control'
-                  type='text'
-                  placeholder="What's this article about?"
-                  value={state.form.description}
-                  onChange={handleChange}
-                />
-              </div>
+function ArticleTag(props) {
+  const { tag } = props;
 
-              <div className='form-group'>
-                <textarea
-                  name='body'
-                  className='form-control'
-                  rows={8}
-                  placeholder='Write your article (in markdown)'
-                  value={state.form.body}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className='form-group'>
-                <input
-                  name='tag'
-                  className='form-control'
-                  type='text'
-                  placeholder='Enter tags'
-                  value={state.form.tag}
-                  onChange={handleChange}
-                  onKeyUp={handelKeyUp}
-                />
-
-                <div className='tag-list'>
-                  {state.tagList.map((tag) => {
-                    return (
-                      <span className='tag-default tag-pill' key={tag}>
-                        <i
-                          className='ion-close-round'
-                          onClick={() => dispatch({ type: 'REMOVE_TAG', tag })}
-                        />
-                        {tag}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <button
-                className='btn btn-lg pull-xs-right btn-primary'
-                type='submit'
-              >
-                Publish Article
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+  return (
+    <>
+      {' '}
+      <ActionButton
+        UNSAFE_style={{
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
+          borderWidth: 0,
+          backgroundColor: '#5aa9fa',
+          color: 'white',
+        }}
+      >
+        {tag}
+      </ActionButton>
+      <ActionButton
+        UNSAFE_style={{
+          borderTopLeftRadius: 0,
+          borderBottomLeftRadius: 0,
+          borderWidth: 0,
+          backgroundColor: 'rgb(234, 234, 234)',
+          cursor: 'pointer',
+          // color:'white'
+        }}
+      >
+        X
+      </ActionButton>
+    </>
   );
 }

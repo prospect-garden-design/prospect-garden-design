@@ -42,7 +42,7 @@ export function register(user: {
   //   handleUserResponse(user.data),
   // );
 
-  return mockApi.registerUser({ user }).then((resUser) => {
+  return mockApi.createUser({ user }).then((resUser) => {
     console.log(`==registered user, `, JSON.stringify(resUser));
     return handleUserResponse((resUser as any).data);
   });

@@ -68,6 +68,7 @@ export function getArticle(slug: string) {
 export function unfavoriteArticle(slug: string) {
   return API.delete<Article>(`/articles/${slug}/favorite`);
 }
+
 export function updateArticle(article: {
   slug: string;
   title?: string;
@@ -86,5 +87,7 @@ export function createArticle(article: {
   body: string;
   tagList?: string[];
 }) {
-  return API.post<Article>('/articles', { article });
+  // return API.post<Article>('/articles', { article });
+
+  return mockApi.createArticle({ article });
 }

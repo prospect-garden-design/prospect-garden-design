@@ -12,7 +12,7 @@ export let userList = new Array(userNum).fill(0).map((item, index) => ({
   image: faker.image.avatar(),
 }));
 
-function getUserByUsername(username) {
+export function getUserByUsername(username) {
   return userList.find((user) => user.username === username);
 }
 

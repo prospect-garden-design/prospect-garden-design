@@ -1,5 +1,5 @@
 import faker from 'faker';
-import { userList, articleList } from './mockData';
+import { userList, articleList, getUserByUsername } from './mockData';
 
 function mockResPromise(dataOrList: unknown, timeout = 250) {
   return new Promise((resolve, reject) => {
@@ -22,15 +22,6 @@ export function getArticles(pCount = 10, pNum) {
   return mockResPromise(retData);
 }
 
-export function getTags() {
-  let articleTagList = new Set();
-  articleList.forEach((article) => {
-    articleTagList = new Set([...articleTagList, ...article.tagList]);
-  });
-  const retData = { tags: Array.from(articleTagList) };
-  return mockResPromise(retData);
-}
-
 export function getArticle(slug) {
   const retArticle = articleList.find((article) => article.slug === slug);
 
@@ -38,6 +29,41 @@ export function getArticle(slug) {
     article: retArticle,
   };
 
+  return mockResPromise(retData);
+}
+
+export function createArticle({ article }) {
+  const retArticle = {
+    ...article,
+    slug: faker.lorem.slug(),
+    tagList: [article.tag],
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    favorited: false,
+    favoritesCount: 0,
+    author: {
+      ...getUserByUsername(article.user),
+      following: false,
+    },
+  };
+
+  articleList.push(retArticle);
+
+  // console.log(`==, mock create ${article} success`);
+
+  const retData = {
+    article: retArticle,
+  };
+
+  return mockResPromise(retData);
+}
+
+export function getTags() {
+  let articleTagList = new Set();
+  articleList.forEach((article) => {
+    articleTagList = new Set([...articleTagList, ...article.tagList]);
+  });
+  const retData = { tags: Array.from(articleTagList) };
   return mockResPromise(retData);
 }
 
@@ -51,7 +77,22 @@ export function getArticleComments(slug) {
   return mockResPromise(retData);
 }
 
-export function registerUser({ user }) {
+export function getUserProfile(username: string) {
+  const matchedUser = userList.find((curUser) => curUser.username === username);
+
+  const retData = {
+    profile: {
+      username,
+      bio: matchedUser?.bio ?? '',
+      image: matchedUser?.image ?? '',
+      following: false,
+    },
+  };
+
+  return mockResPromise(retData);
+}
+
+export function createUser({ user }) {
   const retUser = {
     ...user,
     id: userList.length,
@@ -65,24 +106,10 @@ export function registerUser({ user }) {
 
   userList.push(retUser);
 
-  // console.log(`==, mock register ${user} success`);
+  // console.log(`==, mock create ${user} success`);
 
   const retData = {
     user: retUser,
-  };
-
-  return mockResPromise(retData);
-}
-export function getUserProfile(username: string) {
-  const matchedUser = userList.find((curUser) => curUser.username === username);
-
-  const retData = {
-    profile: {
-      username,
-      bio: matchedUser?.bio ?? '',
-      image: matchedUser?.image ?? '',
-      following: false,
-    },
   };
 
   return mockResPromise(retData);
@@ -112,12 +139,13 @@ export function loginByEmail({ user }) {
 
 const mockApi = {
   getArticles,
-  getTags,
   getArticle,
+  createArticle,
+  getTags,
   getArticleComments,
-  registerUser,
-  loginByEmail,
+  createUser,
   updateUser,
+  loginByEmail,
   getUserProfile,
 };
 

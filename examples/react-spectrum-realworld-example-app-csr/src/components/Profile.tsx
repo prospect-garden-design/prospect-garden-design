@@ -35,8 +35,7 @@ export default function Profile({
     async function fetchProfile() {
       try {
         const payload = await getProfile(username);
-
-        console.log('==profile-payload, ', JSON.stringify(payload));
+        // console.log('==profile-payload, ', JSON.stringify(payload));
         if (!ignore) {
           setProfile((payload as any).data.profile);
         }

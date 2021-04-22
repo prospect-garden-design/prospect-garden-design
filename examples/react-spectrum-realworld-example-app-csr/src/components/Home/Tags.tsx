@@ -42,9 +42,9 @@ function Tags() {
         ) : (
           <View>
             <div className='tag-list'>
-              {tags.map((tag) => (
+              {tags.map((tag, index) => (
                 <button
-                  key={tag}
+                  key={index}
                   className='tag-pill tag-default'
                   onClick={() =>
                     dispatch({
