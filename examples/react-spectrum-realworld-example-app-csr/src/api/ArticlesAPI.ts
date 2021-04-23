@@ -76,9 +76,11 @@ export function updateArticle(article: {
   body?: string;
   tagList?: string[];
 }) {
-  return API.put<Article>(`/articles/${article.slug}`, {
-    article: omitSlug(article),
-  });
+  // return API.put<Article>(`/articles/${article.slug}`, {
+  //   article: omitSlug(article),
+  // });
+
+  return mockApi.updateArticle({ article });
 }
 
 export function createArticle(article: {

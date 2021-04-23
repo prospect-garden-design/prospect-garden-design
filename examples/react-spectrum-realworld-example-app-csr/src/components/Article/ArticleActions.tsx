@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from '@reach/router';
+
 import { followProfile, unfollowProfile } from '../../api/ProfileAPI';
 import { IArticle } from '../../types';
 import { ArticleAction } from '../../reducers/article';
@@ -37,6 +39,7 @@ export default function ArticleActions({
   };
 
   return canModifyArticle ? (
+    // 编辑 / 删除文章
     <React.Fragment>
       <Link
         to={`/editor/${article.slug}`}
@@ -47,6 +50,7 @@ export default function ArticleActions({
       <DeleteButton article={article} />
     </React.Fragment>
   ) : (
+    // 关注作者 / 收藏文章
     <React.Fragment>
       <FollowUserButton
         onClick={handleFollowButtonClick}

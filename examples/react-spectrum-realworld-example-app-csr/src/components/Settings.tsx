@@ -12,6 +12,7 @@ import {
 } from '@adobe/react-spectrum';
 import { navigate, Link, RouteComponentProps, Redirect } from '@reach/router';
 
+import { userList } from '../api/mockData';
 import ListErrors from './common/ListErrors';
 import useAuth from '../context/auth';
 import { updateUser, logout } from '../api/AuthAPI';
@@ -46,9 +47,11 @@ export default function Settings(_: RouteComponentProps) {
   // };
 
   useEffect(() => {
+    console.log('==Settings-user, ', user);
+
     if (user) {
       const { username, email, image, bio } = user;
-      console.log(username, email, image, bio);
+      // console.log(username, email, image, bio);
       setUsername(username);
       setEmail(email);
       setPassword(password);
@@ -66,6 +69,9 @@ export default function Settings(_: RouteComponentProps) {
     try {
       // const payload = await updateUser(form);
       const payload = await updateUser({ username, email, image, bio });
+      console.log('==updatedUser, ', payload);
+      console.log('==updatedUserList, ', userList);
+
       dispatch({ type: 'LOAD_USER', user: (payload as any).data.user });
     } catch (error) {
       console.log(error);

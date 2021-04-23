@@ -23,6 +23,7 @@ export default function Editor({
   slug = '',
 }: RouteComponentProps<{ slug: string }>) {
   // const [state, dispatch] = React.useReducer(editorReducer, initalState);
+  console.log('==Editor-slug, ', slug);
 
   const {
     state: { user },
@@ -51,6 +52,11 @@ export default function Editor({
           //   form: { title, description, body, tag: '' },
           // });
           // dispatch({ type: 'SET_TAGS', tagList });
+
+          setTitle(title);
+          setDescription(description);
+          setBody(body);
+          setTag(tagList.toString());
         }
       } catch (error) {
         console.log(error);
@@ -98,12 +104,17 @@ export default function Editor({
         user,
       };
       let payload;
+
       if (slug) {
         payload = await updateArticle({ slug, ...article });
+
+        console.log('---1');
       } else {
         payload = await createArticle(article);
       }
+      console.log('---2');
       navigate(`/article/${payload.data.article.slug}`);
+      console.log('---3');
     } catch (error) {
       console.log(error);
       if (error.status === 422) {
@@ -192,7 +203,6 @@ function ArticleTag(props) {
 
   return (
     <>
-      {' '}
       <ActionButton
         UNSAFE_style={{
           borderTopRightRadius: 0,

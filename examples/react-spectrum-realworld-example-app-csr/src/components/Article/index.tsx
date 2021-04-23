@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect, useReducer } from 'react';
 import { View, Flex, Grid } from '@adobe/react-spectrum';
 import marked from 'marked';
 
@@ -13,12 +14,12 @@ import { getArticle } from '../../api/ArticlesAPI';
 export default function Article({
   slug = '',
 }: RouteComponentProps<{ slug: string }>) {
-  const [{ article, comments, loading, error }, dispatch] = React.useReducer(
+  const [{ article, comments, loading, error }, dispatch] = useReducer(
     articleReducer,
     initialState,
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch({ type: 'FETCH_ARTICLE_BEGIN' });
     let ignore = false;
 
@@ -28,6 +29,8 @@ export default function Article({
           getArticle(slug),
           getArticleComments(slug),
         ]);
+
+        console.log('==articlePayload, ', articlePayload);
         if (!ignore) {
           dispatch({
             type: 'FETCH_ARTICLE_SUCCESS',
@@ -57,6 +60,7 @@ export default function Article({
     __html: marked(text),
   });
 
+  console.log('==cur-article, ', article);
   return (
     article && (
       <View>

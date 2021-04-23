@@ -25,6 +25,11 @@ export function getArticles(pCount = 10, pNum) {
 export function getArticle(slug) {
   const retArticle = articleList.find((article) => article.slug === slug);
 
+  console.log(
+    '==get-1article-articleList, ',
+    articleList[articleList.length - 1],
+  );
+  console.log('==get-1article, ', retArticle);
   const retData = {
     article: retArticle,
   };
@@ -36,16 +41,17 @@ export function createArticle({ article }) {
   const retArticle = {
     ...article,
     slug: faker.lorem.slug(),
-    tagList: [article.tag],
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     favorited: false,
     favoritesCount: 0,
     author: {
-      ...getUserByUsername(article.user),
+      ...getUserByUsername(article.user.username),
       following: false,
     },
   };
+
+  delete retArticle['user'];
 
   articleList.push(retArticle);
 
@@ -53,6 +59,26 @@ export function createArticle({ article }) {
 
   const retData = {
     article: retArticle,
+  };
+
+  return mockResPromise(retData);
+}
+
+export function updateArticle({ article }) {
+  console.log('==update-1article, ', article);
+  let matched = articleList.find(
+    (curArticle) => curArticle.slug === article.slug,
+  );
+
+  console.log('==matched, ', matched);
+  const updatedArticle = { ...matched, ...article };
+  console.log('==updated, ', updatedArticle);
+  matched = updatedArticle;
+
+  console.log('==update-articleList, ', articleList[articleList.length - 1]);
+
+  const retData = {
+    article: updatedArticle,
   };
 
   return mockResPromise(retData);
@@ -116,9 +142,14 @@ export function createUser({ user }) {
 }
 
 export function updateUser({ user }) {
-  let matchedUser = userList.find((curUser) => curUser.email === user.email);
-  const updatedUser = { ...matchedUser, ...user };
-  matchedUser = updatedUser;
+  let matched = userList.find((curUser) => curUser.email === user.email);
+  console.log('==matched-user, ', matched);
+  const updatedUser = { ...matched, ...user };
+  console.log('==updated-user, ', updatedUser);
+  matched = updatedUser;
+
+  // console.log('==update-userList, ', userList[userList.length - 1]);
+  console.log('==update-userList, ', JSON.stringify(userList));
 
   const retData = {
     user: updatedUser,
@@ -141,6 +172,7 @@ const mockApi = {
   getArticles,
   getArticle,
   createArticle,
+  updateArticle,
   getTags,
   getArticleComments,
   createUser,

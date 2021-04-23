@@ -5,9 +5,9 @@ import {
   defaultTheme,
   lightTheme,
   darkTheme,
-  Button,
 } from '@adobe/react-spectrum';
 import { Router } from '@reach/router';
+
 import Header from './Header';
 import Home from './Home';
 import Register from './Register';
