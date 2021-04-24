@@ -7,7 +7,7 @@ function mockResPromise(dataOrList: unknown, timeout = 250) {
       return setTimeout(() => reject(new Error('res data not found')), timeout);
     }
 
-    setTimeout(() => resolve({ data: dataOrList }), timeout);
+    return setTimeout(() => resolve({ data: dataOrList }), timeout);
   });
 }
 
@@ -23,15 +23,10 @@ export function getArticles(pCount = 10, pNum) {
 }
 
 export function getArticle(slug) {
-  const retArticle = articleList.find((article) => article.slug === slug);
+  const matched = articleList.find((article) => article.slug === slug);
 
-  console.log(
-    '==get-1article-articleList, ',
-    articleList[articleList.length - 1],
-  );
-  console.log('==get-1article, ', retArticle);
   const retData = {
-    article: retArticle,
+    article: matched,
   };
 
   return mockResPromise(retData);
@@ -65,20 +60,16 @@ export function createArticle({ article }) {
 }
 
 export function updateArticle({ article }) {
-  console.log('==update-1article, ', article);
-  let matched = articleList.find(
-    (curArticle) => curArticle.slug === article.slug,
+  const matchedIndex = articleList.findIndex(
+    (cur) => cur.slug === article.slug,
   );
-
-  console.log('==matched, ', matched);
-  const updatedArticle = { ...matched, ...article };
-  console.log('==updated, ', updatedArticle);
-  matched = updatedArticle;
-
-  console.log('==update-articleList, ', articleList[articleList.length - 1]);
+  const matched = articleList[matchedIndex];
+  const updated = { ...matched, ...article };
+  // console.log('==updated, ', updatedArticle);
+  articleList[matchedIndex] = updated;
 
   const retData = {
-    article: updatedArticle,
+    article: updated,
   };
 
   return mockResPromise(retData);
@@ -104,13 +95,13 @@ export function getArticleComments(slug) {
 }
 
 export function getUserProfile(username: string) {
-  const matchedUser = userList.find((curUser) => curUser.username === username);
+  const matched = userList.find((curUser) => curUser.username === username);
 
   const retData = {
     profile: {
       username,
-      bio: matchedUser?.bio ?? '',
-      image: matchedUser?.image ?? '',
+      bio: matched?.bio ?? '',
+      image: matched?.image ?? '',
       following: false,
     },
   };
@@ -122,7 +113,6 @@ export function createUser({ user }) {
   const retUser = {
     ...user,
     id: userList.length,
-    // token: faker.datatype.uuid(),
     token: `--test--${faker.datatype.uuid()}`,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
@@ -142,17 +132,13 @@ export function createUser({ user }) {
 }
 
 export function updateUser({ user }) {
-  let matched = userList.find((curUser) => curUser.email === user.email);
-  console.log('==matched-user, ', matched);
-  const updatedUser = { ...matched, ...user };
-  console.log('==updated-user, ', updatedUser);
-  matched = updatedUser;
-
-  // console.log('==update-userList, ', userList[userList.length - 1]);
-  console.log('==update-userList, ', JSON.stringify(userList));
+  const matchedIndex = userList.findIndex((cur) => cur.email === user.email);
+  const matched = userList[matchedIndex];
+  const updated = { ...matched, ...user };
+  userList[matchedIndex] = updated;
 
   const retData = {
-    user: updatedUser,
+    user: updated,
   };
 
   return mockResPromise(retData);

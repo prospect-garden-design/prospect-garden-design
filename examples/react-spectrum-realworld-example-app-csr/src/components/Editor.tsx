@@ -23,7 +23,7 @@ export default function Editor({
   slug = '',
 }: RouteComponentProps<{ slug: string }>) {
   // const [state, dispatch] = React.useReducer(editorReducer, initalState);
-  console.log('==Editor-slug, ', slug);
+  // console.log('==Editor-slug, ', slug);
 
   const {
     state: { user },
@@ -71,18 +71,6 @@ export default function Editor({
     };
   }, [slug]);
 
-  const handleChange = (
-    event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    // dispatch({
-    //   type: 'UPDATE_FORM',
-    //   field: {
-    //     key: event.currentTarget.name,
-    //     value: event.currentTarget.value,
-    //   },
-    // });
-  };
-
   const handelKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
     console.log(event.key, event.code);
     // if (event.keyCode === 13) {
@@ -107,14 +95,13 @@ export default function Editor({
 
       if (slug) {
         payload = await updateArticle({ slug, ...article });
-
-        console.log('---1');
+        // console.log('---1');
       } else {
         payload = await createArticle(article);
       }
-      console.log('---2');
+      // console.log('---2');
       navigate(`/article/${payload.data.article.slug}`);
-      console.log('---3');
+      // console.log('---3');
     } catch (error) {
       console.log(error);
       if (error.status === 422) {

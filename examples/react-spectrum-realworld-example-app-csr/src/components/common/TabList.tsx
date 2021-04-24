@@ -1,4 +1,5 @@
 import * as React from 'react';
+import useAuth from '../../context/auth';
 import useArticles from '../../context/articles';
 import { ITab } from '../../reducers/articleList';
 
@@ -7,6 +8,10 @@ type TabsListProps = {
 };
 
 export default function TabList({ data }: TabsListProps) {
+  const {
+    state: { user },
+  } = useAuth();
+
   const {
     state: { selectedTab },
     dispatch,

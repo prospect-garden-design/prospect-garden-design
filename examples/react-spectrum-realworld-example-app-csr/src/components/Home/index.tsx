@@ -7,7 +7,7 @@ import Tags from './Tags';
 import { ArticlesProvider } from '../../context/articles';
 import { RouteComponentProps } from '@reach/router';
 
-export function RHome(props: RouteComponentProps) {
+export function Home(props: RouteComponentProps) {
   return (
     <Grid
       areas={['mainView tagsView']}
@@ -24,4 +24,4 @@ export function RHome(props: RouteComponentProps) {
 }
 
 // export default Home;
-export default RHome;
+export default Home;

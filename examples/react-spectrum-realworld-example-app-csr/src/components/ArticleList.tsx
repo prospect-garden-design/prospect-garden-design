@@ -68,7 +68,7 @@ export default function ArticleList() {
     return <div className='article-preview'>No articles are here... yet.</div>;
   }
 
-  console.log('==articles, ', articles);
+  // console.log('==ArticleList, ', articles);
   return (
     <React.Fragment>
       {articles.map((article, index) => (

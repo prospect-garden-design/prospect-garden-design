@@ -17,9 +17,14 @@ const ArticlesContext = createContext<ArticleListContextProps>({
   dispatch: () => initialState,
 });
 
-export function ArticlesProvider(props: React.PropsWithChildren<{}>) {
+export function ArticlesProvider(
+  props: React.PropsWithChildren<{ value?: any }>,
+) {
   const [state, dispatch] = useReducer(articlesReducer, initialState);
-  return <ArticlesContext.Provider value={{ state, dispatch }} {...props} />;
+
+  const providerVal = props && props.value ? props.value : { state, dispatch };
+
+  return <ArticlesContext.Provider value={providerVal} {...props} />;
 }
 
 export default function useArticles() {

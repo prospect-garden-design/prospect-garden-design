@@ -13,24 +13,19 @@ export function Header() {
 
   // 用grid布局是为了将header右侧文字菜单和Home的MainView右侧标签对齐
   return (
-    <Grid
-      columns={['3fr', '1fr']}
-      columnGap='size-300'
-      marginX='size-1000'
-      marginY='size-160'
-    >
+    <Flex justifyContent='space-between' marginX='size-1000' marginY='size-160'>
       <Heading level={3}>
         <Link to='/' className=''>
           {APP_NAME}
         </Link>
       </Heading>
       {user ? <LoggedInView user={user} /> : <LoggedOutView />}
-    </Grid>
+    </Flex>
   );
 }
 
 const LoggedInView = ({ user: { username, image } }: { user: IUser }) => (
-  <Flex gap='size-300' marginStart='size-200'>
+  <Flex gap='size-300'>
     <NavLink to='/'>Home</NavLink>
     <NavLink to='/editor'>
       <i className='ion-compose' />
@@ -48,7 +43,7 @@ const LoggedInView = ({ user: { username, image } }: { user: IUser }) => (
 );
 
 const LoggedOutView = () => (
-  <Flex gap='size-300' marginStart='size-200'>
+  <Flex gap='size-300'>
     <NavLink to='/'>Home</NavLink>
     <NavLink to='/login'>Sign in</NavLink>
     <NavLink to='/register'>

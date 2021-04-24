@@ -30,7 +30,7 @@ export default function Article({
           getArticleComments(slug),
         ]);
 
-        console.log('==articlePayload, ', articlePayload);
+        // console.log('==articlePayload, ', articlePayload.data);
         if (!ignore) {
           dispatch({
             type: 'FETCH_ARTICLE_SUCCESS',
