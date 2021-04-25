@@ -2,23 +2,25 @@ import * as React from 'react';
 import { ArticleListAction } from '../reducers/articleList';
 
 type ListPaginationProps = {
-  page: number;
+  page?: number;
+  pageSize?: number;
   articlesCount: number;
   dispatch: React.Dispatch<ArticleListAction>;
 };
 
 export default function ListPagination({
-  page,
+  page = 0,
+  pageSize = 10,
   articlesCount,
   dispatch,
 }: ListPaginationProps) {
   const pageNumbers = [];
 
-  for (let i = 0; i < Math.ceil(articlesCount / 10); ++i) {
+  for (let i = 0; i < Math.ceil(articlesCount / pageSize); ++i) {
     pageNumbers.push(i);
   }
 
-  if (articlesCount <= 10) {
+  if (articlesCount <= pageSize) {
     return null;
   }
 

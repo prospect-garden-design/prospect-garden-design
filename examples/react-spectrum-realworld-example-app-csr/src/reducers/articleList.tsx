@@ -26,6 +26,7 @@ export interface ArticleListState {
   articlesCount: number;
   selectedTab: ITab;
   page: number;
+  pageSize?: number;
 }
 
 export const initialState: ArticleListState = {
@@ -34,6 +35,7 @@ export const initialState: ArticleListState = {
   error: null,
   articlesCount: 0,
   page: 0,
+  pageSize: 10,
   selectedTab: { type: 'ALL', label: 'Global Feed' },
 };
 
@@ -80,6 +82,7 @@ export function articlesReducer(
       return {
         ...state,
         selectedTab: action.tab,
+        page: 0,
       };
     case 'SET_PAGE':
       return {

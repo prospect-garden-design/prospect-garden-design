@@ -19,7 +19,7 @@ export default function ArticlePreview({
 }: ArticlePreviewProps) {
   // console.log('==ArticlePreview, ', article);
   return (
-    <Grid UNSAFE_style={{ borderTop: '1px solid rgba(0,0,0,.1)' }}>
+    <View UNSAFE_style={{ borderTop: '1px solid rgba(0,0,0,.1)' }}>
       <Flex justifyContent='space-between' marginY='size-200'>
         <ArticleAvatar article={article} />
         <FavoriteButton article={article} dispatch={dispatch}>
@@ -33,13 +33,14 @@ export default function ArticlePreview({
       <Flex
         justifyContent='space-between'
         // alignItems='top'
-        marginY='size-200'
+        marginTop='size-200'
+        // marginBottom='size-0'
       >
         <Link to={`/article/${article.slug}`} className='preview-link'>
           <span>Read more...</span>
         </Link>
         <ArticleTags tagList={article.tagList} />
       </Flex>
-    </Grid>
+    </View>
   );
 }

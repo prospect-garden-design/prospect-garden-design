@@ -1,7 +1,7 @@
 import faker from 'faker';
 import { userList, articleList, getUserByUsername } from './mockData';
 
-function mockResPromise(dataOrList: unknown, timeout = 250) {
+function mockResPromise(dataOrList: unknown, timeout = 0) {
   return new Promise((resolve, reject) => {
     if (!dataOrList) {
       return setTimeout(() => reject(new Error('res data not found')), timeout);
@@ -11,12 +11,43 @@ function mockResPromise(dataOrList: unknown, timeout = 250) {
   });
 }
 
-export function getArticles(pCount = 10, pNum) {
-  const startIdx = pNum ? pNum * pCount : 0;
-  const endIdx = startIdx + pCount;
+export function getArticles(pNum, pSize = 10) {
+  const startIdx = pNum ? pNum * pSize : 0;
+  const endIdx = startIdx + pSize;
   const retData = {
     articles: articleList.slice(startIdx, endIdx),
     articlesCount: articleList.length,
+  };
+
+  return mockResPromise(retData);
+}
+
+export function getArticlesByAuthor(username, pNum, pSize = 5) {
+  const startIdx = pNum ? pNum * pSize : 0;
+  const endIdx = startIdx + pSize;
+
+  const matched = articleList.filter(
+    (article) => article.author.username === username,
+  );
+
+  const retData = {
+    articles: matched.slice(startIdx, endIdx),
+    articlesCount: matched.length,
+  };
+
+  return mockResPromise(retData);
+}
+export function getArticlesByTag(tag, pNum, pSize = 10) {
+  const startIdx = pNum ? pNum * pSize : 0;
+  const endIdx = startIdx + pSize;
+
+  const matched = articleList.filter((article) =>
+    article.tagList.includes(tag),
+  );
+
+  const retData = {
+    articles: matched.slice(startIdx, endIdx),
+    articlesCount: matched.length,
   };
 
   return mockResPromise(retData);
@@ -156,6 +187,8 @@ export function loginByEmail({ user }) {
 
 const mockApi = {
   getArticles,
+  getArticlesByAuthor,
+  getArticlesByTag,
   getArticle,
   createArticle,
   updateArticle,

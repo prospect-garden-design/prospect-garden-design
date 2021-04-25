@@ -29,17 +29,21 @@ function omitSlug(article: {
 
 export function getArticles(page: number) {
   // return API.get<Articles>(`/articles?${limit(10, page)}`);
-  return mockApi.getArticles(10, page);
+  return mockApi.getArticles(page, 10);
 }
 
 export function getArticlesByAuthor(username: string, page: number) {
-  return API.get<Articles>(
-    `/articles?author=${encode(username)}&${limit(5, page)}`,
-  );
+  // return API.get<Articles>(
+  //   `/articles?author=${encode(username)}&${limit(5, page)}`,
+  // );
+
+  return mockApi.getArticlesByAuthor(username, page);
 }
 
 export function getArticlesByTag(tag: string, page: number) {
-  return API.get<Articles>(`/articles?tag=${encode(tag)}&${limit(10, page)}`);
+  // return API.get<Articles>(`/articles?tag=${encode(tag)}&${limit(10, page)}`);
+
+  return mockApi.getArticlesByTag(tag, page);
 }
 
 export function deleteArticle(slug: string) {

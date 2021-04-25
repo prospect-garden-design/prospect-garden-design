@@ -31,7 +31,8 @@ function ProfileArticles({ username }: { username: string }) {
     error: null,
     articlesCount: 0,
     page: 0,
-    selectedTab: { type: 'AUTHORED', label: 'Global Feed', username },
+    pageSize: 5,
+    selectedTab: { type: 'AUTHORED', label: 'Articles', username },
   };
 
   const [state, dispatch] = useReducer(

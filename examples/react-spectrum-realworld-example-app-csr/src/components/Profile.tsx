@@ -73,7 +73,8 @@ export default function Profile({
     profile && (
       <View UNSAFE_style={{}}>
         <View
-          paddingY='size-400'
+          paddingTop='size-300'
+          paddingBottom='size-200'
           backgroundColor='gray-200'
           // UNSAFE_style={{
           //   backgroundColor: 'beige',

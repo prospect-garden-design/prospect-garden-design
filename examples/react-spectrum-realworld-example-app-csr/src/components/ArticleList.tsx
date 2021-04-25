@@ -32,7 +32,15 @@ const loadArticles = (tab: ITab, page = 0) => {
 
 export default function ArticleList() {
   const {
-    state: { articles, loading, error, articlesCount, selectedTab, page },
+    state: {
+      articles,
+      loading,
+      error,
+      articlesCount,
+      selectedTab,
+      page,
+      pageSize,
+    },
     dispatch,
   } = useArticles();
 
@@ -41,6 +49,8 @@ export default function ArticleList() {
     async function fetchArticles() {
       dispatch({ type: 'FETCH_ARTICLES_BEGIN' });
       try {
+        // console.log('==selectedTab, ', selectedTab);
+        // console.log('==page, ', page);
         const payload = await loadArticles(selectedTab, page);
         if (!ignore) {
           dispatch({
@@ -80,6 +90,7 @@ export default function ArticleList() {
       ))}
       <ListPagination
         page={page}
+        pageSize={pageSize}
         articlesCount={articlesCount}
         dispatch={dispatch}
       />
