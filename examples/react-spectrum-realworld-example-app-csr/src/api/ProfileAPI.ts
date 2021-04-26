@@ -1,6 +1,6 @@
 import API from './APIUtils';
-import mockApi from './mockApi';
 import { IProfile } from '../types';
+import mockApi from './mockApi';
 
 type Profile = {
   profile: IProfile;

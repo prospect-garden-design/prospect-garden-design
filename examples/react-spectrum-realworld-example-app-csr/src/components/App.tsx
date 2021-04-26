@@ -1,24 +1,25 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+
 import {
   Provider,
+  darkTheme,
   defaultTheme,
   lightTheme,
-  darkTheme,
 } from '@adobe/react-spectrum';
-import { Router } from '@reach/router';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import useAuth, { AuthProvider } from '../context/auth';
+import { useEffect, useState } from 'react';
 
+import Article from './Article';
+import Editor from './Editor';
 import Header from './Header';
 import Home from './Home';
-import Register from './Register';
 import Login from './Login';
-import Article from './Article';
-import Profile from './Profile';
-import Editor from './Editor';
-import Settings from './Settings';
 import PrivateRoute from './PrivateRoute';
+import Profile from './Profile';
+import Register from './Register';
+import Settings from './Settings';
 import { getCurrentUser } from '../api/AuthAPI';
-import useAuth, { AuthProvider } from '../context/auth';
 
 function App() {
   const {
@@ -59,16 +60,18 @@ function App() {
     // <Provider theme={darkTheme}>
     <AuthProvider>
       <Provider theme={lightTheme}>
-        <Header />
         <Router>
-          <Home default path='/' />
-          <Article path='article/:slug' />
-          <Login path='login' />
-          <Register path='register' />
-          <Profile path=':username' />
-          <PrivateRoute as={Settings} path='/settings' />
-          <PrivateRoute as={Editor} path='/editor' />
-          <PrivateRoute as={Editor} path='/editor/:slug' />
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='article/:slug' element={<Article />} />
+            <Route path='login' element={<Login />} />
+            <Route path='register' element={<Register />} />
+            <Route path=':username' element={<Profile />} />
+            <PrivateRoute as={Settings} path='/settings' />
+            <PrivateRoute as={Editor} path='/editor' />
+            <PrivateRoute as={Editor} path='/editor/:slug' />
+          </Routes>
         </Router>
       </Provider>
     </AuthProvider>

@@ -1,8 +1,8 @@
+import './index.css';
+
 import * as React from 'react';
 
 import AppComp from './components/App';
-
-import './index.css';
 
 export function App() {
   return <AppComp />;

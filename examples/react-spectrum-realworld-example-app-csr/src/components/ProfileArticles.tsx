@@ -1,11 +1,16 @@
 import * as React from 'react';
+
+import {
+  ArticleListState,
+  ITab,
+  articlesReducer,
+} from '../reducers/articleList';
 import { useEffect, useReducer } from 'react';
-import { ITab } from '../reducers/articleList';
+
+import ArticleList from './ArticleList';
 import { ArticlesProvider } from '../context/articles';
 import TabList from './common/TabList';
-import ArticleList from './ArticleList';
 import useAuth from '../context/auth';
-import { articlesReducer, ArticleListState } from '../reducers/articleList';
 
 function ProfileArticles({ username }: { username: string }) {
   const {

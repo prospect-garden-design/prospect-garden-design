@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { View, Flex, Grid } from '@adobe/react-spectrum';
 
-import Banner from './Banner';
+import { Flex, Grid, View } from '@adobe/react-spectrum';
+
+import { ArticlesProvider } from '../../context/articles';
 import MainView from './MainView';
 import Tags from './Tags';
-import { ArticlesProvider } from '../../context/articles';
-import { RouteComponentProps } from '@reach/router';
 
-export function Home(props: RouteComponentProps) {
+export function Home(props) {
   return (
     <Grid
       areas={['mainView tagsView']}
@@ -23,5 +22,4 @@ export function Home(props: RouteComponentProps) {
   );
 }
 
-// export default Home;
 export default Home;

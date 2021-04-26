@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { Link } from '@reach/router';
 
+import { Link, useNavigate } from 'react-router-dom';
 import { followProfile, unfollowProfile } from '../../api/ProfileAPI';
-import { IArticle } from '../../types';
+import { useEffect, useState } from 'react';
+
 import { ArticleAction } from '../../reducers/article';
 import DeleteButton from './DeleteButton';
-import FollowUserButton from '../common/FollowUserButton';
 import FavoriteButton from '../common/FavoriteButton';
+import FollowUserButton from '../common/FollowUserButton';
+import { IArticle } from '../../types';
 import useAuth from '../../context/auth';
 
 type ArticleActionsProps = {
@@ -19,7 +20,8 @@ export default function ArticleActions({
   article,
   dispatch,
 }: ArticleActionsProps) {
-  const [loading, setLoading] = React.useState(false);
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const {
     state: { user },
   } = useAuth();
@@ -27,6 +29,11 @@ export default function ArticleActions({
   const canModifyArticle = user && user.username === article.author.username;
 
   const handleFollowButtonClick = async () => {
+    if (!user) {
+      navigate('/register');
+      return;
+    }
+
     setLoading(true);
     if (article.author.following) {
       await followProfile(article.author.username);
@@ -57,7 +64,7 @@ export default function ArticleActions({
         profile={article.author}
         loading={loading}
       />
-      <FavoriteButton article={article} dispatch={dispatch}>
+      <FavoriteButton article={article} dispatch={dispatch} user={user}>
         {article.favorited ? 'Unfavorite Article' : 'Favorite Article'}
         <span className=''>({article.favoritesCount})</span>
       </FavoriteButton>

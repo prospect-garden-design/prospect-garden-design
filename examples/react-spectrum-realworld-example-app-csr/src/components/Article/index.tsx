@@ -1,19 +1,19 @@
 import * as React from 'react';
-import { useState, useEffect, useReducer } from 'react';
-import { View, Flex, Grid } from '@adobe/react-spectrum';
-import marked from 'marked';
+
+import { Flex, Grid, View } from '@adobe/react-spectrum';
+import { articleReducer, initialState } from '../../reducers/article';
+import { useEffect, useReducer, useState } from 'react';
 
 import ArticleMeta from './ArticleMeta';
 import ArticleTags from '../common/ArticleTags';
 import CommentContainer from './CommentContainer';
-import { RouteComponentProps } from '@reach/router';
-import { articleReducer, initialState } from '../../reducers/article';
-import { getArticleComments } from '../../api/CommentsAPI';
 import { getArticle } from '../../api/ArticlesAPI';
+import { getArticleComments } from '../../api/CommentsAPI';
+import marked from 'marked';
+import { useParams } from 'react-router-dom';
 
-export default function Article({
-  slug = '',
-}: RouteComponentProps<{ slug: string }>) {
+export default function Article() {
+  const { slug } = useParams();
   const [{ article, comments, loading, error }, dispatch] = useReducer(
     articleReducer,
     initialState,

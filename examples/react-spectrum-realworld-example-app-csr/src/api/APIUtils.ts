@@ -1,4 +1,4 @@
-import { navigate } from '@reach/router';
+// import { navigate } from '@reach/router';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
@@ -12,11 +12,11 @@ axios.interceptors.response.use(
   (error) => {
     switch (error.response.status) {
       case 401:
-        navigate('/register');
+        // navigate('/register');
         break;
       case 404:
       case 403:
-        navigate('/');
+        // navigate('/');
         break;
     }
     return Promise.reject(error.response);

@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { ArticleListAction } from '../reducers/articleList';
 
 type ListPaginationProps = {

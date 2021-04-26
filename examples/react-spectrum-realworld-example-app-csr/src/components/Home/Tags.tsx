@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { useState, useEffect, useMemo } from 'react';
-import { View, Flex, Grid, Button } from '@adobe/react-spectrum';
+
+import { Button, Flex, Grid, View } from '@adobe/react-spectrum';
+import { useEffect, useMemo, useState } from 'react';
 
 import { getTags } from '../../api/TagsAPI';
 import useArticles from '../../context/articles';

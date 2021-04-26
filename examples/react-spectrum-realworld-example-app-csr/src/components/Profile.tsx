@@ -1,28 +1,29 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+
 import {
-  View,
+  Button,
   Flex,
+  Form,
   Grid,
-  Text,
   Heading,
   Image,
-  Form,
+  Text,
   TextField,
-  Button,
+  View,
 } from '@adobe/react-spectrum';
-import { navigate, Link, RouteComponentProps, Redirect } from '@reach/router';
+import { Link, useParams } from 'react-router-dom';
+import { followProfile, getProfile, unfollowProfile } from '../api/ProfileAPI';
+import { useEffect, useState } from 'react';
 
-import ProfileArticles from './ProfileArticles';
+import { ALT_IMAGE_URL } from '../utils';
 import FollowUserButton from './common/FollowUserButton';
 import { IProfile } from '../types';
+import ProfileArticles from './ProfileArticles';
 import useAuth from '../context/auth';
-import { unfollowProfile, followProfile, getProfile } from '../api/ProfileAPI';
-import { ALT_IMAGE_URL } from '../utils';
 
-export default function Profile({
-  username = '',
-}: RouteComponentProps<{ username: string }>) {
+export default function Profile() {
+  const { username } = useParams();
+  console.log('Profile-username, ', username);
   const [profile, setProfile] = useState<IProfile | null>(null);
   const [loading, setLoading] = useState(false);
   const {

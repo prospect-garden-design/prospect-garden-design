@@ -1,16 +1,18 @@
 import * as React from 'react';
-import { useEffect } from 'react';
-import ArticlePreview from './ArticlePreview';
-import ListPagination from './ListPagination';
+
 import {
   getArticles,
-  getFeedArticles,
-  getArticlesByTag,
   getArticlesByAuthor,
+  getArticlesByTag,
   getArticlesFavoritedBy,
+  getFeedArticles,
 } from '../api/ArticlesAPI';
-import useArticles from '../context/articles';
+
+import ArticlePreview from './ArticlePreview';
 import { ITab } from '../reducers/articleList';
+import ListPagination from './ListPagination';
+import useArticles from '../context/articles';
+import { useEffect } from 'react';
 
 const loadArticles = (tab: ITab, page = 0) => {
   switch (tab.type) {

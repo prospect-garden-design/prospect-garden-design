@@ -1,8 +1,8 @@
-import API, { TOKEN_KEY } from './APIUtils';
-import mockApi from './mockApi';
+import API, { TOKEN_KEY, setToken } from './APIUtils';
+
 import { IUser } from '../types';
+import mockApi from './mockApi';
 import { setLocalStorage } from '../utils';
-import { setToken } from './APIUtils';
 
 type User = {
   user: IUser & { token: string };

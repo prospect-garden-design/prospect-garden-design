@@ -7,5 +7,6 @@ type Tags = {
 
 export function getTags() {
   // return API.get<Tags>('/tags');
+
   return mockApi.getTags();
 }

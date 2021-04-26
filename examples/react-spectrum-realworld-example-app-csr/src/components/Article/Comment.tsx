@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Link } from '@reach/router';
+
 import { IComment, IUser } from '../../types';
+
 import { ArticleAction } from '../../reducers/article';
+import { Link } from 'react-router-dom';
 import { deleteComment } from '../../api/CommentsAPI';
 
 type CommentProps = {

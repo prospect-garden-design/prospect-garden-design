@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Link, LinkGetProps, LinkProps } from '@reach/router';
-import { View, Flex, Grid, Text, Heading } from '@adobe/react-spectrum';
 
-import useAuth from '../context/auth';
-import { IUser } from '../types';
+import { Flex, Grid, Heading, Text, View } from '@adobe/react-spectrum';
+
 import { APP_NAME } from '../utils';
+import { IUser } from '../types';
+import { Link } from 'react-router-dom';
+import useAuth from '../context/auth';
 
 export function Header() {
   const {
@@ -26,7 +27,7 @@ export function Header() {
 
 const LoggedInView = ({ user: { username, image } }: { user: IUser }) => (
   <Flex gap='size-300'>
-    <NavLink to='/'>Home</NavLink>
+    {/* <NavLink to='/'>Home</NavLink> */}
     <NavLink to='/editor'>
       <i className='ion-compose' />
       &nbsp;New Post
@@ -44,20 +45,21 @@ const LoggedInView = ({ user: { username, image } }: { user: IUser }) => (
 
 const LoggedOutView = () => (
   <Flex gap='size-300'>
-    <NavLink to='/'>Home</NavLink>
+    {/* <NavLink to='/'>Home</NavLink> */}
     <NavLink to='/login'>Sign in</NavLink>
-    <NavLink to='/register'>
-      <Text>Sign up</Text>
-    </NavLink>
+    <NavLink to='/register'>Sign up</NavLink>
   </Flex>
 );
 
-const NavLink = (props: LinkProps<{}>) => {
-  const CompRoot = Link as any;
-  return <CompRoot getProps={isActive} {...props} />;
+// const NavLink = (props: LinkProps<{}>) => {
+const NavLink = (props) => {
+  const CompRoot = Link;
+  return <CompRoot {...props} />;
+  // return <CompRoot getProps={isActive} {...props} />;
 };
 
-const isActive = ({ isCurrent }: LinkGetProps) => {
+// const isActive = ({ isCurrent }: LinkGetProps) => {
+const isActive = ({ isCurrent }) => {
   return isCurrent
     ? { className: 'nav-link active' }
     : { className: 'nav-link' };

@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { navigate } from '@reach/router';
+
 import { IArticle } from '../../types';
 import { deleteArticle } from '../../api/ArticlesAPI';
+import { useNavigate } from 'react-router-dom';
 
 export default function DeleteButton({ article }: { article: IArticle }) {
+  const navigate = useNavigate();
   const handleDelete = async () => {
     try {
       await deleteArticle(article.slug);

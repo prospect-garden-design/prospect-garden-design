@@ -1,28 +1,28 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+
 import {
-  View,
-  Flex,
-  Grid,
-  Text,
-  Heading,
-  Form,
-  TextField,
-  TextArea,
-  Button,
   ActionButton,
+  Button,
+  Flex,
+  Form,
+  Grid,
+  Heading,
+  Text,
+  TextArea,
+  TextField,
+  View,
 } from '@adobe/react-spectrum';
-import { navigate, Link, RouteComponentProps, Redirect } from '@reach/router';
-
-import useAuth from '../context/auth';
+import { createArticle, getArticle, updateArticle } from '../api/ArticlesAPI';
 import { editorReducer, initalState } from '../reducers/editor';
-import { getArticle, updateArticle, createArticle } from '../api/ArticlesAPI';
-import ListErrors from './common/ListErrors';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-export default function Editor({
-  slug = '',
-}: RouteComponentProps<{ slug: string }>) {
-  // const [state, dispatch] = React.useReducer(editorReducer, initalState);
+import ListErrors from './common/ListErrors';
+import useAuth from '../context/auth';
+
+export default function Editor() {
+  const { slug } = useParams();
+  const navigate = useNavigate();
   // console.log('==Editor-slug, ', slug);
 
   const {
@@ -88,20 +88,17 @@ export default function Editor({
         title,
         description,
         body,
-        tagList: [tag],
+        tagList: tag && tag.trim() !== '' ? [tag] : [],
         user,
       };
       let payload;
 
       if (slug) {
         payload = await updateArticle({ slug, ...article });
-        // console.log('---1');
       } else {
         payload = await createArticle(article);
       }
-      // console.log('---2');
       navigate(`/article/${payload.data.article.slug}`);
-      // console.log('---3');
     } catch (error) {
       console.log(error);
       if (error.status === 422) {

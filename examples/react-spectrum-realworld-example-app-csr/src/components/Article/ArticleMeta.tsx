@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { View, Flex, Grid } from '@adobe/react-spectrum';
 
-import ArticleActions from './ArticleActions';
-import { IArticle } from '../../types';
+import { Flex, Grid, View } from '@adobe/react-spectrum';
+
 import { ArticleAction } from '../../reducers/article';
+import ArticleActions from './ArticleActions';
 import ArticleAvatar from '../common/ArticleAvatar';
+import { IArticle } from '../../types';
 
 type ArticleMetaProps = {
   article: IArticle;

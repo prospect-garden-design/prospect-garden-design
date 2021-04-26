@@ -1,6 +1,6 @@
 import API from './APIUtils';
-import mockApi from './mockApi';
 import { IComment } from '../types';
+import mockApi from './mockApi';
 
 type Comment = {
   comment: IComment;
@@ -20,5 +20,6 @@ export function deleteComment(slug: string, commentId: number) {
 
 export function getArticleComments(slug: string) {
   // return API.get<Comments>(`/articles/${slug}/comments`);
+
   return mockApi.getArticleComments(slug);
 }

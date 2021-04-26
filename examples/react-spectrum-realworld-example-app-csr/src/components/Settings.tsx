@@ -1,22 +1,23 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import {
-  View,
-  Flex,
-  Grid,
-  Text,
-  Heading,
-  Form,
-  TextField,
-  Button,
-} from '@adobe/react-spectrum';
-import { navigate, Link, RouteComponentProps, Redirect } from '@reach/router';
 
-import { userList } from '../api/mockData';
+import {
+  Button,
+  Flex,
+  Form,
+  Grid,
+  Heading,
+  Text,
+  TextField,
+  View,
+} from '@adobe/react-spectrum';
+import { logout, updateUser } from '../api/AuthAPI';
+import { useEffect, useState } from 'react';
+
+import { IErrors } from '../types';
 import ListErrors from './common/ListErrors';
 import useAuth from '../context/auth';
-import { updateUser, logout } from '../api/AuthAPI';
-import { IErrors } from '../types';
+import { useNavigate } from 'react-router-dom';
+import { userList } from '../api/mockData';
 
 type Form = {
   username: string;
@@ -26,7 +27,8 @@ type Form = {
   password?: string;
 };
 
-export default function Settings(_: RouteComponentProps) {
+export default function Settings(_) {
+  const navigate = useNavigate();
   const {
     state: { user },
     dispatch,
@@ -127,6 +129,7 @@ export default function Settings(_: RouteComponentProps) {
             placeholder='input name will be checked for uniqueness'
           />
           <TextField
+            isDisabled={true}
             value={email}
             onChange={setEmail}
             name='email'
@@ -165,7 +168,7 @@ export default function Settings(_: RouteComponentProps) {
           onPress={handleLogout}
           variant='negative'
           minWidth='size-1200'
-          marginTop='size-400'
+          marginTop='size-200'
           UNSAFE_style={{}}
         >
           Or click here to Logout

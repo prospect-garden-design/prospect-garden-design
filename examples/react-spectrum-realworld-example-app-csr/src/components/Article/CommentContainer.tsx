@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { Link } from '@reach/router';
-import { View, Flex, Grid } from '@adobe/react-spectrum';
 
+import { Flex, Grid, View } from '@adobe/react-spectrum';
+
+import { ArticleAction } from '../../reducers/article';
 import Comment from './Comment';
 import CommentInput from './CommentInput';
 import { IComment } from '../../types';
-import { ArticleAction } from '../../reducers/article';
+import { Link } from 'react-router-dom';
 import useAuth from '../../context/auth';
 
 type CommentContainerProps = {

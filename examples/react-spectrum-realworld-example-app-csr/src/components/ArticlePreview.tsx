@@ -1,23 +1,33 @@
 import * as React from 'react';
-import { Link } from '@reach/router';
-import { View, Flex, Grid, Text, Heading } from '@adobe/react-spectrum';
+
+import { Flex, Grid, Heading, Text, View } from '@adobe/react-spectrum';
 
 import ArticleAvatar from './common/ArticleAvatar';
+import { ArticleListAction } from '../reducers/articleList';
 import ArticleTags from './common/ArticleTags';
 import FavoriteButton from './common/FavoriteButton';
 import { IArticle } from '../types';
-import { ArticleListAction } from '../reducers/articleList';
+import { Link } from 'react-router-dom';
 
 type ArticlePreviewProps = {
   article: IArticle;
   dispatch: React.Dispatch<ArticleListAction>;
 };
 
+function generateSummaryDescriptionFromArticle(content) {
+  if (content && content.length > 40) {
+    return content.slice(0, 32);
+  }
+
+  return content;
+}
+
 export default function ArticlePreview({
   article,
   dispatch,
 }: ArticlePreviewProps) {
   // console.log('==ArticlePreview, ', article);
+
   return (
     <View UNSAFE_style={{ borderTop: '1px solid rgba(0,0,0,.1)' }}>
       <Flex justifyContent='space-between' marginY='size-200'>
@@ -28,7 +38,11 @@ export default function ArticlePreview({
       </Flex>
 
       <Heading level={5}>{article.title}</Heading>
-      <p>{article.description}</p>
+      <p>
+        {article.description
+          ? article.description
+          : generateSummaryDescriptionFromArticle(article.body)}
+      </p>
 
       <Flex
         justifyContent='space-between'

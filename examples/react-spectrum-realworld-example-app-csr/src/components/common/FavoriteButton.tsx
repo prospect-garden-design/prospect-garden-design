@@ -1,23 +1,34 @@
 import * as React from 'react';
-import { IArticle } from '../../types';
+
+import { Link, useNavigate } from 'react-router-dom';
+import { favoriteArticle, unfavoriteArticle } from '../../api/ArticlesAPI';
+
 import { ArticleAction } from '../../reducers/article';
 import { ArticleListAction } from '../../reducers/articleList';
-import { favoriteArticle, unfavoriteArticle } from '../../api/ArticlesAPI';
+import { IArticle } from '../../types';
 
 type FavoriteButtonProps = {
   article: IArticle;
   dispatch: React.Dispatch<ArticleAction & ArticleListAction>;
   children: React.ReactNode;
+  user?: any;
 };
 
 export default function FavoriteButton({
   article,
   dispatch,
   children,
+  user,
 }: FavoriteButtonProps) {
+  const navigate = useNavigate();
   const [loading, setLoading] = React.useState(false);
 
   const handleClick = async () => {
+    if (!user) {
+      navigate('/register');
+      return;
+    }
+
     setLoading(true);
     if (article.favorited) {
       const payload = await unfavoriteArticle(article.slug);

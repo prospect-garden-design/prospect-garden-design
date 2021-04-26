@@ -1,6 +1,6 @@
 import API from './APIUtils';
-import mockApi from './mockApi';
 import { IArticle } from '../types';
+import mockApi from './mockApi';
 
 const encode = encodeURIComponent;
 
@@ -29,6 +29,7 @@ function omitSlug(article: {
 
 export function getArticles(page: number) {
   // return API.get<Articles>(`/articles?${limit(10, page)}`);
+
   return mockApi.getArticles(page, 10);
 }
 
@@ -66,6 +67,7 @@ export function getFeedArticles() {
 
 export function getArticle(slug: string) {
   // return API.get<Article>(`/articles/${slug}`);
+
   return mockApi.getArticle(slug);
 }
 

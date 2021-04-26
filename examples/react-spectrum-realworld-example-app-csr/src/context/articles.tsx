@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { useEffect, useReducer, useContext, createContext } from 'react';
+
 import {
-  articlesReducer,
-  initialState,
   ArticleListAction,
   ArticleListState,
+  articlesReducer,
+  initialState,
 } from '../reducers/articleList';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 
 type ArticleListContextProps = {
   state: ArticleListState;

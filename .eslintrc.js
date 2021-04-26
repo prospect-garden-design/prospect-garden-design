@@ -79,7 +79,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/explicit-member-accessibility': 0,
     '@typescript-eslint/member-ordering': 0,
-    '@typescript-eslint/consistent-type-definitions': 1,
+    '@typescript-eslint/consistent-type-definitions': 0,
     '@typescript-eslint/prefer-for-of': 0,
     '@typescript-eslint/prefer-optional-chain': 0,
     '@typescript-eslint/method-signature-style': 1,

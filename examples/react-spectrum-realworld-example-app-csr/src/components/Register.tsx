@@ -1,23 +1,26 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import {
-  View,
-  Flex,
-  Grid,
-  Text,
-  Heading,
-  Form,
-  TextField,
-  Button,
-} from '@adobe/react-spectrum';
-import { navigate, Link, RouteComponentProps, Redirect } from '@reach/router';
 
+import {
+  Button,
+  Flex,
+  Form,
+  Grid,
+  Heading,
+  Text,
+  TextField,
+  View,
+} from '@adobe/react-spectrum';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
+import { IErrors } from '../types';
+import ListErrors from './common/ListErrors';
 import { register } from '../api/AuthAPI';
 import useAuth from '../context/auth';
-import ListErrors from './common/ListErrors';
-import { IErrors } from '../types';
 
-export default function Register(_: RouteComponentProps) {
+export default function Register(_) {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -46,9 +49,12 @@ export default function Register(_: RouteComponentProps) {
     }
   };
 
-  if (user) {
-    return <Redirect to='/' noThrow />;
-  }
+  useEffect(() => {
+    if (user) {
+      // return <Redirect to='/' noThrow />;
+      navigate('/');
+    }
+  }, [navigate, user]);
 
   return (
     <View UNSAFE_style={{}}>
