@@ -167,6 +167,7 @@ export function updateUser({ user }) {
   const matchedIndex = userList.findIndex((cur) => cur.email === user.email);
   const matched = userList[matchedIndex];
   const updated = { ...matched, ...user };
+
   userList[matchedIndex] = updated;
 
   const retData = {

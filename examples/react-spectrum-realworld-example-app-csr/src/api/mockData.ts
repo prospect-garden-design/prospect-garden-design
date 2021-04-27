@@ -1,7 +1,7 @@
 import faker from 'faker';
 
-const userNum = 3;
-const articleNum = 6;
+const userNum = 13;
+const articleNum = 166;
 
 export let userList = new Array(userNum).fill(0).map((item, index) => ({
   id: index,

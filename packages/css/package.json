@@ -1,5 +1,5 @@
 {
-  "name": "@pgd/components",
+  "name": "@pgd/css",
   "version": "1.0.0",
   "description": "the css implementation of the prospect garden design system",
   "main": "dist",

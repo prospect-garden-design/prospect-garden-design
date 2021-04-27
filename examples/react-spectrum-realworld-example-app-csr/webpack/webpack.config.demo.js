@@ -9,6 +9,11 @@ module.exports = merge(devServerConfig, {
     filename: 'main.js',
     path: path.resolve(__dirname, '../dist'),
   },
+  resolve: {
+    alias: {
+      '@adobe/react-spectrum': '@pgd/components-react',
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       // template: path.resolve(process.cwd(), 'demo.html'),
@@ -16,7 +21,8 @@ module.exports = merge(devServerConfig, {
       // filename: 'index.html',
     }),
   ],
-  // devServer: {
-  //   contentBase: path.resolve(__dirname, '../dist'),
-  // },
+  devServer: {
+    // contentBase: path.resolve(__dirname, '../dist'),
+    port: 9000,
+  },
 });

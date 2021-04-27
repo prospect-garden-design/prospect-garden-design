@@ -55,7 +55,7 @@ export default function Settings(_) {
       const { username, email, image, bio } = user;
       // console.log(username, email, image, bio);
       setUsername(username);
-      setEmail(email);
+      // setEmail(email);
       setPassword(password);
       setImage(image || '');
       setBio(bio || '');
