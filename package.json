@@ -57,6 +57,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@adobe/react-spectrum": "^3.9.0",
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.0",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
