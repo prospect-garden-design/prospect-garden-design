@@ -29,6 +29,7 @@
     "syncpack-fix": "syncpack-fix-mismatches",
     "syncpack-ls": "syncpack-list-mismatches",
     "test": "jest --config=jest.monorepo.js",
+    "test-bug-docs": "npm x -w @examples-hub/sample-eg-react-comp-docs -- npm run dev",
     "test:coverage": "jest --coverage"
   },
   "husky": {
@@ -67,12 +68,12 @@
     "@babel/preset-typescript": "^7.13.0",
     "@mdx-js/loader": "^2.0.0-next.9",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.0-beta.1",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
     "@types/faker": "^5.5.2",
     "@types/jest": "^26.0.20",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.1",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.0",
@@ -94,7 +95,7 @@
     "husky": "^6.0.0",
     "jest": "^26.6.3",
     "jest-transform-stub": "^2.0.0",
-    "mini-css-extract-plugin": "^1.4.1",
+    "mini-css-extract-plugin": "^1.5.1",
     "prettier": "^2.2.1",
     "react-refresh": "^0.10.0",
     "react-test-renderer": "^17.0.2",
@@ -114,5 +115,18 @@
   },
   "engines": {
     "npm": ">=7.0.0"
+  },
+  "syncpack": {
+    "versionGroups": [
+      {
+        "dependencies": [
+          "react",
+          "react-dom"
+        ],
+        "packages": [
+          "@examples-hub/sample-eg-react-comp-docs"
+        ]
+      }
+    ]
   }
 }
