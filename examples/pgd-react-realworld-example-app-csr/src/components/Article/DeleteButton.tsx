@@ -1,8 +1,8 @@
 import * as React from 'react';
-
-import { IArticle } from '../../types';
-import { deleteArticle } from '../../api/ArticlesAPI';
 import { useNavigate } from 'react-router-dom';
+
+import { deleteArticle } from '../../api/ArticlesAPI';
+import { IArticle } from '../../types';
 
 export default function DeleteButton({ article }: { article: IArticle }) {
   const navigate = useNavigate();

@@ -1,21 +1,20 @@
 import * as React from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 
-import {
-  AuthAction,
-  AuthState,
-  authReducer,
-  initialState,
-} from '../reducers/auth';
 import {
   TOKEN_KEY,
   isTokenValid,
   isTokenValidForTest,
   setToken,
 } from '../api/APIUtils';
-import { createContext, useContext, useEffect, useReducer } from 'react';
-
-import { getLocalStorageValue } from '../utils';
 import { logout } from '../api/AuthAPI';
+import {
+  AuthAction,
+  AuthState,
+  authReducer,
+  initialState,
+} from '../reducers/auth';
+import { getLocalStorageValue } from '../utils';
 
 type AuthContextProps = {
   state: AuthState;

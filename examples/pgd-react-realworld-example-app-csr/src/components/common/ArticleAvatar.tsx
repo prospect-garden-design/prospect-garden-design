@@ -1,10 +1,10 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Flex, Grid, Heading, Text, View } from '@adobe/react-spectrum';
 
-import { ALT_IMAGE_URL } from '../../utils';
 import { IArticle } from '../../types';
-import { Link } from 'react-router-dom';
+import { ALT_IMAGE_URL } from '../../utils';
 
 type ArticleAvatarProps = {
   article: IArticle;

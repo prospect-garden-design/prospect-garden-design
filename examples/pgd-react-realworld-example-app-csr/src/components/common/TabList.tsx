@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { ITab } from '../../reducers/articleList';
 import useArticles from '../../context/articles';
 import useAuth from '../../context/auth';
+import { ITab } from '../../reducers/articleList';
 
 type TabsListProps = {
   data: ITab[];

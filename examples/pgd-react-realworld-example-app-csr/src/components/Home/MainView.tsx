@@ -2,10 +2,10 @@ import * as React from 'react';
 
 import { Button, Flex, Grid, View } from '@adobe/react-spectrum';
 
-import ArticleList from '../ArticleList';
-import { ITab } from '../../reducers/articleList';
-import TabList from '../common/TabList';
 import useAuth from '../../context/auth';
+import { ITab } from '../../reducers/articleList';
+import ArticleList from '../ArticleList';
+import TabList from '../common/TabList';
 
 const tabsData: Array<ITab> = [
   { type: 'FEED', label: 'Your Feed' },

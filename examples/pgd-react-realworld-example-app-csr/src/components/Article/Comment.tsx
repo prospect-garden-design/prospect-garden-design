@@ -1,10 +1,9 @@
 import * as React from 'react';
-
-import { IComment, IUser } from '../../types';
-
-import { ArticleAction } from '../../reducers/article';
 import { Link } from 'react-router-dom';
+
 import { deleteComment } from '../../api/CommentsAPI';
+import { ArticleAction } from '../../reducers/article';
+import { IComment, IUser } from '../../types';
 
 type CommentProps = {
   comment: IComment;

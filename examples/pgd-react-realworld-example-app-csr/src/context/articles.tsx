@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 
 import {
   ArticleListAction,
@@ -6,7 +7,6 @@ import {
   articlesReducer,
   initialState,
 } from '../reducers/articleList';
-import { createContext, useContext, useEffect, useReducer } from 'react';
 
 type ArticleListContextProps = {
   state: ArticleListState;

@@ -1,5 +1,5 @@
-import API from './APIUtils';
 import { IArticle } from '../types';
+import API from './APIUtils';
 import mockApi from './mockApi';
 
 const encode = encodeURIComponent;

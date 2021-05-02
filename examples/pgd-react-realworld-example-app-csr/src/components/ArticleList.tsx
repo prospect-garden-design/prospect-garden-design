@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 
 import {
   getArticles,
@@ -7,12 +8,10 @@ import {
   getArticlesFavoritedBy,
   getFeedArticles,
 } from '../api/ArticlesAPI';
-
-import ArticlePreview from './ArticlePreview';
-import { ITab } from '../reducers/articleList';
-import ListPagination from './ListPagination';
 import useArticles from '../context/articles';
-import { useEffect } from 'react';
+import { ITab } from '../reducers/articleList';
+import ArticlePreview from './ArticlePreview';
+import ListPagination from './ListPagination';
 
 const loadArticles = (tab: ITab, page = 0) => {
   switch (tab.type) {

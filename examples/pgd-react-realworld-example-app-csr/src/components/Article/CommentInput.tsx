@@ -1,8 +1,8 @@
 import * as React from 'react';
 
+import { createComment } from '../../api/CommentsAPI';
 import { ArticleAction } from '../../reducers/article';
 import { IUser } from '../../types';
-import { createComment } from '../../api/CommentsAPI';
 
 type CommentInputProps = {
   user: IUser;

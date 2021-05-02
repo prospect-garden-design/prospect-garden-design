@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import {
   ActionButton,
@@ -12,13 +14,11 @@ import {
   TextField,
   View,
 } from '@adobe/react-spectrum';
-import { createArticle, getArticle, updateArticle } from '../api/ArticlesAPI';
-import { editorReducer, initalState } from '../reducers/editor';
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
 
-import ListErrors from './common/ListErrors';
+import { createArticle, getArticle, updateArticle } from '../api/ArticlesAPI';
 import useAuth from '../context/auth';
+import { editorReducer, initalState } from '../reducers/editor';
+import ListErrors from './common/ListErrors';
 
 export default function Editor() {
   const { slug } = useParams();

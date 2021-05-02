@@ -1,6 +1,6 @@
-import { articleList, getUserByUsername, userList } from './mockData';
-
 import faker from 'faker';
+
+import { articleList, getUserByUsername, userList } from './mockData';
 
 function mockResPromise(dataOrList: unknown, timeout = 0) {
   return new Promise((resolve, reject) => {

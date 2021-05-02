@@ -1,13 +1,13 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Flex, Grid, Heading, Text, View } from '@adobe/react-spectrum';
 
-import ArticleAvatar from './common/ArticleAvatar';
 import { ArticleListAction } from '../reducers/articleList';
+import { IArticle } from '../types';
+import ArticleAvatar from './common/ArticleAvatar';
 import ArticleTags from './common/ArticleTags';
 import FavoriteButton from './common/FavoriteButton';
-import { IArticle } from '../types';
-import { Link } from 'react-router-dom';
 
 type ArticlePreviewProps = {
   article: IArticle;

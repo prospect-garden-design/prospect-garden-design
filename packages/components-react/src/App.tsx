@@ -2,12 +2,23 @@ import './index.css';
 
 import * as React from 'react';
 
-import { Button, Provider, defaultTheme } from './index';
+import { Accordion, Button, Item, Provider, defaultTheme } from './index';
 
-export function App() {
+export function App(props = {}) {
   return (
     <Provider theme={defaultTheme}>
-      <Button variant='cta'>Hello</Button>
+      <Button variant='cta'>Hello spectrum</Button>
+      <Accordion {...props}>
+        <Item key='files' title='Your files'>
+          files
+        </Item>
+        <Item key='shared' title='Shared with you'>
+          shared
+        </Item>
+        <Item key='last' title='Last item'>
+          last
+        </Item>
+      </Accordion>
     </Provider>
   );
 }

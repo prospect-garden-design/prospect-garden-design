@@ -55,6 +55,7 @@
     "@react-spectrum/view": "^3.1.1",
     "@react-spectrum/well": "^3.1.1",
     "@react-stately/collections": "^3.3.1",
-    "@react-stately/data": "^3.3.0"
+    "@react-stately/data": "^3.3.0",
+    "@react-types/shared": "^3.5.0"
   }
 }

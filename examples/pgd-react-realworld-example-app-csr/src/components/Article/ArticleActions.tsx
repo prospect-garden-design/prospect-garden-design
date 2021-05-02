@@ -1,15 +1,14 @@
 import * as React from 'react';
-
-import { Link, useNavigate } from 'react-router-dom';
-import { followProfile, unfollowProfile } from '../../api/ProfileAPI';
 import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
+import { followProfile, unfollowProfile } from '../../api/ProfileAPI';
+import useAuth from '../../context/auth';
 import { ArticleAction } from '../../reducers/article';
-import DeleteButton from './DeleteButton';
+import { IArticle } from '../../types';
 import FavoriteButton from '../common/FavoriteButton';
 import FollowUserButton from '../common/FollowUserButton';
-import { IArticle } from '../../types';
-import useAuth from '../../context/auth';
+import DeleteButton from './DeleteButton';
 
 type ArticleActionsProps = {
   article: IArticle;

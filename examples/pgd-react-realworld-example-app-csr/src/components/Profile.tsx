@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 import {
   Button,
@@ -11,15 +13,13 @@ import {
   TextField,
   View,
 } from '@adobe/react-spectrum';
-import { Link, useParams } from 'react-router-dom';
-import { followProfile, getProfile, unfollowProfile } from '../api/ProfileAPI';
-import { useEffect, useState } from 'react';
 
-import { ALT_IMAGE_URL } from '../utils';
-import FollowUserButton from './common/FollowUserButton';
-import { IProfile } from '../types';
-import ProfileArticles from './ProfileArticles';
+import { followProfile, getProfile, unfollowProfile } from '../api/ProfileAPI';
 import useAuth from '../context/auth';
+import { IProfile } from '../types';
+import { ALT_IMAGE_URL } from '../utils';
+import ProfileArticles from './ProfileArticles';
+import FollowUserButton from './common/FollowUserButton';
 
 export default function Profile() {
   const { username } = useParams();

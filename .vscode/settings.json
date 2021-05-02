@@ -80,5 +80,7 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "sort-imports.default-sort-style": "module-scoped",
+  "sort-imports.on-save": true
 }

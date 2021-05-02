@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import {
   Button,
@@ -10,13 +12,11 @@ import {
   TextField,
   View,
 } from '@adobe/react-spectrum';
-import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 
-import { IErrors } from '../types';
-import ListErrors from './common/ListErrors';
 import { login } from '../api/AuthAPI';
 import useAuth from '../context/auth';
+import { IErrors } from '../types';
+import ListErrors from './common/ListErrors';
 
 export default function Login(_) {
   const [email, setEmail] = useState('');

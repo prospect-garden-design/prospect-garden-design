@@ -4,6 +4,7 @@
     "mervin.markdown-formatter",
     "streetsidesoftware.code-spell-checker",
     "alefragnani.bookmarks",
-    "maptz.regionfolder"
+    "maptz.regionfolder",
+    "amatiasq.sort-imports"
   ]
 }

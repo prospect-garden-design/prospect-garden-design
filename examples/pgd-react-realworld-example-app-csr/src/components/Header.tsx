@@ -1,11 +1,11 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Flex, Grid, Heading, Text, View } from '@adobe/react-spectrum';
 
-import { APP_NAME } from '../utils';
-import { IUser } from '../types';
-import { Link } from 'react-router-dom';
 import useAuth from '../context/auth';
+import { IUser } from '../types';
+import { APP_NAME } from '../utils';
 
 export function Header() {
   const {

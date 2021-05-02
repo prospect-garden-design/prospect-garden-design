@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import {
   Button,
@@ -10,14 +12,12 @@ import {
   TextField,
   View,
 } from '@adobe/react-spectrum';
-import { logout, updateUser } from '../api/AuthAPI';
-import { useEffect, useState } from 'react';
 
+import { logout, updateUser } from '../api/AuthAPI';
+import { userList } from '../api/mockData';
+import useAuth from '../context/auth';
 import { IErrors } from '../types';
 import ListErrors from './common/ListErrors';
-import useAuth from '../context/auth';
-import { useNavigate } from 'react-router-dom';
-import { userList } from '../api/mockData';
 
 type Form = {
   username: string;

@@ -1,16 +1,16 @@
+import marked from 'marked';
 import * as React from 'react';
+import { useEffect, useReducer, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { Flex, Grid, View } from '@adobe/react-spectrum';
-import { articleReducer, initialState } from '../../reducers/article';
-import { useEffect, useReducer, useState } from 'react';
 
-import ArticleMeta from './ArticleMeta';
-import ArticleTags from '../common/ArticleTags';
-import CommentContainer from './CommentContainer';
 import { getArticle } from '../../api/ArticlesAPI';
 import { getArticleComments } from '../../api/CommentsAPI';
-import marked from 'marked';
-import { useParams } from 'react-router-dom';
+import { articleReducer, initialState } from '../../reducers/article';
+import ArticleTags from '../common/ArticleTags';
+import ArticleMeta from './ArticleMeta';
+import CommentContainer from './CommentContainer';
 
 export default function Article() {
   const { slug } = useParams();
@@ -73,7 +73,7 @@ export default function Article() {
             rowGap='size-200'
             marginX='size-2400'
             marginY='size-400'
-            backgroundColor='blue-600'
+            // backgroundColor='blue-600'
           >
             <h1>{article.title}</h1>
             <ArticleMeta article={article} dispatch={dispatch} />

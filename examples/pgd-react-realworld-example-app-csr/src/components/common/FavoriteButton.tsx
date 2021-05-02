@@ -1,8 +1,7 @@
 import * as React from 'react';
-
 import { Link, useNavigate } from 'react-router-dom';
-import { favoriteArticle, unfavoriteArticle } from '../../api/ArticlesAPI';
 
+import { favoriteArticle, unfavoriteArticle } from '../../api/ArticlesAPI';
 import { ArticleAction } from '../../reducers/article';
 import { ArticleListAction } from '../../reducers/articleList';
 import { IArticle } from '../../types';

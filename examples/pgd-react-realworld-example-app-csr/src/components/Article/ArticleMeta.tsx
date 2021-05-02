@@ -3,9 +3,9 @@ import * as React from 'react';
 import { Flex, Grid, View } from '@adobe/react-spectrum';
 
 import { ArticleAction } from '../../reducers/article';
-import ArticleActions from './ArticleActions';
-import ArticleAvatar from '../common/ArticleAvatar';
 import { IArticle } from '../../types';
+import ArticleAvatar from '../common/ArticleAvatar';
+import ArticleActions from './ArticleActions';
 
 type ArticleMetaProps = {
   article: IArticle;

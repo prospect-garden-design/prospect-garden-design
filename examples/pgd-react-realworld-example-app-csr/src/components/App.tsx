@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import {
   Provider,
@@ -6,10 +8,9 @@ import {
   defaultTheme,
   lightTheme,
 } from '@adobe/react-spectrum';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import useAuth, { AuthProvider } from '../context/auth';
-import { useEffect, useState } from 'react';
 
+import { getCurrentUser } from '../api/AuthAPI';
+import useAuth, { AuthProvider } from '../context/auth';
 import Article from './Article';
 import Editor from './Editor';
 import Header from './Header';
@@ -19,7 +20,6 @@ import PrivateRoute from './PrivateRoute';
 import Profile from './Profile';
 import Register from './Register';
 import Settings from './Settings';
-import { getCurrentUser } from '../api/AuthAPI';
 
 function App() {
   const {
