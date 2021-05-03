@@ -1,3 +1,4 @@
+import classNames from 'clsx';
 import * as React from 'react';
 import { useRef } from 'react';
 
@@ -6,7 +7,7 @@ import { useLocale } from '@react-aria/i18n';
 import { useHover } from '@react-aria/interactions';
 import { filterDOMProps, mergeProps } from '@react-aria/utils';
 import { useProviderProps } from '@react-spectrum/provider';
-import { classNames, useDOMRef, useStyleProps } from '@react-spectrum/utils';
+import { useDOMRef, useStyleProps } from '@react-spectrum/utils';
 import { TreeState, useTreeState } from '@react-stately/tree';
 import ChevronLeftMedium from '@spectrum-icons/ui/ChevronLeftMedium';
 import ChevronRightMedium from '@spectrum-icons/ui/ChevronRightMedium';
