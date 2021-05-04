@@ -9,6 +9,8 @@
     "build:prod": "rimraf dist && cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
     "build:types": "",
     "demo": "cross-env APP_ENV=reactfresh webpack serve --hot --config webpack/webpack.config.demo.js",
+    "dev": "npm run site",
+    "site": "cross-env APP_ENV=reactfresh webpack serve --hot --config webpack/webpack.config.site.js",
     "start": "npm run demo",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:log": "node index.js --name nested-a"
@@ -19,6 +21,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@mdx-js/loader": "^2.0.0-next.9",
     "@react-aria/i18n": "^3.3.0",
     "@react-aria/ssr": "^3.0.1",
     "@react-aria/visually-hidden": "^3.2.1",
@@ -57,6 +60,8 @@
     "@react-spectrum/well": "^3.1.1",
     "@react-stately/collections": "^3.3.1",
     "@react-stately/data": "^3.3.0",
-    "@react-types/shared": "^3.5.0"
+    "@react-types/shared": "^3.5.0",
+    "prism-react-renderer": "^1.2.0",
+    "react-router-dom": "^6.0.0-beta.0"
   }
 }

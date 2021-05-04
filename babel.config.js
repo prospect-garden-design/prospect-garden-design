@@ -68,9 +68,14 @@ module.exports = function (api) {
     ],
     isEnvReact && [
       '@babel/preset-react',
-      { development: env !== 'production' },
+      {
+        // runtime: 'automatic',
+        development: env !== 'production',
+      },
     ],
   ].filter(Boolean);
+
+  console.log('babel-presets, ', JSON.stringify(presets));
 
   const ignore = ['node_modules'];
 
