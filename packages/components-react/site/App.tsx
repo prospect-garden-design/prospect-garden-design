@@ -1,6 +1,7 @@
 // import './index.css';
 
 import * as React from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import {
@@ -15,6 +16,8 @@ import {
 } from '../src/index';
 import { SiteHome } from './SiteHome';
 import { CompHome } from './pages/CompHome';
+import { componentsMdxPaths } from './config/mdx-registry';
+import { getCompNameFromPath, getCompRelativePath } from './utils/mdx-helper';
 
 export function App(props = {}) {
   return (
@@ -25,7 +28,7 @@ export function App(props = {}) {
         {/* <Header /> */}
         <Routes>
           <Route path='/' element={<SiteHome />} />
-          <Route path='components/:comp' element={<CompHome />} />
+          <Route path='docs/*' element={<CompHome />} />
         </Routes>
       </Router>
     </Provider>

@@ -26,6 +26,8 @@ function Accordion<T extends object>(
   props: SpectrumAccordionProps<T>,
   ref: DOMRef<HTMLDivElement>,
 ) {
+  console.log('==pp4accordion, ', props);
+
   props = useProviderProps(props);
   let state = useTreeState<T>(props);
   let { styleProps } = useStyleProps(props);

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import ReadmeMdx from '../README.md';
 import AccordionMdx from '../src/components/accordion/Accordion.docs.mdx';
@@ -15,31 +16,33 @@ import {
 
 export function SiteHome(props) {
   return (
-    <div>
-      <h1>Site首页: react components for pgd</h1>
-      <h2>again</h2>
-      <AccordionMdx />
-      <h2>again</h2>
-      <h2>again</h2>
-      <h2>again</h2>
-      <ReadmeMdx />
-      <Button variant='cta'>tt</Button>
-      <div style={{ width: '480px', margin: '24px' }}>
-        <Accordion {...props}>
-          <Item
-            key='files'
-            title='Your files'
-            // UNSAFE_style={{}}
-          >
-            files
-          </Item>
-          <Item key='shared' title='Shared with you'>
-            shared
-          </Item>
-          <Item key='last' title='Last item'>
-            last
-          </Item>
-        </Accordion>
+    <div style={{ flex: `0 0 auto` }}>
+      <div
+        style={{
+          display: `flex`,
+          minHeight: `100vh`,
+          flexFlow: `wrap column`,
+          justifyContent: `center`,
+          alignItems: `center`,
+        }}
+      >
+        <h1> react components for prospect garden design system</h1>
+        <h2>
+          <Link to='/docs'>documentation</Link>
+        </h2>
+        <div>
+          <Accordion>
+            <Item key='files' title='Your files'>
+              files
+            </Item>
+            <Item key='shared' title='Shared with you'>
+              shared
+            </Item>
+            <Item key='last' title='Last item'>
+              last
+            </Item>
+          </Accordion>
+        </div>
       </div>
     </div>
   );

@@ -14,18 +14,6 @@ const wpConfig = merge(devServerConfig, {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.(ts|js)x?$/,
-      //   use: [
-      //     {
-      //       loader: 'babel-loader',
-      //       options: {
-      //         rootMode: 'upward',
-      //       },
-      //     },
-      //   ],
-      //   exclude: /node_modules/,
-      // },
       {
         test: /\.mdx?$/,
         use: [
@@ -43,29 +31,6 @@ const wpConfig = merge(devServerConfig, {
           },
         ],
       },
-      // {
-      //   test: /\.(sa|sc|c)ss$/,
-      //   use: [
-      //     // isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-      //     'style-loader',
-      //     'css-loader',
-      //     {
-      //       loader: 'sass-loader',
-      //       options: {
-      //         // when node-sass and sass were installed，by default sass-loader prefers sass.
-      //         implementation: require('sass'),
-      //         sassOptions: {
-      //           // fiber: require('fibers'),
-      //         },
-      //       },
-      //     },
-      //   ],
-      // },
-      // {
-      //   test: /\.js$/,
-      //   use: 'source-map-loader',
-      //   enforce: 'pre',
-      // },
     ],
   },
   plugins: [
@@ -81,6 +46,6 @@ const wpConfig = merge(devServerConfig, {
   // },
 });
 
-console.log('site-wpCfg, ', JSON.stringify(wpConfig));
+// console.log('site-wpCfg, ', JSON.stringify(wpConfig));
 
 module.exports = wpConfig;
