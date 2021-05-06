@@ -14,6 +14,8 @@ export interface StyleProps {
   UNSAFE_className?: string;
   /** Sets inline [style](https://developer.mozilla.org/en-US/docs/Web/API/Element/style) for the element. Only use as a **last resort**. Use style props instead. */
   UNSAFE_style?: CSSProperties;
+  className?: string;
+  style?: CSSProperties;
 
   /** The margin for all four sides of the element. See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/margin). */
   margin?: DimensionValue;

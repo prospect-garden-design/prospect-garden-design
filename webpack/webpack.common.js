@@ -20,6 +20,22 @@ module.exports = {
 
   module: {
     rules: [
+      // {
+      //   test: /\.d\.ts$/,
+      //   use: [
+      //     {
+      //       loader: 'babel-loader',
+      //       options: {
+      //         rootMode: 'upward',
+      //       },
+      //     },
+      //   ],
+      //   exclude: /node_modules/,
+      //   // exclude: function(modulePath) {
+      //   //   return /node_modules/.test(modulePath) &&
+      //   //       !/node_modules\/@react-types\/shared/.test(modulePath);
+      //   // }
+      // },
       {
         test: /\.(ts|js)x?$/,
         use: [
@@ -65,6 +81,7 @@ module.exports = {
     // }),
   ],
   resolve: {
+    // extensions: ['.ts', '.tsx', '.d.ts', '.js', 'jsx'],
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
     alias: {},
   },

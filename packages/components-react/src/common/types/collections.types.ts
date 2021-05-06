@@ -46,10 +46,12 @@ export interface SectionProps<T> {
 export type SectionElement<T> = ReactElement<SectionProps<T>>;
 
 export type CollectionElement<T> = SectionElement<T> | ItemElement<T>;
+
 export type CollectionChildren<T> =
   | CollectionElement<T>
   | CollectionElement<T>[]
   | ((item: T) => CollectionElement<T>);
+
 export interface CollectionBase<T> {
   /** The contents of the collection. */
   children: CollectionChildren<T>;

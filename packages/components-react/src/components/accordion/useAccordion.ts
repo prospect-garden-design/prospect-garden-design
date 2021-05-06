@@ -4,11 +4,11 @@ import { useButton } from '@react-aria/button';
 import { useSelectableItem, useSelectableList } from '@react-aria/selection';
 import { mergeProps, useId } from '@react-aria/utils';
 import { TreeState } from '@react-stately/tree';
+import type { Node } from '@react-types/shared';
 
-import { Node } from '../../common/types';
-import { AriaAccordionProps } from './Accordion.types';
+import { AriaAccordionProps } from './types';
 
-// import {Node} from '@react-types/shared';
+// import { Node } from '../../common/types';
 
 interface AccordionAria {
   /** Props for the accordion container element. */

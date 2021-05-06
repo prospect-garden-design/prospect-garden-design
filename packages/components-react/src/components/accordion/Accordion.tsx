@@ -9,14 +9,15 @@ import { filterDOMProps, mergeProps } from '@react-aria/utils';
 import { useProviderProps } from '@react-spectrum/provider';
 import { useDOMRef, useStyleProps } from '@react-spectrum/utils';
 import { TreeState, useTreeState } from '@react-stately/tree';
+import type { DOMRef, Node } from '@react-types/shared';
+// import { DOMRef, Node } from '@react-types/shared/src/index.d.ts';
 import ChevronLeftMedium from '@spectrum-icons/ui/ChevronLeftMedium';
 import ChevronRightMedium from '@spectrum-icons/ui/ChevronRightMedium';
 
-import { DOMRef, Node } from '../../common/types';
-import { SpectrumAccordionProps } from './Accordion.types';
+import { SpectrumAccordionProps } from './types';
 import { useAccordion, useAccordionItem } from './useAccordion';
 
-// import { DOMRef, Node } from '@react-types/shared';
+// import { DOMRef, Node } from '../../common/types';
 // import {SpectrumAccordionProps} from '@react-types/accordion';
 // import styles from '@adobe/spectrum-css-temp/components/accordion/vars.css';
 
@@ -26,12 +27,14 @@ function Accordion<T extends object>(
   props: SpectrumAccordionProps<T>,
   ref: DOMRef<HTMLDivElement>,
 ) {
-  console.log('==pp4accordion, ', props);
+  console.log('==pp4=Accordion, ', props);
+
+  // debugger;
 
   props = useProviderProps(props);
+  let domRef = useDOMRef(ref);
   let state = useTreeState<T>(props);
   let { styleProps } = useStyleProps(props);
-  let domRef = useDOMRef(ref);
   let { accordionProps } = useAccordion(props, state, domRef);
 
   return (
@@ -55,6 +58,8 @@ interface AccordionItemProps<T> {
 }
 
 function AccordionItem<T>(props: AccordionItemProps<T>) {
+  // console.log('==pp4=AccordionItem, ', props);
+
   props = useProviderProps(props);
   let ref = useRef<HTMLButtonElement>();
   let { state, item } = props;
@@ -64,6 +69,8 @@ function AccordionItem<T>(props: AccordionItemProps<T>) {
   let { isHovered, hoverProps } = useHover({ isDisabled });
   let { direction } = useLocale();
 
+  console.log('==acd=isOpen, ', isOpen);
+
   return (
     <div
       className={classNames(styles, 'spectrum-Accordion-item', {
@@ -72,34 +79,34 @@ function AccordionItem<T>(props: AccordionItemProps<T>) {
       })}
     >
       <h3 className={classNames(styles, 'spectrum-Accordion-itemHeading')}>
-        <FocusRing within focusRingClass={classNames(styles, 'focus-ring')}>
-          <button
-            {...mergeProps(buttonProps, hoverProps)}
-            ref={ref}
-            className={classNames(styles, 'spectrum-Accordion-itemHeader', {
-              'is-hovered': isHovered,
-            })}
-          >
-            {direction === 'ltr' ? (
-              <ChevronRightMedium
-                aria-hidden='true'
-                UNSAFE_className={classNames(
-                  styles,
-                  'spectrum-Accordion-itemIndicator',
-                )}
-              />
-            ) : (
-              <ChevronLeftMedium
-                aria-hidden='true'
-                UNSAFE_className={classNames(
-                  styles,
-                  'spectrum-Accordion-itemIndicator',
-                )}
-              />
-            )}
-            {item.props.title}
-          </button>
-        </FocusRing>
+        {/* <FocusRing within focusRingClass={classNames(styles, 'focus-ring')}> */}
+        <button
+          {...mergeProps(buttonProps, hoverProps)}
+          ref={ref}
+          className={classNames(styles, 'spectrum-Accordion-itemHeader', {
+            'is-hovered': isHovered,
+          })}
+        >
+          {direction === 'ltr' ? (
+            <ChevronRightMedium
+              aria-hidden='true'
+              UNSAFE_className={classNames(
+                styles,
+                'spectrum-Accordion-itemIndicator',
+              )}
+            />
+          ) : (
+            <ChevronLeftMedium
+              aria-hidden='true'
+              UNSAFE_className={classNames(
+                styles,
+                'spectrum-Accordion-itemIndicator',
+              )}
+            />
+          )}
+          {item.props.title}
+        </button>
+        {/* </FocusRing>I */}
       </h3>
       <div
         {...regionProps}
