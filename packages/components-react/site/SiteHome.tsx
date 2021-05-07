@@ -35,12 +35,6 @@ export function SiteHome(props) {
             <Item key='files' title='Your files'>
               files
             </Item>
-            <Item key='shared' title='Shared with you'>
-              shared
-            </Item>
-            <Item key='last' title='Last item'>
-              last
-            </Item>
           </Accordion>
         </div>
       </div>
