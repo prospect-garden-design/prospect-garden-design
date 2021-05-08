@@ -26,6 +26,6 @@
     "react-router-dom": "^6.0.0-beta.0"
   },
   "devDependencies": {
-    "@types/faker": "^5.5.2"
+    "@types/faker": "^5.5.4"
   }
 }
