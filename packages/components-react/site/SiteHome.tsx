@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import ReadmeMdx from '../README.md';
-import AccordionMdx from '../src/components/accordion/Accordion.docs.mdx';
+import AccordionMdx from '../src/components/accordion/docs/Accordion.docs.mdx';
+import { SimpleAccordion } from '../src/components/accordion/stories/Accordion.stories';
 import {
   Accordion,
   Button,
@@ -31,11 +32,7 @@ export function SiteHome(props) {
           <Link to='/docs'>documentation</Link>
         </h2>
         <div>
-          <Accordion>
-            <Item key='files' title='Your files'>
-              files
-            </Item>
-          </Accordion>
+          <SimpleAccordion />
         </div>
       </div>
     </div>

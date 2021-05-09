@@ -10,15 +10,12 @@ import { useProviderProps } from '@react-spectrum/provider';
 import { useDOMRef, useStyleProps } from '@react-spectrum/utils';
 import { TreeState, useTreeState } from '@react-stately/tree';
 import type { DOMRef, Node } from '@react-types/shared';
-// import { DOMRef, Node } from '@react-types/shared/src/index.d.ts';
 import ChevronLeftMedium from '@spectrum-icons/ui/ChevronLeftMedium';
 import ChevronRightMedium from '@spectrum-icons/ui/ChevronRightMedium';
 
 import { SpectrumAccordionProps } from './types';
 import { useAccordion, useAccordionItem } from './useAccordion';
 
-// import { DOMRef, Node } from '../../common/types';
-// import {SpectrumAccordionProps} from '@react-types/accordion';
 // import styles from '@adobe/spectrum-css-temp/components/accordion/vars.css';
 
 const styles = { className: '' };

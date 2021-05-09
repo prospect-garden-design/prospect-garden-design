@@ -8,10 +8,7 @@ import type { Node } from '@react-types/shared';
 
 import { AriaAccordionProps } from './types';
 
-// import { Node } from '../../common/types';
-
 interface AccordionAria {
-  /** Props for the accordion container element. */
   accordionProps: HTMLAttributes<HTMLElement>;
 }
 interface AccordionItemAriaProps<T> {

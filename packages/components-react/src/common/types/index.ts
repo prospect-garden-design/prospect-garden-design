@@ -6,7 +6,6 @@
 // export * from './collections.types';
 // export * from './removable.types';
 // export * from './events.types';
-// export * from './dna.types';
 // export * from './style.types';
 // export * from './refs.types';
 // export * from './labelable.types';
