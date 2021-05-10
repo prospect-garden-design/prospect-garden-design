@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 
 import ReadmeMdx from '../README.md';
 import AccordionMdx from '../src/components/accordion/docs/Accordion.docs.mdx';
-import { SimpleAccordion } from '../src/components/accordion/stories/Accordion.stories';
+import {
+  NestedAccordion,
+  SimpleAccordion,
+  ZendeskStyleAccordion,
+} from '../src/components/accordion/stories/Accordion.stories';
 import {
   Accordion,
   Button,
@@ -23,17 +27,17 @@ export function SiteHome(props) {
           display: `flex`,
           minHeight: `100vh`,
           flexFlow: `wrap column`,
-          justifyContent: `center`,
-          alignItems: `center`,
+          // justifyContent: `center`,
+          // alignItems: `center`,
         }}
       >
         <h1> react components for prospect garden design system</h1>
         <h2>
           <Link to='/docs'>documentation</Link>
         </h2>
-        <div>
-          <SimpleAccordion />
-        </div>
+        <ZendeskStyleAccordion />
+        <hr style={{ height: 16, border: 'none' }} />
+        {/* <NestedAccordion /> */}
       </div>
     </div>
   );

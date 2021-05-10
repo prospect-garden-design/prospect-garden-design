@@ -25,7 +25,7 @@
     "lint:style": "",
     "prepare": "",
     "publish": "",
-    "start": "cd packages/sample-vanilla-app-ts && npm run demo",
+    "start": "cd packages/components-react && npm run site",
     "syncpack-fix": "syncpack-fix-mismatches",
     "syncpack-ls": "syncpack-list-mismatches",
     "test": "jest --config=jest.monorepo.js",
