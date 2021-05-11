@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import { Item } from '@react-stately/collections';
 
+import { ZendeskAccordion } from '../lab/zendesk-accordion';
 import { Accordion } from '../src/Accordion';
-import { ZendeskAccordion } from '../tests/lab-zendesk-accordion';
 
 export function SimpleAccordion(props) {
   return (
