@@ -5,6 +5,7 @@ import { Item } from '@react-stately/collections';
 import { Tree } from '../src/TreeView';
 
 export function SimpleStaticTree(props = {}) {
+  console.log('//SimpleStaticTree');
   return (
     <Tree {...props}>
       <Item key='A1' title='Animals'>
@@ -27,3 +28,5 @@ export function SimpleStaticTree(props = {}) {
     </Tree>
   );
 }
+
+export default SimpleStaticTree;

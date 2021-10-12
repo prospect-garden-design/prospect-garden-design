@@ -85,4 +85,8 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
     alias: {},
   },
+  experiments: {
+    topLevelAwait: true,
+  },
+  ignoreWarnings: [/Failed to parse source map/],
 };

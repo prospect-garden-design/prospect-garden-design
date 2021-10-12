@@ -9,11 +9,23 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const wpConfig = merge(devServerConfig, {
   entry: path.resolve(__dirname, '../site/render.tsx'),
   output: {
-    filename: 'site.main.js',
+    filename: '[name].main.js',
     path: path.resolve(__dirname, '../dist'),
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|js)x?$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              rootMode: 'upward',
+            },
+          },
+        ],
+        exclude: /node_modules/,
+      },
       {
         test: /\.mdx?$/,
         use: [
@@ -41,9 +53,10 @@ const wpConfig = merge(devServerConfig, {
     }),
   ],
 
-  // devServer: {
-  //   contentBase: path.resolve(__dirname, '../dist'),
-  // },
+  devServer: {
+    // contentBase: path.resolve(__dirname, '../dist'),
+    port: 8000,
+  },
 });
 
 // console.log('site-wpCfg, ', JSON.stringify(wpConfig));

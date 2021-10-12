@@ -13,6 +13,11 @@ export const componentsMdxPaths = [
     path: 'src/experimental/tree/docs/TreeView.docs.mdx',
     status: 'BETA',
   },
+  {
+    name: 'TreeView.stories',
+    path: 'src/experimental/tree/stories/TreeView.stories.tsx',
+    status: 'BETA',
+  },
 ];
 
 export default componentsMdxPaths;

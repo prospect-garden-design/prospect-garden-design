@@ -120,7 +120,7 @@
       <div class="container">
         <ul class="list-inline">
           <li>
-            <a href="#!" aria-label="Back home">
+            <a href="/pgd-css-site" aria-label="Back home">
               <span class=""><i class="icono-barChart"></i></span>
             </a>
           </li>
@@ -133,12 +133,12 @@
               <span class="" id="darkToggler"><i class="icono-moon"></i></span
             ></a>
           </li>
-          <li><a href="#!" class="secondary">themes</a></li>
-          <li><a href="#!" class="secondary">i18n</a></li>
+          <!-- <li><a href="#!" class="secondary">themes</a></li> -->
+          <!-- <li><a href="#!" class="secondary">i18n</a></li> -->
           <li>
             <a
               target="_blank"
-              href="https://github.com/prospect-garden-design/prospect-garden-design/tree/main/packages/components"
+              href="https://github.com/prospect-garden-design/prospect-garden-design/tree/main/packages/css"
               class=""
               aria-label="prospect garden design css gitHub repository"
               >github
@@ -161,7 +161,7 @@
               <li><a href="#theming" class="secondary">theming</a></li>
             </ul>
           </details>
-          <details class="collapse-panel no-arrow" open>
+          <!-- <details class="collapse-panel no-arrow" open>
             <summary>design tokens</summary>
             <ul class="ul no-bullet">
               <li>
@@ -173,7 +173,7 @@
               <li><a href="#typography" class="secondary">typography</a></li>
               <li><a href="#spacing" class="secondary">spacing</a></li>
             </ul>
-          </details>
+          </details> -->
           <details class="collapse-panel no-arrow" open>
             <summary>general elements</summary>
             <ul class="ul no-bullet">
@@ -181,7 +181,7 @@
               <li><a href="#code" class="secondary">code</a></li>
               <li><a href="#list" class="secondary">list - ul & ol</a></li>
               <li><a href="#table" class="secondary">table</a></li>
-              <li><a href="#details" class="secondary">details collapse</a></li>
+              <!-- <li><a href="#details" class="secondary">details collapse</a></li> -->
             </ul>
           </details>
           <details class="collapse-panel no-arrow" open>
@@ -260,8 +260,8 @@
           <h2 class="">overview</h2>
           <p>
             prospect garden css components(a.k.a.
-            <code class="code">@pgd/components</code>) is the css implementation
-            of the prospect garden design system.
+            <code class="code">@pgd/css</code>) is the css implementation of the
+            prospect garden design system.
           </p>
           <p>
             It's a responsive css framework built to make switching themes easy,
@@ -347,22 +347,22 @@
         <!-- #endregion getting started -->
 
         <!-- #region design tokens  -->
-        <section id="tokensConventions" class="docs-content-section">
+        <!-- <section id="tokensConventions" class="docs-content-section">
           <h2>design tokens conventions</h2>
           <p>3-tier design tokens</p>
           <h3>global constant tokens</h3>
           <h3>global semantic tokens</h3>
           <h3>component specific tokens</h3>
-        </section>
-        <section id="color" class="docs-content-section">
-          <h2>color palette</h2>
-        </section>
-        <section id="typography" class="docs-content-section">
-          <h2>typography</h2>
-        </section>
-        <section id="spacing" class="docs-content-section">
-          <h2>spacing</h2>
-        </section>
+        </section> -->
+        <!-- <section id="color" class="docs-content-section">
+            <h2>color palette</h2>
+          </section>
+          <section id="typography" class="docs-content-section">
+            <h2>typography</h2>
+          </section>
+          <section id="spacing" class="docs-content-section">
+            <h2>spacing</h2>
+          </section> -->
         <!-- #endregion design tokens  -->
 
         <!-- #region general html elements -->
@@ -394,7 +394,7 @@
               </li>
               <li><code class="code">10 + 5 = 15</code></li>
               <li>
-                The default code style is like this:
+                The browser default code style is like this:
                 <code class="">f = ma</code>.
               </li>
             </ul>
@@ -587,88 +587,6 @@
           </div>
         </section>
 
-        <section id="details" class="docs-content-section">
-          <h2>details collapse panel</h2>
-          <p>.collapse-panel > details</p>
-          <p>.collapse-header > summary</p>
-          <p>.collapse-content > contents below summary</p>
-          <p>
-            note: <code class="code">&lt;details&gt;</code> and
-            <code class="code">&lt;summary&gt;</code> elements are not supported
-            in IE 11.
-          </p>
-
-          <h3>browser default details summary element</h3>
-          <div class="eg-preview">
-            <details class="">
-              <summary class="">Why are computers important?</summary>
-              <div class="">
-                Computers are important because they are like bicycles for the
-                mind.
-              </div>
-            </details>
-          </div>
-
-          <h3>basic collapse panel</h3>
-          <div class="eg-preview">
-            <!-- <details class="collapse-panel w-400 mw-full" open> -->
-            <details class="collapse-panel">
-              <summary class="collapse-header">
-                Why are computers important?
-              </summary>
-              <div class="collapse-content">
-                Computers are important because they are like bicycles for the
-                mind.
-              </div>
-            </details>
-          </div>
-          <h3>collapse panel group</h3>
-          <div class="eg-preview">
-            <div class="collapse-group w-75 mw-full">
-              <!-- 1st collapse panel (open by default) -->
-              <details class="collapse-panel 1st" open>
-                <summary class="collapse-header">
-                  <strong>Plain White T-Shirt</strong>
-                  <br />
-                  <span class="text-muted">Price: $20.00</span>
-                </summary>
-                <div class="collapse-content">
-                  A long description that lists all the good sides of the
-                  product and none of the bad. Compels the shopper to add this
-                  product to their cart immediately.
-                </div>
-              </details>
-
-              <!-- 2nd collapse panel -->
-              <details class="collapse-panel">
-                <summary class="collapse-header">
-                  <strong>Cool Jeans</strong>
-                  <br />
-                  <span class="text-muted">Price: $41.00</span>
-                </summary>
-                <div class="collapse-content">
-                  A long description that lists all the good sides of the
-                  product and none of the bad. Compels the shopper to add this
-                  product to their cart immediately.
-                </div>
-              </details>
-
-              <!-- 3rd collapse panel -->
-              <details class="collapse-panel">
-                <summary class="collapse-header">
-                  <strong>Plain White Crop Top</strong>
-                  <br />
-                  <span class="text-muted">Price: $20.00</span>
-                </summary>
-                <div class="collapse-content">
-                  A long description that lists all the good sides of the
-                  product and none of the bad. Compels the shopper to add this
-                  product to their cart immediately.
-                </div>
-              </details>
-            </div>
-          </div>
-        </section>
         <!-- #endregion general html elements -->
 
         <!-- #region forms -->
@@ -694,8 +612,8 @@
           <p>
             it provides consistent sizing/spacing/states/... among form inputs.
           </p>
-          <h3>form inline</h3>
-          <div class="eg-preview"></div>
+          <!-- <h3>form inline</h3>
+          <div class="eg-preview"></div> -->
         </section>
 
         <section id="input" class="docs-content-section">
@@ -744,6 +662,7 @@
               type="text"
               class="form-control disabled mb-3"
               value="disabled input"
+              disabled
             />
             <input
               type="email"
@@ -1014,9 +933,86 @@
         <!-- #region components -->
 
         <section id="accordion" class="docs-content-section">
-          <h2>accordion</h2>
-          <h3>basic</h3>
-          <div class="eg-preview"></div>
+          <h2>accordion / collapse</h2>
+          <p>.collapse-panel > details</p>
+          <p>.collapse-header > summary</p>
+          <p>.collapse-content > contents below summary</p>
+          <p>
+            note: <code class="code">&lt;details&gt;</code> and
+            <code class="code">&lt;summary&gt;</code> elements are not supported
+            in IE 11.
+          </p>
+
+          <h3>browser default details summary element</h3>
+          <div class="eg-preview">
+            <details class="">
+              <summary class="">Why are computers important?</summary>
+              <div class="">
+                Computers are important because they are like bicycles for the
+                mind.
+              </div>
+            </details>
+          </div>
+
+          <h3>basic collapse panel</h3>
+          <div class="eg-preview">
+            <!-- <details class="collapse-panel w-400 mw-full" open> -->
+            <details class="collapse-panel">
+              <summary class="collapse-header">
+                Why are computers important?
+              </summary>
+              <div class="collapse-content">
+                Computers are important because they are like bicycles for the
+                mind.
+              </div>
+            </details>
+          </div>
+          <h3>collapse panel group</h3>
+          <div class="eg-preview">
+            <div class="collapse-group w-75 mw-full">
+              <!-- 1st collapse panel (open by default) -->
+              <details class="collapse-panel 1st" open>
+                <summary class="collapse-header">
+                  <strong>Plain White T-Shirt</strong>
+                  <br />
+                  <span class="text-muted">Price: $20.00</span>
+                </summary>
+                <div class="collapse-content">
+                  A long description that lists all the good sides of the
+                  product and none of the bad. Compels the shopper to add this
+                  product to their cart immediately.
+                </div>
+              </details>
+
+              <!-- 2nd collapse panel -->
+              <details class="collapse-panel">
+                <summary class="collapse-header">
+                  <strong>Cool Jeans</strong>
+                  <br />
+                  <span class="text-muted">Price: $41.00</span>
+                </summary>
+                <div class="collapse-content">
+                  A long description that lists all the good sides of the
+                  product and none of the bad. Compels the shopper to add this
+                  product to their cart immediately.
+                </div>
+              </details>
+
+              <!-- 3rd collapse panel -->
+              <details class="collapse-panel">
+                <summary class="collapse-header">
+                  <strong>Plain White Crop Top</strong>
+                  <br />
+                  <span class="text-muted">Price: $20.00</span>
+                </summary>
+                <div class="collapse-content">
+                  A long description that lists all the good sides of the
+                  product and none of the bad. Compels the shopper to add this
+                  product to their cart immediately.
+                </div>
+              </details>
+            </div>
+          </div>
         </section>
 
         <section id="alert" class="docs-content-section">
@@ -1667,8 +1663,8 @@
               >Open modal</a
             >
           </div>
-          <h3>scrollable modal</h3>
-          <div class="eg-preview"></div>
+          <!-- <h3>scrollable modal</h3>
+          <div class="eg-preview"></div> -->
         </section>
 
         <!-- #region /folded progress bar -->
@@ -1800,7 +1796,12 @@
             </div>
             <div class="progress">
               <div
-                class="progress-bar bg-success progress-bar-animated highlight-dark"
+                class="
+                  progress-bar
+                  bg-success
+                  progress-bar-animated
+                  highlight-dark
+                "
                 role="progressbar"
                 style="width: 60%"
                 aria-valuenow="60"
@@ -1939,10 +1940,10 @@
           <div class="eg-preview">
             <nav class="navbar" id="navbar-6">
               <div class="navbar-content">
-                <button class="btn btn-action" type="button">
-                  <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+                <!-- <button class="btn btn-action" type="button">
+                  <i class="fa fa-bars" aria-hidden="true"></i>
                   <span class="sr-only">Toggle sidebar</span>
-                </button>
+                </button> -->
               </div>
               <a class="navbar-brand" style="cursor: pointer">
                 <!-- <img src="fake-logo.svg" alt="navbar-brand-img" /> -->
@@ -1963,14 +1964,14 @@
           <div class="eg-preview">
             <nav class="navbar" id="navbar-collapsible">
               <div class="navbar-content">
-                <button class="btn btn-action" type="button">
-                  <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+                <!-- <button class="btn btn-action" type="button">
+                  <i class="fa fa-bars" aria-hidden="true"></i>
                   <span class="sr-only">Toggle sidebar</span>
-                </button>
+                </button> -->
               </div>
               <a class="navbar-brand" style="cursor: pointer">
                 <!-- <img src="fake-logo.svg" alt="navbar-brand-img" /> -->
-                <span><i class="icono-barChart">logo</i></span>
+                <span> <i class="icono-barChart">logo</i></span>
                 <span class="pl-2">Brand</span>
               </a>
               <div class="navbar-content ml-auto">
@@ -2022,12 +2023,12 @@
             </div>
           </div>
 
-          <h3>sidebar links with icons</h3>
+          <!-- <h3>sidebar links with icons</h3>
           <div class="eg-preview">
             <button class="btn">button with data-pg-sidebar</button>
             <a class="btn" href="#!">anchor link with data-pg-sidebar</a>
           </div>
-          <h3>sidebar with multi-level & collapsible contents</h3>
+          <h3>sidebar with multi-level & collapsible contents</h3> -->
         </section>
         <!-- #endregion /folded sidebar -->
 

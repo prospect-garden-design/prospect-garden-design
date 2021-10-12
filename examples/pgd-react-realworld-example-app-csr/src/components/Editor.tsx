@@ -40,12 +40,8 @@ export default function Editor() {
     const fetchArticle = async () => {
       try {
         const payload = await getArticle(slug);
-        const {
-          title,
-          description,
-          body,
-          tagList,
-        } = (payload as any).data.article;
+        const { title, description, body, tagList } = (payload as any).data
+          .article;
         if (!ignore) {
           // dispatch({
           //   type: 'SET_FORM',

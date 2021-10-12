@@ -16,8 +16,9 @@ module.exports = function (api) {
   const isEnvReactFresh = checkAppEnv('reactfresh');
   // 用在react项目打包阶段，会启用@babel/preset-react，不会启用react-refresh/babel
   const isEnvReact = checkAppEnv('react');
+  console.log(';;isEnvReact, ', isEnvReact);
 
-  console.log('====process.env.APP_ENV, ', process.env.APP_ENV);
+  console.log(';;process.env.APP_ENV, ', process.env.APP_ENV);
 
   // Plugins run before Presets. Plugin ordering is first to last.
   const plugins = [
@@ -30,7 +31,7 @@ module.exports = function (api) {
     // ],
     ['@babel/plugin-proposal-class-properties', { loose: false }],
     '@babel/proposal-object-rest-spread',
-    isEnvReactFresh && 'react-refresh/babel',
+    // isEnvReactFresh && 'react-refresh/babel',
   ].filter(Boolean);
 
   function configModule() {

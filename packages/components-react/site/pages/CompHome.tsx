@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Suspense, lazy, useState } from 'react';
-import { Link, Route, Routes, Outlet } from 'react-router-dom';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
 
 import { componentsMdxPaths } from '../config/mdx-registry';
 import { getCompNameFromPath, getCompRelativePath } from '../utils/mdx-helper';
 
-const mdxPathsArr = componentsMdxPaths.map((comp) => comp.path);
-
+/**
+ * 基于React.lazy和Suspense懒加载所有组件
+ */
 export function CompHome(props) {
   const [curName, setCurName] = useState('');
 
@@ -19,15 +20,18 @@ export function CompHome(props) {
       <div style={{ display: 'flex' }}>
         <div
           style={{
-            width: 200,
+            width: 320,
             backgroundColor: 'beige',
           }}
           className='left-toc-placeholder'
         >
-          {mdxPathsArr.map((path, index) => (
-            <p key={path}>
-              <Link to={`${getCompNameFromPath(path).toLowerCase()}`}>
-                {getCompNameFromPath(path)}
+          {componentsMdxPaths.map((comp, index) => (
+            <p key={comp.path}>
+              <Link to={getCompRelativePath(comp.path).toLowerCase()}>
+                {
+                  // getCompNameFromPath(path)
+                  comp.name
+                }
               </Link>
             </p>
           ))}
@@ -44,17 +48,24 @@ export function CompHome(props) {
               {componentsMdxPaths
                 .filter((comp) => comp.status !== 'hidden')
                 .map((comp) => {
-                  const LoadedDoc = lazy(() => {
-                    console.log(getCompRelativePath(comp.path));
+                  let MaybeDynamicComp: any = PlaceholderH1;
+
+                  console.log(';;lazy-before-str-0, ', comp.path);
+
+                  const DynamicComp = lazy(() => {
+                    console.log('lazy, ', getCompRelativePath(comp.path));
                     return import(
                       `../../src/${getCompRelativePath(comp.path)}`
                     );
                   });
+
+                  MaybeDynamicComp = DynamicComp;
+
                   return (
                     <Route
                       key={comp.path}
-                      path={`${getCompNameFromPath(comp.path).toLowerCase()}`}
-                      element={<LoadedDoc />}
+                      path={getCompRelativePath(comp.path).toLowerCase()}
+                      element={<MaybeDynamicComp />}
                     />
                   );
                 })}
@@ -64,4 +75,8 @@ export function CompHome(props) {
       </div>
     </div>
   );
+}
+
+function PlaceholderH1() {
+  return <h1>占位符组件</h1>;
 }
